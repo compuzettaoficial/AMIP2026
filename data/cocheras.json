@@ -1,7 +1,7 @@
 [
   {
     "nombre": "Cochera Nuevo Chimbote",
-    "imagenes": ["../assets/images/eventos/chimbote-2026/cocheras/cochera-nuevo-chimbote.jpg"],
+    "imagenes": ["imagenes/parking-central.jpg"],
     "direccion": "VFFF+XWC, Nuevo Chimbote 02711",
     "distanciaAproximada": "Ubicación céntrica en Nuevo Chimbote",
     "capacidad": 50,
@@ -24,7 +24,7 @@
   },
   {
     "nombre": "Estacionamiento Hotel Costa del Inka",
-    "imagenes": ["../assets/images/eventos/chimbote-2026/cocheras/costa-del-inka.jpg"],
+    "imagenes": ["imagenes/costa-del-inka.jpg"],
     "direccion": "Av. Anchoveta Mz. W2 Lt. 24-25, Nuevo Chimbote",
     "distanciaAproximada": "1-2 km del instituto",
     "capacidad": 36,
@@ -47,7 +47,7 @@
   },
   {
     "nombre": "Estacionamiento Hotel Los Cocos",
-    "imagenes": ["../assets/images/eventos/chimbote-2026/cocheras/los-cocos.jpg"],
+    "imagenes": ["imagenes/cochera-los-cocos.jpg"],
     "direccion": "Av. Pacífico E-1, Urb. Buenos Aires, Chimbote",
     "distanciaAproximada": "500m-1km del instituto",
     "capacidad": 30,
@@ -68,7 +68,7 @@
   },
   {
     "nombre": "Cochera Privada Buenos Aires",
-    "imagenes": ["../assets/images/eventos/chimbote-2026/cocheras/buenos-aires.jpg"],
+    "imagenes": [".imagenes/cochera-buenos-aires.jpg"],
     "direccion": "Urbanización Buenos Aires, Nuevo Chimbote",
     "distanciaAproximada": "Cerca del instituto",
     "capacidad": 20,
@@ -90,7 +90,7 @@
   },
   {
     "nombre": "Estacionamiento Plaza Mayor",
-    "imagenes": ["../assets/images/eventos/chimbote-2026/cocheras/plaza-mayor.jpg"],
+    "imagenes": ["imagenes/cochera-plaza-mayor.jpg"],
     "direccion": "Plaza Mayor de Nuevo Chimbote",
     "distanciaAproximada": "Centro de Nuevo Chimbote",
     "capacidad": 100,
