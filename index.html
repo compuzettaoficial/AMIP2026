@@ -66,20 +66,8 @@
         
         .brand-name {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: var(--primary);
-        }
-        
-        .badge {
-            background: rgba(91, 149, 194, 0.1);
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 0.25rem 0.5rem;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: 600;
-            display: block;
-            margin-top: 0.25rem;
         }
         
         nav {
@@ -146,6 +134,8 @@
             backdrop-filter: blur(10px);
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            color: white;
         }
         
         .hero-info-item:hover {
@@ -252,6 +242,55 @@
             background: white;
             width: 30px;
             border-radius: 5px;
+        }
+
+        /* Event Details Section */
+        .event-details {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-detail-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .event-detail-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-detail-card p {
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .event-detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-detail-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .event-detail-card ul li:last-child {
+            border-bottom: none;
         }
         
         /* Tabs */
@@ -571,6 +610,16 @@
             margin-bottom: 0.75rem;
             font-size: 1.1rem;
         }
+
+        .info-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-section a:hover {
+            text-decoration: underline;
+        }
         
         /* Footer */
         footer {
@@ -581,16 +630,15 @@
         
         .footer-disclaimer {
             background: #111827;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 8px;
             margin-bottom: 2rem;
             font-size: 0.875rem;
+            text-align: center;
         }
         
-        .footer-disclaimer h4 {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+        .footer-disclaimer p {
+            margin: 0.25rem 0;
         }
         
         .footer-grid {
@@ -687,6 +735,10 @@
             .menu-toggle {
                 display: block;
             }
+
+            .event-details-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -696,10 +748,7 @@
             <div class="header-content">
                 <div class="logo">
                     <img src="imagenes/logo.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
-                    <div>
-                        <div class="brand-name">HOSPITALIDAD EN ACCIÓN</div>
-                        <span class="badge">📋 APOYO A EVENTOS CRISTIANOS</span>
-                    </div>
+                    <div class="brand-name">HOSPITALIDAD EN ACCIÓN</div>
                 </div>
                 
                 <button class="menu-toggle" onclick="toggleMenu()">
@@ -709,7 +758,7 @@
                 <nav id="nav">
                     <a href="#evento" onclick="closeMenu()">Evento</a>
                     <a href="#hoteles-section" onclick="closeMenu()">Hoteles</a>
-                    <a href="#cocheras-section" onclick="closeMenu(); showTab('cocheras')">Cocheras</a>
+                    <a href="#cocheras-section" onclick="closeMenu(); showTab(event, 'cocheras')">Cocheras</a>
                     <a href="#contacto" onclick="closeMenu()">Contacto</a>
                 </nav>
             </div>
@@ -724,9 +773,9 @@
                 <div class="date-box">
                     <i class="fas fa-calendar"></i> 20-23 Febrero 2026
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Instituto+Carlos+Salazar+Romero+Nuevo+Chimbote" target="_blank" class="hero-info-item">
+                <a href="https://www.google.com/maps/search/?api=1&query=Instituto+Carlos+Salazar+Romero+Nuevo+Chimbote" target="_blank" class="hero-info-item" style="background: rgba(91, 149, 194, 0.9);">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Instituto Carlos Salazar Romero</span>
+                    <span style="font-weight: 700;">Instituto Carlos Salazar Romero</span>
                 </a>
             </div>
         </div>
@@ -760,11 +809,41 @@
         </div>
     </section>
 
+    <section class="event-details">
+        <div class="container">
+            <div class="event-details-grid">
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-church"></i> Organizado por</h3>
+                    <p><strong>AMIP</strong><br>Asociación Misionera de Iglesias Pentecostales</p>
+                </div>
+                
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Programa</h3>
+                    <ul>
+                        <li><strong>Día 1:</strong> Inauguración y conferencias</li>
+                        <li><strong>Día 2:</strong> Talleres y reuniones</li>
+                        <li><strong>Día 3:</strong> Actividades especiales</li>
+                        <li><strong>Día 4:</strong> Clausura</li>
+                    </ul>
+                </div>
+                
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-clock"></i> Horarios</h3>
+                    <p>
+                        <strong>Mañana:</strong> 9:00 AM - 12:00 PM<br>
+                        <strong>Tarde:</strong> 3:00 PM - 6:00 PM<br>
+                        <strong>Noche:</strong> 7:00 PM - 10:00 PM
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('hoteles')">
+        <button class="tab-btn active" onclick="showTab(event, 'hoteles')">
             <i class="fas fa-hotel"></i> Hoteles
         </button>
-        <button class="tab-btn" onclick="showTab('cocheras')">
+        <button class="tab-btn" onclick="showTab(event, 'cocheras')">
             <i class="fas fa-car"></i> Cocheras
         </button>
     </div>
@@ -840,7 +919,7 @@
         <div class="container">
             <div class="contact-toggle">
                 <h2 class="section-title">💻 Contacto y Sugerencias</h2>
-                <p class="section-subtitle">¿Problemas técnicos o sugerencias? Escríbenos</p>
+                <p class="section-subtitle">¿Problemas técnicos o sugerencias del sistema? Escríbenos</p>
                 <button class="toggle-btn" onclick="toggleContact()">
                     <i class="fas fa-envelope"></i>
                     <span id="toggleText">Abrir Formulario</span>
@@ -849,7 +928,7 @@
             
             <div class="form-container" id="contactForm">
                 <form action="https://formsubmit.co/compuzettaoficial@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="[Evento Chimbote 2026] Mensaje">
+                    <input type="hidden" name="_subject" value="[AMIP 2026] Sistema - Mensaje">
                     <input type="hidden" name="_captcha" value="false">
                     
                     <div class="form-group">
@@ -866,9 +945,9 @@
                         <label>Motivo</label>
                         <select name="motivo" required>
                             <option value="">Seleccionar...</option>
-                            <option>Error técnico</option>
-                            <option>Sugerencia</option>
-                            <option>Consulta</option>
+                            <option>Error técnico del sistema</option>
+                            <option>Sugerencia para el sistema</option>
+                            <option>Consulta sobre la página</option>
                         </select>
                     </div>
                     
@@ -882,7 +961,7 @@
                     </button>
                     
                     <div class="form-disclaimer">
-                        <strong>ℹ️ Nota:</strong> Para consultas sobre el evento, contactar con AMIP Perú.
+                        <strong>ℹ️ Nota:</strong> Este formulario es solo para consultas sobre el sistema web. Para consultas sobre el evento, contactar directamente con AMIP Perú.
                     </div>
                 </form>
             </div>
@@ -892,31 +971,34 @@
     <footer>
         <div class="container">
             <div class="footer-disclaimer">
-                <h4>PÁGINA DE APOYO AL EVENTO</h4>
-                <p>Esta página es proporcionada por <span class="brand-highlight">HOSPITALIDAD EN ACCIÓN</span> como soporte informativo a la Convención Nacional AMIP 2026</p>
-                <p style="color: #ef4444; font-weight: 600;">⚠️ Esta NO es la página oficial de AMIP</p>
+                <p><strong>Soporte informativo brindado por Hospitalidad en Acción</strong></p>
+                <p style="color: #9ca3af; margin-top: 0.5rem;">Servicio externo al evento • No pertenece a ninguna denominación</p>
             </div>
             
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>AMIP</h3>
+                    <h3>Sobre el Evento</h3>
+                    <p><strong>AMIP</strong></p>
                     <p>Asociación Misionera de Iglesias Pentecostales</p>
+                    <p style="margin-top: 1rem;">20-23 Febrero 2026</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Información</h3>
                     <p>• Solo información de hospedaje</p>
                     <p>• No gestionamos reservas</p>
+                    <p>• Contacte directamente con hoteles</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Sistema web</h3>
-                    <p style="font-weight: 700; color: var(--primary);">HOSPITALIDAD EN ACCIÓN</p>
+                    <h3>Sistema Web</h3>
+                    <p style="font-weight: 700; color: var(--primary); font-size: 1rem;">HOSPITALIDAD EN ACCIÓN</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #6b7280;">Created by Compuzetta</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span></p>
+                <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span> • Sistema de información para eventos</p>
             </div>
         </div>
     </footer>
@@ -930,6 +1012,11 @@
             <div class="modal-body" id="modal-body"></div>
         </div>
     </div>
+
+    <!-- PARTE 2 DEL JAVASCRIPT VA AQUÍ -->
+
+    // PARTE 2 - JAVASCRIPT COMPLETO
+// Pega este código después del comentario: <!-- PARTE 2 DEL JAVASCRIPT VA AQUÍ -->
 
     <script>
         let hoteles = [];
@@ -975,16 +1062,18 @@
             document.getElementById('nav').classList.remove('active');
         }
         
-        // Tabs
-        function showTab(tab) {
+        // Tabs - CORREGIDO
+        function showTab(event, tab) {
+            event.preventDefault();
+            
             const btns = document.querySelectorAll('.tab-btn');
             btns.forEach(b => b.classList.remove('active'));
-            event.target.closest('.tab-btn').classList.add('active');
+            event.currentTarget.classList.add('active');
             
             if (tab === 'hoteles') {
                 document.getElementById('hoteles-section').classList.remove('hidden');
                 document.getElementById('cocheras-section').classList.add('hidden');
-            } else {
+            } else if (tab === 'cocheras') {
                 document.getElementById('hoteles-section').classList.add('hidden');
                 document.getElementById('cocheras-section').classList.remove('hidden');
             }
@@ -1008,12 +1097,15 @@
                 const cocherasRes = await fetch('data/cocheras.json');
                 cocheras = await cocherasRes.json();
                 
+                console.log('Hoteles cargados:', hoteles.length);
+                console.log('Cocheras cargadas:', cocheras.length);
+                
                 applyFilters();
                 applyCocherasFilters();
             } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('hoteles-grid').innerHTML = '<p class="loading">Error al cargar hoteles</p>';
-                document.getElementById('cocheras-grid').innerHTML = '<p class="loading">Error al cargar cocheras</p>';
+                console.error('Error cargando datos:', error);
+                document.getElementById('hoteles-grid').innerHTML = '<p class="loading">Error al cargar hoteles. Verifica que los archivos JSON estén en la carpeta "data/"</p>';
+                document.getElementById('cocheras-grid').innerHTML = '<p class="loading">Error al cargar cocheras. Verifica que los archivos JSON estén en la carpeta "data/"</p>';
             }
         }
         
@@ -1049,7 +1141,7 @@
             const grid = document.getElementById('hoteles-grid');
             
             if (list.length === 0) {
-                grid.innerHTML = '<p class="loading">No se encontraron hoteles</p>';
+                grid.innerHTML = '<p class="loading">No se encontraron hoteles con los filtros seleccionados</p>';
                 return;
             }
             
@@ -1115,7 +1207,7 @@
             const grid = document.getElementById('cocheras-grid');
             
             if (list.length === 0) {
-                grid.innerHTML = '<p class="loading">No se encontraron cocheras</p>';
+                grid.innerHTML = '<p class="loading">No se encontraron cocheras con los filtros seleccionados</p>';
                 return;
             }
             
@@ -1150,7 +1242,7 @@
             `).join('');
         }
         
-        // Modals
+        // Modals - MEJORADOS CON LINKS CLICABLES
         function showHotelDetail(name) {
             const hotel = hoteles.find(h => h.nombre === name);
             if (!hotel) return;
@@ -1181,9 +1273,9 @@
                 
                 <div class="info-section">
                     <h3><i class="fas fa-phone"></i> Contacto</h3>
-                    ${hotel.contacto?.telefono ? `<p>📞 ${hotel.contacto.telefono}</p>` : ''}
-                    ${hotel.contacto?.whatsapp ? `<p>💬 ${hotel.contacto.whatsapp}</p>` : ''}
-                    ${hotel.contacto?.email ? `<p>✉️ ${hotel.contacto.email}</p>` : ''}
+                    ${hotel.contacto?.telefono ? `<p>📞 <a href="tel:${hotel.contacto.telefono}">${hotel.contacto.telefono}</a></p>` : ''}
+                    ${hotel.contacto?.whatsapp ? `<p>💬 <a href="https://wa.me/${hotel.contacto.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${hotel.contacto.whatsapp}</a></p>` : ''}
+                    ${hotel.contacto?.email ? `<p>✉️ <a href="mailto:${hotel.contacto.email}">${hotel.contacto.email}</a></p>` : ''}
                     ${hotel.contacto?.facebook ? `<p>📘 <a href="${hotel.contacto.facebook}" target="_blank">Facebook</a></p>` : ''}
                     ${hotel.contacto?.web ? `<p>🌐 <a href="${hotel.contacto.web}" target="_blank">Sitio Web</a></p>` : ''}
                 </div>
@@ -1213,8 +1305,8 @@
                 
                 <div class="info-section">
                     <h3><i class="fas fa-phone"></i> Contacto</h3>
-                    ${cochera.telefono ? `<p>📞 ${cochera.telefono}</p>` : ''}
-                    ${cochera.whatsapp ? `<p>💬 ${cochera.whatsapp}</p>` : ''}
+                    ${cochera.telefono ? `<p>📞 <a href="tel:${cochera.telefono}">${cochera.telefono}</a></p>` : ''}
+                    ${cochera.whatsapp ? `<p>💬 <a href="https://wa.me/${cochera.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${cochera.whatsapp}</a></p>` : ''}
                 </div>
             `;
             
@@ -1229,7 +1321,8 @@
             if (e.target.id === 'detailModal') closeModal();
         });
         
+        // Iniciar carga de datos
         loadData();
     </script>
 </body>
-</html>
+</html
