@@ -578,7 +578,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/images/branding/logo.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <img src="imagenes/logo.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
                     <div>
                         <div class="brand-name">HOSPITALIDAD EN ACCIÓN</div>
                         <span class="badge">📋 PÁGINA DE APOYO A EVENTOS CRISTIANOS</span>
@@ -624,9 +624,9 @@
             </div>
             
             <div class="evento-carousel">
-                <img src="assets/images/eventos/chimbote-2026/nvo.chimbote.jpg" alt="Nuevo Chimbote" class="active" onerror="this.style.display='none'">
-                <img src="assets/images/eventos/chimbote-2026/auditorio.jpg" alt="Auditorio" onerror="this.style.display='none'">
-                <img src="assets/images/slider/evento14.jpg" alt="Evento" onerror="this.style.display='none'">
+                <img src="imagenes/nvo.chimbote.jpg" alt="Nuevo Chimbote" class="active" onerror="this.style.display='none'">
+                <img src="imagenes/chimbote-2026/auditorio.jpg" alt="Auditorio" onerror="this.style.display='none'">
+                <img src="imagenes/evento14.jpg" alt="Evento" onerror="this.style.display='none'">
                 
                 <button class="carousel-nav prev" onclick="cambiarSlide(-1)">
                     <i class="fas fa-chevron-left"></i>
@@ -820,7 +820,7 @@
             try {
                 console.log('Iniciando carga de datos...');
                 
-                const hotelesRes = await fetch('data/hoteles/chimbote.json');
+                const hotelesRes = await fetch('data/hoteles.json');
                 console.log('Respuesta hoteles:', hotelesRes.status);
                 
                 const hotelesJson = await hotelesRes.json();
@@ -829,7 +829,7 @@
                 hotelesData = Array.isArray(hotelesJson) ? hotelesJson : (hotelesJson.hoteles || []);
                 console.log('Hoteles procesados:', hotelesData.length, hotelesData);
                 
-                const cocherasRes = await fetch('data/cocheras/chimbote.json');
+                const cocherasRes = await fetch('data/cocheras.json');
                 const cocherasJson = await cocherasRes.json();
                 cocherasData = Array.isArray(cocherasJson) ? cocherasJson : (cocherasJson.cocheras || []);
                 
