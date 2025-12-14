@@ -175,7 +175,7 @@
   },
   {
     "nombre": "Hospedaje Feliz",
-    "imagenes": ["imagenes/hotel-feliz.jpg"],
+    "imagenes": ["imagenes/hotel-hospedaje-feliz.jpg"],
     "direccion": "Chimbote (ubicación exacta por confirmar)",
     "distanciaAproximada": "Variable según ubicación",
     "contacto": {
