@@ -1006,3 +1006,314 @@
     </div>
 
     <!-- PARTE 2 DEL JAVASCRIPT VA AQUÍ -->
+    // PARTE 2 - JAVASCRIPT COMPLETO
+// Pega este código después del comentario: <!-- PARTE 2 DEL JAVASCRIPT VA AQUÍ -->
+
+    <script>
+        let hoteles = [];
+        let cocheras = [];
+        let currentSlide = 0;
+        
+        // Carousel
+        function slideCarousel(direction) {
+            const images = document.querySelectorAll('.carousel-images img');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const container = document.getElementById('carouselImages');
+            
+            currentSlide = (currentSlide + direction + images.length) % images.length;
+            
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        function goToSlide(index) {
+            const images = document.querySelectorAll('.carousel-images img');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const container = document.getElementById('carouselImages');
+            
+            currentSlide = index;
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        setInterval(() => slideCarousel(1), 5000);
+        
+        // Menu
+        function toggleMenu() {
+            document.getElementById('nav').classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav').classList.remove('active');
+        }
+        
+        // Tabs - CORREGIDO
+        function showTab(event, tab) {
+            event.preventDefault();
+            
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            if (tab === 'hoteles') {
+                document.getElementById('hoteles-section').classList.remove('hidden');
+                document.getElementById('cocheras-section').classList.add('hidden');
+            } else if (tab === 'cocheras') {
+                document.getElementById('hoteles-section').classList.add('hidden');
+                document.getElementById('cocheras-section').classList.remove('hidden');
+            }
+        }
+        
+        // Contact
+        function toggleContact() {
+            const form = document.getElementById('contactForm');
+            const text = document.getElementById('toggleText');
+            
+            form.classList.toggle('active');
+            text.textContent = form.classList.contains('active') ? 'Cerrar Formulario' : 'Abrir Formulario';
+        }
+        
+        // Load Data
+        async function loadData() {
+            try {
+                const hotelesRes = await fetch('data/hoteles.json');
+                hoteles = await hotelesRes.json();
+                
+                const cocherasRes = await fetch('data/cocheras.json');
+                cocheras = await cocherasRes.json();
+                
+                console.log('Hoteles cargados:', hoteles.length);
+                console.log('Cocheras cargadas:', cocheras.length);
+                
+                applyFilters();
+                applyCocherasFilters();
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+                document.getElementById('hoteles-grid').innerHTML = '<p class="loading">Error al cargar hoteles. Verifica que los archivos JSON estén en la carpeta "data/"</p>';
+                document.getElementById('cocheras-grid').innerHTML = '<p class="loading">Error al cargar cocheras. Verifica que los archivos JSON estén en la carpeta "data/"</p>';
+            }
+        }
+        
+        // Filters
+        function applyFilters() {
+            let filtered = [...hoteles];
+            
+            const maxPrice = parseInt(document.getElementById('filter-precio').value);
+            const onlyPromo = document.getElementById('filter-promo').value;
+            const sort = document.getElementById('sort-hoteles').value;
+            
+            filtered = filtered.filter(h => {
+                const price = (h.promocion?.tienePromocion && h.promocion.preciosEvento) ? h.promocion.preciosEvento.simple : h.precios.simple;
+                if (price > maxPrice) return false;
+                if (onlyPromo === 'si' && !h.promocion?.tienePromocion) return false;
+                return true;
+            });
+            
+            filtered.sort((a, b) => {
+                const priceA = (a.promocion?.tienePromocion && a.promocion.preciosEvento) ? a.promocion.preciosEvento.simple : a.precios.simple;
+                const priceB = (b.promocion?.tienePromocion && b.promocion.preciosEvento) ? b.promocion.preciosEvento.simple : b.precios.simple;
+                
+                if (sort === 'precio-asc') return priceA - priceB;
+                if (sort === 'precio-desc') return priceB - priceA;
+                if (sort === 'nombre-asc') return a.nombre.localeCompare(b.nombre);
+                return 0;
+            });
+            
+            renderHoteles(filtered);
+        }
+        
+        function renderHoteles(list) {
+            const grid = document.getElementById('hoteles-grid');
+            
+            if (list.length === 0) {
+                grid.innerHTML = '<p class="loading">No se encontraron hoteles con los filtros seleccionados</p>';
+                return;
+            }
+            
+            grid.innerHTML = list.map(h => {
+                const price = (h.promocion?.tienePromocion && h.promocion.preciosEvento) ? h.promocion.preciosEvento.simple : h.precios.simple;
+                const originalPrice = (h.promocion?.tienePromocion && h.promocion.preciosEvento) ? h.precios.simple : null;
+                
+                return `
+                    <div class="card" onclick="showHotelDetail('${h.nombre.replace(/'/g, "\\'")}')">
+                        ${h.imagenes?.[0] ? `<img src="${h.imagenes[0]}" alt="${h.nombre}" class="card-img" onerror="this.style.display='none'">` : ''}
+                        <div class="card-content">
+                            <h3 class="card-title">${h.nombre}</h3>
+                            <div class="card-info">
+                                <div class="card-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>${h.direccion}</span>
+                                </div>
+                                ${h.distanciaAproximada ? `
+                                <div class="card-info-item">
+                                    <i class="fas fa-walking"></i>
+                                    <span>${h.distanciaAproximada}</span>
+                                </div>` : ''}
+                            </div>
+                            <div class="card-price">
+                                S/ ${price}
+                                ${originalPrice ? `<span style="text-decoration: line-through; color: #9ca3af; font-size: 1rem;">S/ ${originalPrice}</span>` : ''}
+                                ${h.promocion?.tienePromocion ? '<span class="promo-tag">PROMO</span>' : ''}
+                            </div>
+                            <div class="card-actions">
+                                ${h.contacto?.whatsapp ? `
+                                <a href="https://wa.me/${h.contacto.whatsapp.replace(/[^0-9]/g, '')}" class="btn btn-secondary" onclick="event.stopPropagation()" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>` : ''}
+                                ${h.contacto?.telefono ? `
+                                <a href="tel:${h.contacto.telefono}" class="btn btn-primary" onclick="event.stopPropagation()">
+                                    <i class="fas fa-phone"></i> Llamar
+                                </a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function applyCocherasFilters() {
+            let filtered = [...cocheras];
+            
+            const maxPrice = parseInt(document.getElementById('filter-precio-cochera').value);
+            const sort = document.getElementById('sort-cocheras').value;
+            
+            filtered = filtered.filter(c => c.precioDia <= maxPrice);
+            
+            filtered.sort((a, b) => {
+                if (sort === 'precio-asc') return a.precioDia - b.precioDia;
+                if (sort === 'nombre-asc') return a.nombre.localeCompare(b.nombre);
+                return 0;
+            });
+            
+            renderCocheras(filtered);
+        }
+        
+        function renderCocheras(list) {
+            const grid = document.getElementById('cocheras-grid');
+            
+            if (list.length === 0) {
+                grid.innerHTML = '<p class="loading">No se encontraron cocheras con los filtros seleccionados</p>';
+                return;
+            }
+            
+            grid.innerHTML = list.map(c => `
+                <div class="card" onclick="showCocheraDetail('${c.nombre.replace(/'/g, "\\'")}')">
+                    ${c.imagenes?.[0] ? `<img src="${c.imagenes[0]}" alt="${c.nombre}" class="card-img" onerror="this.style.display='none'">` : ''}
+                    <div class="card-content">
+                        <h3 class="card-title">${c.nombre}</h3>
+                        <div class="card-info">
+                            <div class="card-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${c.direccion}</span>
+                            </div>
+                            <div class="card-info-item">
+                                <i class="fas fa-car"></i>
+                                <span>Capacidad: ${c.capacidad} vehículos</span>
+                            </div>
+                        </div>
+                        <div class="card-price">S/ ${c.precioDia}/día</div>
+                        <div class="card-actions">
+                            ${c.whatsapp ? `
+                            <a href="https://wa.me/${c.whatsapp.replace(/[^0-9]/g, '')}" class="btn btn-secondary" onclick="event.stopPropagation()" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>` : ''}
+                            ${c.telefono ? `
+                            <a href="tel:${c.telefono}" class="btn btn-primary" onclick="event.stopPropagation()">
+                                <i class="fas fa-phone"></i> Llamar
+                            </a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Modals - MEJORADOS CON LINKS CLICABLES
+        function showHotelDetail(name) {
+            const hotel = hoteles.find(h => h.nombre === name);
+            if (!hotel) return;
+            
+            const price = (hotel.promocion?.tienePromocion && hotel.promocion.preciosEvento) ? hotel.promocion.preciosEvento : hotel.precios;
+            
+            document.getElementById('modal-title').textContent = hotel.nombre;
+            document.getElementById('modal-body').innerHTML = `
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Información</h3>
+                    <p><strong>Dirección:</strong> ${hotel.direccion}</p>
+                    ${hotel.distanciaAproximada ? `<p><strong>Distancia:</strong> ${hotel.distanciaAproximada}</p>` : ''}
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Precios</h3>
+                    ${hotel.promocion?.tienePromocion ? `<p style="background: #fef3c7; padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem;"><strong>🎉 Promoción AMIP</strong> ${hotel.promocion.codigo ? '- Código: ' + hotel.promocion.codigo : ''}</p>` : ''}
+                    <p>Simple: <strong>S/ ${price.simple}</strong></p>
+                    <p>Doble: <strong>S/ ${price.doble}</strong></p>
+                    <p>Matrimonial: <strong>S/ ${price.matrimonial}</strong></p>
+                </div>
+                
+                ${hotel.servicios?.length ? `
+                <div class="info-section">
+                    <h3><i class="fas fa-concierge-bell"></i> Servicios</h3>
+                    ${hotel.servicios.map(s => `<p>✓ ${s}</p>`).join('')}
+                </div>` : ''}
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-phone"></i> Contacto</h3>
+                    ${hotel.contacto?.telefono ? `<p>📞 <a href="tel:${hotel.contacto.telefono}">${hotel.contacto.telefono}</a></p>` : ''}
+                    ${hotel.contacto?.whatsapp ? `<p>💬 <a href="https://wa.me/${hotel.contacto.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${hotel.contacto.whatsapp}</a></p>` : ''}
+                    ${hotel.contacto?.email ? `<p>✉️ <a href="mailto:${hotel.contacto.email}">${hotel.contacto.email}</a></p>` : ''}
+                    ${hotel.contacto?.facebook ? `<p>📘 <a href="${hotel.contacto.facebook}" target="_blank">Facebook</a></p>` : ''}
+                    ${hotel.contacto?.web ? `<p>🌐 <a href="${hotel.contacto.web}" target="_blank">Sitio Web</a></p>` : ''}
+                </div>
+            `;
+            
+            document.getElementById('detailModal').classList.add('active');
+        }
+        
+        function showCocheraDetail(name) {
+            const cochera = cocheras.find(c => c.nombre === name);
+            if (!cochera) return;
+            
+            document.getElementById('modal-title').textContent = cochera.nombre;
+            document.getElementById('modal-body').innerHTML = `
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Información</h3>
+                    <p><strong>Dirección:</strong> ${cochera.direccion}</p>
+                    ${cochera.distanciaAproximada ? `<p><strong>Distancia:</strong> ${cochera.distanciaAproximada}</p>` : ''}
+                    <p><strong>Capacidad:</strong> ${cochera.capacidad} vehículos</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Tarifas</h3>
+                    <p>Por día: <strong>S/ ${cochera.precioDia}</strong></p>
+                    ${cochera.precioNoche ? `<p>Por noche: <strong>S/ ${cochera.precioNoche}</strong></p>` : ''}
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-phone"></i> Contacto</h3>
+                    ${cochera.telefono ? `<p>📞 <a href="tel:${cochera.telefono}">${cochera.telefono}</a></p>` : ''}
+                    ${cochera.whatsapp ? `<p>💬 <a href="https://wa.me/${cochera.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${cochera.whatsapp}</a></p>` : ''}
+                </div>
+            `;
+            
+            document.getElementById('detailModal').classList.add('active');
+        }
+        
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+        
+        document.getElementById('detailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'detailModal') closeModal();
+        });
+        
+        // Iniciar carga de datos
+        loadData();
+    </script>
+</body>
+</html>
