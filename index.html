@@ -212,10 +212,6 @@
 }
 
 
-
-
-
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -341,194 +337,187 @@
             border-radius: 6px;
         }
 
-        /* EVENT DETAILS */
-        .event-details {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 4rem 0;
-            margin: 3rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .event-details::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
+/* =========================
+   EVENT DETAILS (ÚNICO)
+========================= */
 
-        .event-details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
+.event-details {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    padding: 4rem 0;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
 
-        .event-detail-card {
-            background: rgba(255,255,255,0.15);
-            padding: 2rem;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s;
-        }
-        
-        .event-detail-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.2);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-        }
+.event-details::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
 
-        .event-detail-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .event-detail-card h3 i {
-            font-size: 1.6rem;
-        }
+/* GRID */
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
 
-        .event-detail-card p {
-            line-height: 1.9;
-            opacity: 0.95;
-        }
+/* CARD */
+.event-detail-card {
+    background: rgba(255,255,255,0.15);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
 
-        .event-detail-card ul {
-            list-style: none;
-            padding: 0;
-        }
+.event-detail-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
 
-        .event-detail-card ul li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .event-detail-card ul li::before {
-            content: '✓';
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+/* TITLES */
+.event-detail-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-        .event-detail-card ul li:last-child {
-            border-bottom: none;
-        }
-        
-        /* ORGANIZER SECTION */
-        .organizer-section {
-            background: var(--bg-medium);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .organizer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        
-        .organizer-logo {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            margin: 0 auto 1.5rem;
-            display: block;
-        }
-        
-        .organizer-content h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .organizer-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .organizer-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .organizer-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .organizer-link:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(91, 149, 194, 0.4);
-        }
-        
-        .organizer-link i {
-            font-size: 1.2rem;
-        }
+.event-detail-card h3 i {
+    font-size: 1.5rem;
+}
 
-        /* CTA SECTION */
-        .cta-section {
-            background: linear-gradient(135deg, var(--secondary), #4a9d8b);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: var(--secondary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-        }
+/* TEXT */
+.event-detail-card p {
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* LIST */
+.event-detail-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-detail-card ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-detail-card ul li::before {
+    content: '✓';
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.event-detail-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   ORGANIZER (DENTRO DE EVENT DETAILS)
+========================= */
+
+.event-details .organizer-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+/* LINKS SOBRIOS */
+.event-details .organizer-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.event-details .org-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+
+    opacity: 0.9;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.event-details .org-link i {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.event-details .org-link:hover {
+    opacity: 1;
+    transform: translateX(3px);
+    text-decoration: underline;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--secondary), #4a9d8b);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: var(--secondary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
         
         /* CONTACT SECTION */
         .contact-section {
@@ -889,22 +878,6 @@
         </div>
     </div>
 </section>
-
-    <section class="organizer-section" id="organizador">
-        <div class="container">
-            <div class="organizer-content">
-                <img src="imagenes/logo-amip.png" alt="AMIP" class="organizer-logo" onerror="this.style.display='none'">
-                <h3>Organizado por AMIP</h3>
-                <p>Asociación Misionera de Iglesias Pentecostales<br>
-                Ministerio Juvenil AMIP Perú</p>
-                <div class="organizer-links">
-                    <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="organizer-link">
-                        <i class="fab fa-facebook"></i> Ministerio Juvenil
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="cta-section">
         <div class="container">
