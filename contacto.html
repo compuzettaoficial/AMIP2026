@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Hospitalidad en Acción</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS DE CONTACTO */
+        .contact-content {
+            padding: 3rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .info-card h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .info-card h3 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card p {
+            line-height: 1.8;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+        
+        .info-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .info-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .bible-verse {
+            background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            font-style: italic;
+            box-shadow: 0 8px 20px rgba(185, 28, 28, 0.35);
+        }
+        
+        .bible-verse p {
+            margin: 0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: white; 
+        }
+        
+        .bible-verse cite {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .format-example {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #374151;
+            margin: 1rem 0;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .process-steps {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .step-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 2rem 0;
+            }
+            
+            .info-card {
+                padding: 1.5rem;
+            }
+            
+            .info-card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .info-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="imagenes/logo.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                </div>
+                
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#evento">Evento</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contacto y Sugerencias</h1>
+            <p>¿Problemas técnicos o sugerencias del sistema? Escríbenos</p>
+        </div>
+    </section>
+
+    <div class="container contact-content">
+        <!-- FORMULARIO -->
+        <div class="form-container" style="margin-bottom: 3rem;">
+            <form action="https://formsubmit.co/compuzettaoficial@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="[AMIP 2026] Sistema - Mensaje">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Motivo</label>
+                    <select name="motivo" required>
+                        <option value="">Seleccionar...</option>
+                        <option>Error técnico del sistema</option>
+                        <option>Sugerencia para el sistema</option>
+                        <option>Consulta sobre la página</option>
+                        <option>Solicitud de actualización de datos</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                </button>
+                
+                <div class="highlight-box" style="margin-top: 1.5rem;">
+                    <p><strong>ℹ️ Nota:</strong> Este formulario es solo para consultas sobre el sistema web. Para consultas sobre el evento, contactar directamente con AMIP Perú.</p>
+                </div>
+            </form>
+        </div>
+
+        <!-- INFORMACIÓN SOBRE HOSPITALIDAD EN ACCIÓN -->
+        <div class="info-card">
+            <h2>
+                <img src="imagenes/logo.png" alt="Logo" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'">
+                <span style="font-weight: 700; color: var(--dark);">HOSPITALIDAD EN <span style="color: var(--primary);">ACCIÓN</span></span>
+            </h2>
+            
+            <p>Es un sistema creado para facilitar la estadía de hermanos en la fe, en los eventos cristianos. Brindando información en un solo lugar. De manera que el encontrar un hospedaje no sea un afán.</p>
+            
+            <div class="bible-verse">
+                <p>"No os olvidéis de la hospitalidad, porque por ella algunos, sin saberlo, hospedaron ángeles"</p>
+                <cite>— Hebreos 13:2</cite>
+            </div>
+            
+            <p>Esta página es parte de todo un sistema que aún no está disponible en su totalidad y no pertenece a alguna denominación en específico, sino que se centra en Hebreos 13:2 y en tener presente la hospitalidad.</p>
+            
+            <h3><i class="fas fa-sync-alt"></i> ¿Cómo se actualiza la información?</h3>
+            
+            <p>Tenemos formularios en línea con el formato correcto compatible a esta página. Los comités pueden solicitarlos para hacer el llenado con toda la información que quieran mostrar de hoteles y cocheras.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Solicitar formulario</h4>
+                        <p>El comité organizador solicita el formulario de registro mediante este contacto</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Completar información</h4>
+                        <p>Llenar el formulario con datos de hoteles y cocheras (nombre, dirección, precios, contacto, servicios, etc.)</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Enviar fotografías</h4>
+                        <p>Las fotos deben enviarse aparte con formato específico</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Solicitar actualización</h4>
+                        <p>Una vez completado el recojo, contactarnos para actualizar los datos del evento</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3><i class="fas fa-image"></i> Formato de fotografías</h3>
+            
+            <p>Las fotos de los hoteles pueden ser varias y deben ser enviadas aparte con un formato específico:</p>
+            
+            <div class="format-example">
+                hotel-nombre-detalle.jpg
+            </div>
+            
+            <p><strong>Ejemplos:</strong></p>
+            <ul>
+                <li>hotel-el-sol-habitacion.jpg</li>
+                <li>hotel-el-sol-fachada.jpg</li>
+                <li>hotel-dorado.jpg</li>
+                <li>cochera-central.jpg</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>⚠️ Importante:</strong> La información no se actualiza automáticamente, porque estamos usando servidores gratuitos para alojar nuestra página.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="imagenes/logo-celeste.png" alt="Hospitalidad en Acción" onerror="this.src='imagenes/logo-blanco.png'; this.onerror=function(){this.src='imagenes/logo.png'};">
+            </div>
+            <div class="footer-bottom">
+                <p>• Sistema de apoyo para eventos cristianos •</p>
+                <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span> - Created by Compuzetta</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav').classList.toggle('active');
+        }
+        
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (nav && menuToggle && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
