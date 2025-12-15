@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alojamientos - Convención AMIP 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #5B95C2;
+            --secondary: #56B4A0;
+            --accent: #507991;
+            --bg-light: #E1E0D6;
+            --bg-medium: #D9CCB3;
+            --success: #10B981;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--bg-light);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* HEADER */
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--dark);
+            letter-spacing: 0.5px;
+        }
+        
+        .brand-name .highlight {
+            color: var(--primary);
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* LAYOUT */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        /* FILTERS SIDEBAR */
+        .filters-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        
+        .filters-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(91, 149, 194, 0.1);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .filter-divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 1.5rem 0;
+        }
+        
+        .reset-filters {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--gray);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .reset-filters:hover {
+            background: var(--dark);
+        }
+        
+        /* RESULTS SECTION */
+        .results-section {
+            min-height: 400px;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .results-count {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .results-count strong {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        /* CARDS GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+        
+        .card-badge.cochera {
+            background: var(--secondary);
+        }
+        
+        .card-img-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #e5e7eb;
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover .card-img {
+            transform: scale(1.1);
+        }
+        
+        .card-share {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .card-share:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .card-features {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #f3f4f6;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+        
+        .feature-badge.highlight {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+        
+        .feature-badge i {
+            font-size: 0.85rem;
+        }
+        
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .card-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        
+        .card-info-item i {
+            margin-top: 2px;
+            color: var(--primary);
+        }
+        
+        .card-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .card-price small {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+        
+        .promo-tag {
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 0.7rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(91, 149, 194, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #4a9d8b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(86, 180, 160, 0.3);
+        }
+        
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-light);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: #f3f4f6;
+            color: var(--dark);
+        }
+        
+        .modal-carousel {
+            position: relative;
+            height: 400px;
+            background: #000;
+        }
+        
+        .modal-carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        
+        .modal-carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #000;
+        }
+        
+        .modal-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            color: var(--dark);
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            z-index: 10;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-carousel-btn:hover {
+            background: white;
+        }
+        
+        .modal-carousel-btn.prev { left: 20px; }
+        .modal-carousel-btn.next { right: 20px; }
+        
+        .modal-carousel-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .info-section {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-section p {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+        
+        .info-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .info-section a:hover {
+            text-decoration: underline;
+            color: var(--accent);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .servicios-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+        
+        .servicio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .servicio-item::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* LOADING */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--gray);
+        }
+        
+        .loading i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .empty-state p {
+            color: var(--gray);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: #d1d5db;
+            padding: 2rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .brand-highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        /* MOBILE FILTERS */
+        .mobile-filters-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(91, 149, 194, 0.4);
+            z-index: 99;
+            transition: all 0.3s;
+        }
+        
+        .mobile-filters-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                z-index: 999;
+                overflow-y: auto;
+                border-radius: 0;
+            }
+            
+            .filters-sidebar.active {
+                display: block;
+                animation: slideInRight 0.3s ease;
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            
+            .mobile-filters-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                gap: 0.5rem;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .modal-carousel {
+                height: 250px;
+            }
+            
+            .modal-carousel-btn {
+                width: 40px;
+                height: 40px;
+                padding: 0.8rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="imagenes/logo.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                </div>
+                
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#evento">Evento</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Alojamientos Disponibles</h1>
+            <p>Hoteles y cocheras cerca del evento AMIP 2026</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-layout">
+            <!-- SIDEBAR FILTROS -->
+            <aside class="filters-sidebar" id="filtersSidebar">
+                <h2 class="filters-title">
+                    <i class="fas fa-filter"></i> Filtros
+                </h2>
+                
+                <div class="filter-group">
+                    <label>Tipo de alojamiento</label>
+                    <select id="filter-tipo" onchange="applyFilters()">
+                        <option value="todos">Todos</option>
+                        <option value="hotel" selected>Hoteles</option>
+                        <option value="cochera">Cocheras</option>
+                    </select>
+                </div>
+                
+                <div class="filter-divider"></div>
+                
+                <div class="filter-group">
+                    <label>Búsqueda por nombre</label>
+                    <input type="text" id="filter-search" placeholder="Buscar..." oninput="applyFilters()">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Precio máximo</label>
+                    <select id="filter-precio" onchange="applyFilters()">
+                        <option value="9999">Todos</option>
+                        <option value="50">Hasta S/ 50</option>
+                        <option value="100">Hasta S/ 100</option>
+                        <option value="150">Hasta S/ 150</option>
+                        <option value="200">Hasta S/ 200</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Ordenar por</label>
+                    <select id="sort-options" onchange="applyFilters()">
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="nombre-asc">Nombre: A-Z</option>
+                        <option value="nombre-desc">Nombre: Z-A</option>
+                    </select>
+                </div>
+                
+                <div class="filter-divider"></div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="filter-promo" onchange="applyFilters()">
+                    <label for="filter-promo">Solo con promoción</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="filter-estacionamiento" onchange="applyFilters()">
+                    <label for="filter-estacionamiento">Con estacionamiento</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="filter-accesible" onchange="applyFilters()">
+                    <label for="filter-accesible">Accesible (silla de ruedas)</label>
+                </div>
+                
+                <button class="reset-filters" onclick="resetFilters()">
+                    <i class="fas fa-redo"></i> Resetear Filtros
+                </button>
+            </aside>
+            
+            <!-- RESULTADOS -->
+            <main class="results-section">
+                <div class="results-header">
+                    <div class="results-count">
+                        <strong id="resultsCount">0</strong> alojamientos encontrados
+                    </div>
+                </div>
+                
+                <div class="cards-grid" id="cardsGrid">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Cargando alojamientos...</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- BOTÓN MÓVIL -->
+    <button class="mobile-filters-toggle" onclick="toggleFilters()">
+        <i class="fas fa-filter"></i>
+    </button>
+
+    <!-- MODAL DETALLE -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-carousel" id="modalCarousel">
+                <div class="modal-carousel-images" id="modalCarouselImages"></div>
+                <button class="modal-carousel-btn prev" onclick="slideModalCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="modal-carousel-btn next" onclick="slideModalCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="modal-carousel-counter" id="modalCounter"></div>
+            </div>
+            
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+            <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span> • Sistema de información para eventos • Created by Compuzetta</p>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+    // VARIABLES GLOBALES
+    let alojamientos = [];
+    let currentModalSlide = 0;
+    let currentImages = [];
+    
+    // ========================================
+    // CARGAR DATOS
+    // ========================================
+    async function loadData() {
+        try {
+            const response = await fetch('data/alojamientos.json');
+            alojamientos = await response.json();
+            
+            console.log('✅ Alojamientos cargados:', alojamientos.length);
+            applyFilters();
+        } catch (error) {
+            console.error('❌ Error cargando datos:', error);
+            document.getElementById('cardsGrid').innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error al cargar datos</h3>
+                    <p>Verifica que el archivo "data/alojamientos.json" existe</p>
+                </div>
+            `;
+        }
+    }
+    
+    // ========================================
+    // FILTROS
+    // ========================================
+    function applyFilters() {
+        let filtered = [...alojamientos];
+        
+        // Tipo
+        const tipo = document.getElementById('filter-tipo').value;
+        if (tipo !== 'todos') {
+            filtered = filtered.filter(a => a.tipo === tipo);
+        }
+        
+        // Búsqueda
+        const search = document.getElementById('filter-search').value.toLowerCase();
+        if (search) {
+            filtered = filtered.filter(a => 
+                a.nombre.toLowerCase().includes(search) ||
+                a.direccion.toLowerCase().includes(search)
+            );
+        }
+        
+        // Precio
+        const maxPrice = parseInt(document.getElementById('filter-precio').value);
+        filtered = filtered.filter(a => {
+            const price = getPrice(a);
+            return price <= maxPrice;
+        });
+        
+        // Promoción
+        if (document.getElementById('filter-promo').checked) {
+            filtered = filtered.filter(a => a.promocion?.tienePromocion);
+        }
+        
+        // Estacionamiento
+        if (document.getElementById('filter-estacionamiento').checked) {
+            filtered = filtered.filter(a => a.estacionamiento?.tiene);
+        }
+        
+        // Accesible
+        if (document.getElementById('filter-accesible').checked) {
+            filtered = filtered.filter(a => a.accesible);
+        }
+        
+        // Ordenar
+        const sort = document.getElementById('sort-options').value;
+        filtered.sort((a, b) => {
+            if (sort === 'precio-asc') return getPrice(a) - getPrice(b);
+            if (sort === 'precio-desc') return getPrice(b) - getPrice(a);
+            if (sort === 'nombre-asc') return a.nombre.localeCompare(b.nombre);
+            if (sort === 'nombre-desc') return b.nombre.localeCompare(a.nombre);
+            return 0;
+        });
+        
+        renderCards(filtered);
+    }
+    
+    function resetFilters() {
+        document.getElementById('filter-tipo').value = 'hotel';
+        document.getElementById('filter-search').value = '';
+        document.getElementById('filter-precio').value = '9999';
+        document.getElementById('sort-options').value = 'precio-asc';
+        document.getElementById('filter-promo').checked = false;
+        document.getElementById('filter-estacionamiento').checked = false;
+        document.getElementById('filter-accesible').checked = false;
+        applyFilters();
+    }
+    
+    function getPrice(alojamiento) {
+        if (alojamiento.tipo === 'cochera') {
+            return alojamiento.precioDia || 0;
+        }
+        if (alojamiento.promocion?.tienePromocion && alojamiento.promocion.preciosEvento) {
+            return alojamiento.promocion.preciosEvento.simple || 0;
+        }
+        return alojamiento.precios?.simple || 0;
+    }
+    
+    // ========================================
+    // RENDERIZAR TARJETAS
+    // ========================================
+    function renderCards(list) {
+        const grid = document.getElementById('cardsGrid');
+        const count = document.getElementById('resultsCount');
+        
+        count.textContent = list.length;
+        
+        if (list.length === 0) {
+            grid.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron resultados</h3>
+                    <p>Intenta ajustar los filtros de búsqueda</p>
+                </div>
+            `;
+            return;
+        }
+        
+        grid.innerHTML = list.map(a => createCard(a)).join('');
+    }
+    
+    function createCard(alojamiento) {
+        const isHotel = alojamiento.tipo === 'hotel';
+        const price = getPrice(alojamiento);
+        const originalPrice = (alojamiento.promocion?.tienePromocion && alojamiento.precios?.simple) 
+            ? alojamiento.precios.simple : null;
+        
+        const img = alojamiento.imagenes?.[0] || '';
+        const whatsapp = isHotel ? alojamiento.contacto?.whatsapp : alojamiento.whatsapp;
+        const telefono = isHotel ? alojamiento.contacto?.telefono : alojamiento.telefono;
+        
+        // Features
+        let features = [];
+        if (alojamiento.accesible) features.push('<span class="feature-badge highlight"><i class="fas fa-wheelchair"></i> Accesible</span>');
+        if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
+        if (alojamiento.promocion?.tienePromocion) features.push('<span class="feature-badge highlight"><i class="fas fa-tags"></i> Promo</span>');
+        
+        return `
+            <div class="card" onclick="showDetail('${alojamiento.nombre.replace(/'/g, "\\'")}')">
+                <div class="card-badge ${isHotel ? '' : 'cochera'}">
+                    ${isHotel ? 'HOTEL' : 'COCHERA'}
+                </div>
+                
+                ${img ? `
+                <div class="card-img-container">
+                    <img src="${img}" alt="${alojamiento.nombre}" class="card-img" onerror="this.style.display='none'">
+                    <button class="card-share" onclick="shareAlojamiento(event, '${alojamiento.nombre.replace(/'/g, "\\'")}')">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>` : ''}
+                
+                <div class="card-content">
+                    <h3 class="card-title">${alojamiento.nombre}</h3>
+                    
+                    ${features.length > 0 ? `<div class="card-features">${features.join('')}</div>` : ''}
+                    
+                    <div class="card-info">
+                        <div class="card-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${alojamiento.direccion}</span>
+                        </div>
+                        ${alojamiento.distanciaAproximada ? `
+                        <div class="card-info-item">
+                            <i class="fas fa-walking"></i>
+                            <span>${alojamiento.distanciaAproximada}</span>
+                        </div>` : ''}
+                        ${!isHotel && alojamiento.capacidad ? `
+                        <div class="card-info-item">
+                            <i class="fas fa-car"></i>
+                            <span>Capacidad: ${alojamiento.capacidad} vehículos</span>
+                        </div>` : ''}
+                    </div>
+                    
+                    <div class="card-price">
+                        S/ ${price}
+                        ${isHotel ? '' : '<small>/día</small>'}
+                        ${originalPrice ? `<span class="price-original">S/ ${originalPrice}</span>` : ''}
+                        ${alojamiento.promocion?.tienePromocion ? '<span class="promo-tag">PROMO</span>' : ''}
+                    </div>
+                    
+                    <div class="card-actions">
+                        ${whatsapp ? `
+                        <a href="https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}" class="btn btn-secondary" onclick="event.stopPropagation()" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>` : ''}
+                        ${telefono ? `
+                        <a href="tel:${telefono}" class="btn btn-primary" onclick="event.stopPropagation()">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ========================================
+    // COMPARTIR
+    // ========================================
+    function shareAlojamiento(event, nombre) {
+        event.stopPropagation();
+        
+        const alojamiento = alojamientos.find(a => a.nombre === nombre);
+        if (!alojamiento) return;
+        
+        const text = `${alojamiento.nombre} - Convención AMIP 2026\n${alojamiento.direccion}`;
+        const url = window.location.href;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: alojamiento.nombre,
+                text: text,
+                url: url
+            }).catch(() => {});
+        } else {
+            // Copiar al portapapeles
+            navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
+                alert('✓ Enlace copiado al portapapeles');
+            });
+        }
+    }
+    
+    // ========================================
+    // MODAL DETALLE
+    // ========================================
+    function showDetail(nombre) {
+        const alojamiento = alojamientos.find(a => a.nombre === nombre);
+        if (!alojamiento) return;
+        
+        const isHotel = alojamiento.tipo === 'hotel';
+        
+        document.getElementById('modalTitle').textContent = alojamiento.nombre;
+        
+        // Carrusel de imágenes
+        currentImages = alojamiento.imagenes || [];
+        currentModalSlide = 0;
+        
+        if (currentImages.length > 0) {
+            document.getElementById('modalCarousel').style.display = 'block';
+            document.getElementById('modalCarouselImages').innerHTML = currentImages.map(img => 
+                `<img src="${img}" alt="${alojamiento.nombre}" onerror="this.style.display='none'">`
+            ).join('');
+            updateModalCounter();
+        } else {
+            document.getElementById('modalCarousel').style.display = 'none';
+        }
+        
+        // Contenido
+        let bodyHTML = '';
+        
+        // Información general
+        bodyHTML += `
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Información</h3>
+                <p><strong>Dirección:</strong> ${alojamiento.direccion} 
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alojamiento.direccion + ' Nuevo Chimbote')}" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                    </a>
+                </p>
+                ${alojamiento.distanciaAproximada ? `<p><strong>Distancia:</strong> ${alojamiento.distanciaAproximada}</p>` : ''}
+                ${!isHotel && alojamiento.capacidad ? `<p><strong>Capacidad:</strong> ${alojamiento.capacidad} vehículos</p>` : ''}
+                ${alojamiento.accesible ? '<p><i class="fas fa-wheelchair"></i> <strong>Accesible para personas con silla de ruedas</strong></p>' : ''}
+                ${alojamiento.estacionamiento?.tiene ? `<p><i class="fas fa-parking"></i> <strong>Estacionamiento ${alojamiento.estacionamiento.tipo}</strong></p>` : ''}
+            </div>
+        `;
+        
+        // Precios
+        if (isHotel) {
+            const precios = alojamiento.promocion?.tienePromocion && alojamiento.promocion.preciosEvento 
+                ? alojamiento.promocion.preciosEvento : alojamiento.precios;
+            
+            bodyHTML += `
+                <div class="info-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Precios por noche</h3>
+                    ${alojamiento.promocion?.tienePromocion ? `
+                    <p style="background: #fef3c7; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <strong>🎉 Promoción AMIP 2026</strong> 
+                        ${alojamiento.promocion.codigo ? '- Código: ' + alojamiento.promocion.codigo : ''}
+                    </p>` : ''}
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-bed"></i>
+                            <span><strong>Simple:</strong> S/ ${precios.simple}</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-bed"></i>
+                            <span><strong>Doble:</strong> S/ ${precios.doble}</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-bed"></i>
+                            <span><strong>Matrimonial:</strong> S/ ${precios.matrimonial}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            bodyHTML += `
+                <div class="info-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Tarifas</h3>
+                    <p><strong>Por día:</strong> S/ ${alojamiento.precioDia}</p>
+                    ${alojamiento.precioNoche ? `<p><strong>Por noche:</strong> S/ ${alojamiento.precioNoche}</p>` : ''}
+                </div>
+            `;
+        }
+        
+        // Servicios
+        if (isHotel && alojamiento.servicios?.length) {
+            bodyHTML += `
+                <div class="info-section">
+                    <h3><i class="fas fa-concierge-bell"></i> Servicios</h3>
+                    <div class="servicios-list">
+                        ${alojamiento.servicios.map(s => `<div class="servicio-item">${s}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Contacto
+        const contacto = isHotel ? alojamiento.contacto : alojamiento;
+        bodyHTML += `
+            <div class="info-section">
+                <h3><i class="fas fa-phone"></i> Contacto</h3>
+                ${contacto.telefono ? `<p>📞 <a href="tel:${contacto.telefono}">${contacto.telefono}</a></p>` : ''}
+                ${contacto.whatsapp ? `<p>💬 <a href="https://wa.me/${contacto.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${contacto.whatsapp}</a></p>` : ''}
+                ${contacto.email ? `<p>✉️ <a href="mailto:${contacto.email}">${contacto.email}</a></p>` : ''}
+                ${contacto.facebook ? `<p>📘 <a href="${contacto.facebook}" target="_blank">Facebook</a></p>` : ''}
+                ${contacto.web ? `<p>🌐 <a href="${contacto.web}" target="_blank">Sitio Web</a></p>` : ''}
+            </div>
+        `;
+        
+        document.getElementById('modalBody').innerHTML = bodyHTML;
+        document.getElementById('detailModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        document.getElementById('detailModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // ========================================
+    // CARRUSEL MODAL
+    // ========================================
+    function slideModalCarousel(direction) {
+        if (currentImages.length === 0) return;
+        
+        currentModalSlide = (currentModalSlide + direction + currentImages.length) % currentImages.length;
+        
+        const container = document.getElementById('modalCarouselImages');
+        container.style.transform = `translateX(-${currentModalSlide * 100}%)`;
+        
+        updateModalCounter();
+    }
+    
+    function updateModalCounter() {
+        document.getElementById('modalCounter').textContent = 
+            `${currentModalSlide + 1} / ${currentImages.length}`;
+    }
+    
+    // ========================================
+    // NAVEGACIÓN
+    // ========================================
+    function toggleMenu() {
+        document.getElementById('nav').classList.toggle('active');
+    }
+    
+    function toggleFilters() {
+        document.getElementById('filtersSidebar').classList.toggle('active');
+    }
+    
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('detailModal').addEventListener('click', (e) => {
+        if (e.target.id === 'detailModal') closeModal();
+    });
+    
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        const nav = document.getElementById('nav');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        if (nav && menuToggle && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
+            nav.classList.remove('active');
+        }
+        
+        const sidebar = document.getElementById('filtersSidebar');
+        const filterToggle = document.querySelector('.mobile-filters-toggle');
+        
+        if (sidebar && filterToggle && sidebar.classList.contains('active') && 
+            !sidebar.contains(e.target) && !filterToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+    
+    // Tecla ESC para cerrar modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+    
+    // ========================================
+    // INICIALIZACIÓN
+    // ========================================
+    loadData();
+    
+    console.log('✅ Alojamientos.html cargado correctamente');
+    console.log('🏨 Sistema de búsqueda de alojamientos activo');
+</script>
+
+</body>
+</html>
