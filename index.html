@@ -5,127 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convención AMIP Chimbote 2026 - Hospitalidad en Acción</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --primary: #5B95C2;
-            --secondary: #56B4A0;
-            --accent: #507991;
-            --bg-light: #E1E0D6;
-            --bg-medium: #D9CCB3;
-            --success: #10B981;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --white: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: var(--bg-light);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-/* HEADER */
-        header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .logo-img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-        
-        .brand-name {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--dark);
-            letter-spacing: 0.5px;
-        }
-        
-        .brand-name .highlight {
-            color: var(--primary);
-        }
-        
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* HERO */
+        /* ESTILOS ESPECÍFICOS DE INDEX */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-        /*  background: linear-gradient(135deg, rgba(91, 149, 194, 0.95), rgba(80, 121, 145, 0.95)), */
                         url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200') center/cover;
             color: white;
             padding: 5rem 0;
@@ -199,19 +83,17 @@
             font-size: 1.3rem;
         }
         
-
-.date-box {
-    background: linear-gradient(135deg, #b91c1c, #7f1d1d);
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(185, 28, 28, 0.35);
-    animation: pulse-red 2.5s infinite;
-}
-
-
+        .date-box {
+            background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(185, 28, 28, 0.35);
+            animation: pulse-red 2.5s infinite;
+        }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -223,37 +105,21 @@
             }
         }
         
-@keyframes pulse-red {
-    0% {
-        box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(185, 28, 28, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(185, 28, 28, 0);
-    }
-}
+        @keyframes pulse-red {
+            0% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(185, 28, 28, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 28, 0);
+            }
+        }
         
-        /* EVENTO SECTION */
         .evento-section {
             background: white;
             padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
         }
         
         .carousel-container {
@@ -336,405 +202,206 @@
             width: 40px;
             border-radius: 6px;
         }
-
-/* =========================
-   EVENT DETAILS (ÚNICO)
-========================= */
-
-.event-details {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    color: white;
-    padding: 3rem 0;
-    margin: 3rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.event-details::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-/* GRID */
-.event-details-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-/* CARD */
-.event-detail-card {
-    background: rgba(255,255,255,0.15);
-    padding: 1.5rem;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.event-detail-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-}
-
-/* TITLES */
-.event-detail-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.event-detail-card h3 i {
-    font-size: 1.4rem;
-}
-
-/* TEXT */
-.event-detail-card p {
-    line-height: 1.6;
-    opacity: 0.95;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-/* LIST */
-.event-detail-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.event-detail-card ul li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.event-detail-card ul li::before {
-    content: '✓';
-    font-weight: bold;
-    font-size: 1rem;
-    opacity: 0.9;
-    flex-shrink: 0;
-}
-
-.event-detail-card ul li:last-child {
-    border-bottom: none;
-}
-
-/* =========================
-   ORGANIZER (DENTRO DE EVENT DETAILS)
-========================= */
-
-.event-details .organizer-logo {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    margin: 0.75rem 0;
-    opacity: 0.95;
-}
-
-/* LINKS SOBRIOS */
-.event-details .organizer-links {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.event-details .org-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.9);
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.event-details .org-link i {
-    font-size: 0.85rem;
-    opacity: 0.85;
-}
-
-.event-details .org-link:hover {
-    opacity: 1;
-    transform: translateX(3px);
-    text-decoration: underline;
-}
-
-/* DIVIDER */
-.event-detail-card .divider {
-    height: 1px;
-    background: rgba(255,255,255,0.2);
-    margin: 1rem 0;
-}
-
-/* SPEAKER SECTION */
-.event-detail-card .speaker-title {
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-}
-
-.event-detail-card .speaker-name {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    opacity: 0.95;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .event-details-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-    
-    .event-details {
-        padding: 2.5rem 0;
-    }
-    }
-
-/* =========================
-   CTA SECTION
-========================= */
-
-.cta-section {
-    background: linear-gradient(135deg, var(--secondary), #4a9d8b);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-}
-
-.cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    background: white;
-    color: var(--secondary);
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.cta-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
         
-        /* CONTACT SECTION */
-        .contact-section {
-            background: var(--bg-medium);
-            padding: 4rem 0;
-        }
-        
-        .contact-toggle {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .toggle-btn {
-            background: var(--primary);
+        .event-details {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: 0 4px 15px rgba(91, 149, 194, 0.3);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .toggle-btn:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(91, 149, 194, 0.4);
+        .event-details::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
         
-        .form-container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            max-width: 650px;
-            margin: 0 auto;
-            display: none;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
         
-        .form-container.active {
-            display: block;
-            animation: slideDown 0.4s ease;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(91, 149, 194, 0.1);
-        }
-        
-        .form-disclaimer {
-            background: rgba(91, 149, 194, 0.1);
-            border: 1px solid var(--primary);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .btn-submit {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-submit:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(91, 149, 194, 0.3);
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--dark);
-            color: #d1d5db;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-disclaimer {
-            background: #111827;
+        .event-detail-card {
+            background: rgba(255,255,255,0.15);
             padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            font-size: 0.9rem;
-            text-align: center;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
-        .footer-disclaimer p {
-            margin: 0.5rem 0;
+        .event-detail-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
         
-        .footer-services {
-            text-align: center;
-            padding: 2.5rem 0;
-        }
-        
-        .service-list {
-            display: inline-block;
-            text-align: left;
-            max-width: 600px;
-        }
-        
-        .service-item {
-            color: #d1d5db;
-            line-height: 2.2;
-            margin-bottom: 0.75rem;
+        .event-detail-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
         
-        .service-item i {
-            color: var(--success);
-            font-size: 1.2rem;
+        .event-detail-card h3 i {
+            font-size: 1.4rem;
         }
         
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-            color: var(--gray);
+        .event-detail-card p {
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .event-detail-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .event-detail-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .event-detail-card ul li::before {
+            content: '✓';
+            font-weight: bold;
+            font-size: 1rem;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+        
+        .event-detail-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .organizer-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin: 0.75rem 0;
+            opacity: 0.95;
+        }
+        
+        .organizer-links {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+        .org-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
         
-        .brand-highlight {
-            color: var(--primary);
+        .org-link i {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+        
+        .org-link:hover {
+            opacity: 1;
+            transform: translateX(3px);
+            text-decoration: underline;
+        }
+        
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 1rem 0;
+        }
+        
+        .speaker-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .speaker-name {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary), #4a9d8b);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 50px;
             font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         
-        /* RESPONSIVE */
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 992px) {
+            .event-details-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            
+            .event-details {
+                padding: 2.5rem 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -756,35 +423,6 @@
             
             .carousel-btn.prev { left: 10px; }
             .carousel-btn.next { right: 10px; }
-            
-            nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                gap: 0.5rem;
-            }
-            
-            nav.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-
-            .event-details-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
         }
     </style>
 </head>
@@ -801,12 +439,12 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 
-<nav id="nav">
-    <a href="#evento" onclick="closeMenu()">Evento</a>
-    <a href="#organizador" onclick="closeMenu()">Organizador</a>
-    <a href="alojamientos.html">Alojamientos</a>
-    <a href="#contacto" onclick="closeMenu()">Contacto</a>
-</nav>
+                <nav id="nav">
+                    <a href="#evento" onclick="closeMenu()">Evento</a>
+                    <a href="#organizador" onclick="closeMenu()">Organizador</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -857,53 +495,52 @@
         </div>
     </section>
 
-    <section class="event-details" id="organizador">>
-    <div class="container">
-        <div class="event-details-grid">
-            <div class="event-detail-card">
-                <h3><i class="fas fa-church"></i> Organizado por AMIP</h3>
-                <p>Asociación Misionera de Iglesias Pentecostales</p>
-                <img src="imagenes/logo-amip.jpg" alt="AMIP Logo" class="organizer-logo">
-                <div class="organizer-links">
-                    <a href="https://amipinstitucional.org/" target="_blank" class="org-link">
-                        <i class="fas fa-globe"></i> Sitio institucional
-                    </a>
-                    <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="org-link">
-                        <i class="fab fa-facebook"></i> Ministerio Juvenil
-                    </a>
+    <section class="event-details" id="organizador">
+        <div class="container">
+            <div class="event-details-grid">
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-church"></i> Organizado por AMIP</h3>
+                    <p>Asociación Misionera de Iglesias Pentecostales</p>
+                    <img src="imagenes/logo-amip.jpg" alt="AMIP Logo" class="organizer-logo">
+                    <div class="organizer-links">
+                        <a href="https://amipinstitucional.org/" target="_blank" class="org-link">
+                            <i class="fas fa-globe"></i> Sitio institucional
+                        </a>
+                        <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="org-link">
+                            <i class="fab fa-facebook"></i> Ministerio Juvenil
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Programa</h3>
+                    <ul>
+                        <li><strong>Día 1:</strong> Inauguración y conferencias</li>
+                        <li><strong>Día 2:</strong> Talleres y reuniones</li>
+                        <li><strong>Día 3:</strong> Actividades especiales</li>
+                        <li><strong>Día 4:</strong> Clausura</li>
+                    </ul>
+                </div>
+                
+                <div class="event-detail-card">
+                    <h3><i class="fas fa-clock"></i> Horarios</h3>
+                    <p>
+                        <strong>Mañana:</strong> 9:00 AM - 12:00 PM<br>
+                        <strong>Tarde:</strong> 3:00 PM - 6:00 PM<br>
+                        <strong>Noche:</strong> 7:00 PM - 10:00 PM
+                    </p>
+                    <div class="divider"></div>
+                    <h4 class="speaker-title">
+                        <i class="fas fa-microphone"></i> Expositor principal
+                    </h4>
+                    <p class="speaker-name">
+                        <strong>Pt. Omar Tejeiro</strong><br>
+                        Bolivia · Presidente de la Misión
+                    </p>
                 </div>
             </div>
-            
-            <div class="event-detail-card">
-                <h3><i class="fas fa-calendar-alt"></i> Programa</h3>
-                <ul>
-                    <li><strong>Día 1:</strong> Inauguración y conferencias</li>
-                    <li><strong>Día 2:</strong> Talleres y reuniones</li>
-                    <li><strong>Día 3:</strong> Actividades especiales</li>
-                    <li><strong>Día 4:</strong> Clausura</li>
-                </ul>
-            </div>
-            
-            <div class="event-detail-card">
-                <h3><i class="fas fa-clock"></i> Horarios</h3>
-                <p>
-                    <strong>Mañana:</strong> 9:00 AM - 12:00 PM<br>
-                    <strong>Tarde:</strong> 3:00 PM - 6:00 PM<br>
-                    <strong>Noche:</strong> 7:00 PM - 10:00 PM
-                </p>
-                <div class="divider"></div>
-                <h4 class="speaker-title">
-                    <i class="fas fa-microphone"></i> Expositor principal
-                </h4>
-                <p class="speaker-name">
-                    <strong>Pt. Omar Tejeiro</strong><br>
-                    Bolivia · Presidente de la Misión
-                </p>
-            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <section class="cta-section">
         <div class="container">
@@ -915,209 +552,80 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contacto">
-        <div class="container">
-            <div class="contact-toggle">
-                <h2 class="section-title">💻 Contacto y Sugerencias</h2>
-                <p class="section-subtitle">¿Problemas técnicos o sugerencias del sistema? Escríbenos</p>
-                <button class="toggle-btn" onclick="toggleContact()">
-                    <i class="fas fa-envelope"></i>
-                    <span id="toggleText">Abrir Formulario</span>
-                </button>
-            </div>
-            
-            <div class="form-container" id="contactForm">
-                <form action="https://formsubmit.co/compuzettaoficial@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="[AMIP 2026] Sistema - Mensaje">
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Motivo</label>
-                        <select name="motivo" required>
-                            <option value="">Seleccionar...</option>
-                            <option>Error técnico del sistema</option>
-                            <option>Sugerencia para el sistema</option>
-                            <option>Consulta sobre la página</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" rows="4" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">
-                        Enviar Mensaje
-                    </button>
-                    
-                    <div class="form-disclaimer">
-                        <strong>ℹ️ Nota:</strong> Este formulario es solo para consultas sobre el sistema web. Para consultas sobre el evento, contactar directamente con AMIP Perú.
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <div class="footer-disclaimer">
-                <p><strong>Soporte informativo brindado por Hospitalidad en Acción</strong></p>
-                <p style="color: #9ca3af; margin-top: 0.5rem;">Servicio externo al evento • No pertenece a ninguna denominación</p>
+            <div class="footer-logo">
+                <img src="imagenes/logo-celeste.png" alt="Hospitalidad en Acción" onerror="this.src='imagenes/logo-blanco.png'; this.onerror=function(){this.src='imagenes/logo.png'};">
             </div>
-            
-            <div class="footer-services">
-                <div class="service-list">
-                    <div class="service-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Brindamos información oportuna</span>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>No gestionamos reservas</span>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Contacte directamente con hoteles y/o cocheras</span>
-                    </div>
-                </div>
-            </div>
-            
             <div class="footer-bottom">
-                <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span> • Sistema de información para eventos • Created by Compuzetta</p>
+                <p>• Sistema de apoyo para eventos cristianos •</p>
+                <p>© 2025 <span class="brand-highlight">Hospitalidad en Acción</span> - Created by Compuzetta</p>
             </div>
         </div>
     </footer>
 
-
-<script>
-    // VARIABLES GLOBALES
-    let currentSlide = 0;
-    const totalSlides = 3;
-    
-    // ========================================
-    // CAROUSEL
-    // ========================================
-    function slideCarousel(direction) {
-        const images = document.querySelectorAll('.carousel-images img');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const container = document.getElementById('carouselImages');
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
         
-        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-        
-        container.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
-        });
-    }
-    
-    function goToSlide(index) {
-        const dots = document.querySelectorAll('.carousel-dot');
-        const container = document.getElementById('carouselImages');
-        
-        currentSlide = index;
-        container.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
-        });
-    }
-    
-    // Auto-slide cada 5 segundos
-    setInterval(() => slideCarousel(1), 5000);
-    
-    // ========================================
-    // MENU MOBILE
-    // ========================================
-    function toggleMenu() {
-        document.getElementById('nav').classList.toggle('active');
-    }
-    
-    function closeMenu() {
-        document.getElementById('nav').classList.remove('active');
-    }
-    
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', (e) => {
-        const nav = document.getElementById('nav');
-        const menuToggle = document.querySelector('.menu-toggle');
-        
-        if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-            nav.classList.remove('active');
+        function slideCarousel(direction) {
+            const container = document.getElementById('carouselImages');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
         }
-    });
-    
-    // ========================================
-    // CONTACT FORM
-    // ========================================
-    function toggleContact() {
-        const form = document.getElementById('contactForm');
-        const text = document.getElementById('toggleText');
         
-        form.classList.toggle('active');
-        text.textContent = form.classList.contains('active') ? 'Cerrar Formulario' : 'Abrir Formulario';
-    }
-    
-    // ========================================
-    // SMOOTH SCROLL
-    // ========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        function goToSlide(index) {
+            const container = document.getElementById('carouselImages');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            currentSlide = index;
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        setInterval(() => slideCarousel(1), 5000);
+        
+        function toggleMenu() {
+            document.getElementById('nav').classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav').classList.remove('active');
+        }
+        
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (nav && menuToggle && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
-            }
+            });
         });
-    });
-    
-    // ========================================
-    // INTERSECTION OBSERVER - ANIMACIONES
-    // ========================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observar elementos para animación
-    document.querySelectorAll('.event-detail-card, .organizer-content').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // ========================================
-    // INICIALIZACIÓN
-    // ========================================
-    console.log('✅ Index.html cargado correctamente');
-    console.log('🎉 Convención AMIP 2026 - Hospitalidad en Acción');
-</script>
-
+    </script>
 </body>
 </html>
