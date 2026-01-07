@@ -5,7 +5,7 @@
 /* HERO SECTION */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-        url('https://compuzettaoficial.github.io/AMIP2026/imagenes/evento14.jpg') center/cover;
+        url('../../images/event/evento14.jpg') center/cover;
     color: white;
     padding: 5rem 0;
     text-align: center;
