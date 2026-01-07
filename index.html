@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convención AMIP Chimbote 2026 - Hospitalidad en Acción</title>
-        <!-- Favicon -->
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sistema de apoyo logístico para eventos cristianos. Encuentra hoteles y cocheras para la Convención AMIP 2026 en Nuevo Chimbote, Perú.">
+    <meta name="keywords" content="hospitalidad, eventos cristianos, AMIP, Chimbote, alojamiento, hoteles">
+    <meta property="og:title" content="Hospitalidad en Acción - AMIP 2026">
+    <meta property="og:description" content="Sistema de apoyo logístico para eventos cristianos">
+    <meta property="og:image" content="https://hospitalidadenaccion.org/imagenes/logos/logo-metal-azul2.png">
+    <meta property="og:url" content="https://hospitalidadenaccion.org">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="imagenes/favicon.png">
     <link rel="shortcut icon" type="image/png" href="imagenes/favicon.png">
     <link rel="apple-touch-icon" href="imagenes/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        
         /* ESTILOS ESPECÍFICOS DE INDEX */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                     /*   url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200') center/cover; */
                 url('https://compuzettaoficial.github.io/AMIP2026/imagenes/evento14.jpg') center/cover;
-
-                
             color: white;
             padding: 5rem 0;
             text-align: center;
@@ -220,15 +225,29 @@
             overflow: hidden;
         }
         
+        /* MEJORA DE CONTRASTE - CAPA OSCURA */
         .event-details::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .event-details::after {
             content: '';
             position: absolute;
             top: -50%;
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
             border-radius: 50%;
+            z-index: 0;
         }
         
         .event-details-grid {
@@ -244,15 +263,23 @@
             padding: 1.5rem;
             border-radius: 16px;
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             display: flex;
             flex-direction: column;
         }
         
+        /* MEJORA DE CONTRASTE - SOMBRA DE TEXTO */
+        .event-detail-card h3,
+        .event-detail-card p,
+        .event-detail-card li,
+        .event-detail-card strong {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
         .event-detail-card:hover {
             transform: translateY(-6px);
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.3);
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
         
@@ -283,7 +310,7 @@
         
         .event-detail-card ul li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -323,10 +350,11 @@
             gap: 0.5rem;
             font-size: 0.9rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             text-decoration: none;
             opacity: 0.9;
             transition: opacity 0.2s ease, transform 0.2s ease;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
         
         .org-link i {
@@ -399,6 +427,29 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
         }
         
+        /* Botón volver arriba */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 998;
+            transition: all 0.3s;
+        }
+        
+        #backToTop:hover {
+            background: var(--accent);
+            transform: translateY(-4px);
+        }
+        
         @media (max-width: 992px) {
             .event-details-grid {
                 grid-template-columns: 1fr;
@@ -431,6 +482,10 @@
             
             .carousel-btn.prev { left: 10px; }
             .carousel-btn.next { right: 10px; }
+            
+            #backToTop {
+                bottom: 70px;
+            }
         }
     </style>
 </head>
@@ -439,14 +494,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-    <img src="imagenes/logos/logo-metal-azul2.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
-    <div>
-        <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span>
-        <span class="domain-badge">.org</span>
-        </div>
-        <div style="font-size: 0.75rem; opacity: 0.7; margin-top: -2px; line-height: 1.4;">Sistema de apoyo logístico para eventos</div>
-    </div>
-</div>
+                    <img src="imagenes/logos/logo-metal-azul2.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div>
+                        <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                        <div style="font-size: 0.75rem; opacity: 0.7; margin-top: -2px; line-height: 1.4;">Sistema de apoyo logístico para eventos</div>
+                    </div>
+                </div>
                 
                 <button class="menu-toggle" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
@@ -464,7 +517,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Convención Nacional en PERÜ - AMIP 2026 </h1>
+            <h1>Convención Nacional en PERÚ - AMIP 2026</h1>
             <p class="hero-subtitle">Nuevo Chimbote, Perú</p>
             <div class="hero-info">
                 <div class="date-box">
@@ -543,16 +596,17 @@
                         <strong>Noche:</strong> 7:00 PM - 10:00 PM
                     </p>
                     <div class="divider"></div>
-<h4 class="speaker-title">
-    <i class="fas fa-microphone"></i> Expositor principal
-</h4>
-<div style="display: flex; align-items: center; gap: 1rem;">
-    <img src="imagenes/expositor-omar.png" alt="Ps. Omar Tejeiro" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-    <p class="speaker-name" style="margin: 0;">
-        <strong> Pastor y Misionero: Omar Tejeiro</strong><br>
-        Presidente de la Misión AMIP
-    </p>
-</div>
+                    <h4 class="speaker-title">
+                        <i class="fas fa-microphone"></i> Expositor principal
+                    </h4>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="imagenes/expositor-omar.png" alt="Ps. Omar Tejeiro" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                        <p class="speaker-name" style="margin: 0;">
+                            <strong>Pastor y Misionero: Omar Tejeiro</strong><br>
+                            Presidente de la Misión AMIP
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -567,15 +621,41 @@
         </div>
     </section>
 
-<footer style="background: #1e293b; padding: 2rem 0; border-top: 3px solid #5b95c2;">
-    <div class="container" style="text-align: center;">
-        <img src="imagenes/logos/logo-metal-azul2.png" alt="Hospitalidad en Acción" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;" onerror="this.src='imagenes/logo.png'">
-        <p style="color: #94a3b8; font-size: 0.9rem; margin: 0.5rem 0;">Sistema de apoyo logístico para eventos</p>
-        <p style="color: #64748b; font-size: 0.85rem; margin: 0.75rem 0;">
-            © 2025 <span style="color: #5b95c2; font-weight: 600;">Hospitalidad en Acción</span> · Created by Compuzetta
-        </p>
-    </div>
-</footer>
+    <footer style="background: #1e293b; padding: 3rem 0 1.5rem; border-top: 3px solid #5b95c2;">
+        <div class="container" style="text-align: center;">
+            <img src="imagenes/logos/logo-metal-azul2.png" alt="Hospitalidad en Acción" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;" onerror="this.src='imagenes/logo.png'">
+            
+            <h3 style="color: #e2e8f0; font-size: 1.2rem; margin: 0.5rem 0;">
+                Hospitalidad en Acción <span style="color: #5b95c2;">.org</span>
+            </h3>
+            
+            <p style="color: #94a3b8; font-size: 0.9rem; margin: 0.5rem 0;">
+                Sistema de apoyo logístico para eventos cristianos
+            </p>
+            
+            <div style="height: 1px; background: #334155; margin: 1.5rem auto; max-width: 200px;"></div>
+            
+            <div style="margin: 1rem 0;">
+                <a href="index.html" style="color: #94a3b8; margin: 0 1rem; text-decoration: none; font-size: 0.85rem;">Inicio</a>
+                <a href="alojamientos.html" style="color: #94a3b8; margin: 0 1rem; text-decoration: none; font-size: 0.85rem;">Alojamientos</a>
+                <a href="contacto.html" style="color: #94a3b8; margin: 0 1rem; text-decoration: none; font-size: 0.85rem;">Contacto</a>
+            </div>
+            
+            <p style="color: #64748b; font-size: 0.85rem; margin: 1rem 0;">
+                © 2025 <span style="color: #5b95c2; font-weight: 600;">Hospitalidad en Acción</span> · 
+                <a href="https://hospitalidadenaccion.org" style="color: #5b95c2; text-decoration: none;">hospitalidadenaccion.org</a>
+            </p>
+            
+            <p style="color: #475569; font-size: 0.8rem; margin: 0.5rem 0;">
+                Desarrollado por <span style="color: #94a3b8;">Compuzetta</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         let currentSlide = 0;
@@ -638,6 +718,20 @@
                     }
                 }
             });
+        });
+        
+        // Botón volver arriba
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
