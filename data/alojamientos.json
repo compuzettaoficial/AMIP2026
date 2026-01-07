@@ -2,7 +2,7 @@
   {
     "tipo": "hotel",
     "nombre": "Costa del Inka Hotel",
-    "imagenes": ["imagenes/hotel-costa-del-inka.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-costa-del-inka.jpg"],
     "direccion": "Av. Anchoveta Mz. W2 Lt. 24-25, Urbanización Miguel Grau",
     "distanciaAproximada": "1-2 km del instituto, aprox. 15 min caminando",
     "accesible": false,
@@ -41,7 +41,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Sengor",
-    "imagenes": ["imagenes/hotel-sengor.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-sengor.jpg"],
     "direccion": "Urbanización Santo Tomás, Calle Los Claveles Mz. A Lt. 18",
     "distanciaAproximada": "1-2 km del instituto",
     "accesible": false,
@@ -81,7 +81,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Los Cocos",
-    "imagenes": ["imagenes/hotel-los-cocos.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-los-cocos.jpg"],
     "direccion": "Av. Pacífico E-1, Urb. Buenos Aires",
     "distanciaAproximada": "500m-1km del instituto, muy cercano",
     "accesible": true,
@@ -128,7 +128,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Buenos Aires",
-    "imagenes": ["imagenes/hotel-buenos-aires.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-buenos-aires.jpg"],
     "direccion": "Jirón Huambacho 296, Urbanización Buenos Aires",
     "distanciaAproximada": "1-2 km del instituto, 12 min del centro",
     "accesible": false,
@@ -167,7 +167,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Maresta Lodge",
-    "imagenes": ["imagenes/hotel-maresta.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-maresta.jpg"],
     "direccion": "Jirón Samanco 320, Urbanización Buenos Aires 1ra Etapa",
     "distanciaAproximada": "1-2 km del instituto",
     "accesible": true,
@@ -206,7 +206,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
-    "imagenes": ["imagenes/hotel-hospedaje-feliz.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-hospedaje-feliz.jpg"],
     "direccion": "Chimbote (ubicación exacta por confirmar)",
     "distanciaAproximada": "Variable según ubicación",
     "accesible": false,
@@ -244,7 +244,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hostal La Casona de Buenos Aires",
-    "imagenes": ["imagenes/hotel-la-casona.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-la-casona.jpg"],
     "direccion": "Nuevo Chimbote (dirección exacta por confirmar)",
     "distanciaAproximada": "Variable",
     "accesible": false,
@@ -280,7 +280,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Camino Real",
-    "imagenes": ["imagenes/hotel-camino-real.jpg"],
+    "imagenes": ["assets/images/alojamientos/hotel-camino-real.jpg"],
     "direccion": "Chimbote (dirección exacta por confirmar)",
     "distanciaAproximada": "Variable",
     "accesible": false,
@@ -317,7 +317,7 @@
   {
     "tipo": "cochera",
     "nombre": "Cochera Nuevo Chimbote",
-    "imagenes": ["imagenes/parking-central.jpg"],
+    "imagenes": ["assets/images/alojamientos/parking-central.jpg"],
     "direccion": "VFFF+XWC, Nuevo Chimbote 02711",
     "distanciaAproximada": "Ubicación céntrica en Nuevo Chimbote",
     "accesible": true,
@@ -342,7 +342,7 @@
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Hotel Costa del Inka",
-    "imagenes": ["imagenes/costa-del-inka.jpg"],
+    "imagenes": ["assets/images/alojamientos/parking-costa-del-inka.jpg"],
     "direccion": "Av. Anchoveta Mz. W2 Lt. 24-25, Nuevo Chimbote",
     "distanciaAproximada": "1-2 km del instituto",
     "accesible": false,
@@ -367,7 +367,7 @@
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Hotel Los Cocos",
-    "imagenes": ["imagenes/cochera-los-cocos.jpg"],
+    "imagenes": ["assets/images/alojamientos/parking-los-cocos.jpg"],
     "direccion": "Av. Pacífico E-1, Urb. Buenos Aires, Chimbote",
     "distanciaAproximada": "500m-1km del instituto",
     "accesible": true,
@@ -390,7 +390,7 @@
   {
     "tipo": "cochera",
     "nombre": "Cochera Privada Buenos Aires",
-    "imagenes": ["imagenes/cochera-buenos-aires.jpg"],
+    "imagenes": ["assets/images/alojamientos/parking-buenos-aires.jpg"],
     "direccion": "Urbanización Buenos Aires, Nuevo Chimbote",
     "distanciaAproximada": "Cerca del instituto",
     "accesible": false,
@@ -414,7 +414,7 @@
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Plaza Mayor",
-    "imagenes": ["imagenes/cochera-plaza-mayor.jpg"],
+    "imagenes": ["assets/images/alojamientos/parking-plaza-mayor.jpg"],
     "direccion": "Plaza Mayor de Nuevo Chimbote",
     "distanciaAproximada": "Centro de Nuevo Chimbote",
     "accesible": true,
