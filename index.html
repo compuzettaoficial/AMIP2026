@@ -543,25 +543,17 @@
             <h2 class="section-title">Sobre el Evento</h2>
             <p class="section-subtitle">Conoce el lugar de la convención</p>
             
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-images" id="carouselImages">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200" alt="Nuevo Chimbote" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200'">
-                        <img src="imagenes/amip-2026-banner-oficial.jpg" alt="frontis" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200'">
-                        <img src="imagenes/carlos_salazar_romero.jpg" alt="Evento" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200'">
-                    </div>
-                    
-                    <button class="carousel-btn prev" onclick="slideCarousel(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" onclick="slideCarousel(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    
-                    <div class="carousel-dots">
-                        <button class="carousel-dot active" onclick="goToSlide(0)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(1)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(2)"></button>
+            <div class="venue-showcase">
+                <div class="venue-image-container">
+                    <img src="https://hospitalidadenaccion.org/imagenes/carlos_salazar_romero.jpg" 
+                         alt="Instituto Carlos Salazar Romero" 
+                         class="venue-image"
+                         onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200'">
+                    <div class="venue-overlay">
+                        <div class="venue-info">
+                            <h3><i class="fas fa-building"></i> Instituto Carlos Salazar Romero</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Nuevo Chimbote, Perú</p>
+                        </div>
                     </div>
                 </div>
             </div>
