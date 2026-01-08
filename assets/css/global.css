@@ -34,9 +34,6 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background: var(--bg-light);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
@@ -147,8 +144,10 @@ footer {
     background: #1e293b;
     color: #d1d5db;
     padding: var(--space-xl) 0 var(--space-lg);
-    margin-top: auto;
+    margin-top: var(--space-2xl);
     border-top: 3px solid var(--primary);
+    width: 100%;
+    clear: both;
 }
 
 .footer-minimal {
@@ -460,5 +459,10 @@ footer {
     
     .footer-brand {
         font-size: 1.2rem;
+    }
+    
+    /* Agregar padding inferior para evitar overlap */
+    body {
+        padding-bottom: 20px;
     }
 }
