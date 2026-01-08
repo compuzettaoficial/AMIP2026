@@ -34,7 +34,15 @@ function applyFilters() {
     // Tipo
     const tipo = document.getElementById('filter-tipo').value;
     if (tipo !== 'todos') {
-        filtered = filtered.filter(a => a.tipo === tipo);
+        // Si es cochera, incluir hoteles que tengan cochera
+        if (tipo === 'cochera') {
+            filtered = filtered.filter(a => 
+                a.tipo === 'cochera' || 
+                (a.tipo === 'hotel' && a.estacionamiento?.tiene === true)
+            );
+        } else {
+            filtered = filtered.filter(a => a.tipo === tipo);
+        }
     }
     
     // Búsqueda
@@ -100,6 +108,23 @@ function getPrice(alojamiento) {
         return alojamiento.promocion.preciosEvento.simple || 0;
     }
     return alojamiento.precios?.simple || 0;
+}
+
+// ========================================
+// CARGAR MÚLTIPLES IMÁGENES
+// ========================================
+function loadAllImages(nombre, imagenPrincipal) {
+    const images = [imagenPrincipal];
+    const baseName = imagenPrincipal.replace(/\.[^/.]+$/, ''); // Sin extensión
+    const ext = imagenPrincipal.split('.').pop(); // Extensión
+    
+    // Intentar cargar hasta 10 imágenes adicionales
+    for (let i = 2; i <= 10; i++) {
+        const imgPath = `${baseName}-${i}.${ext}`;
+        images.push(imgPath);
+    }
+    
+    return images;
 }
 
 // ========================================
@@ -219,7 +244,7 @@ function shareAlojamiento(event, nombre) {
         }).catch(() => {});
     } else {
         navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-            alert('✓ Enlace copiado al portapapeles');
+            alert('✔ Enlace copiado al portapapeles');
         });
     }
 }
@@ -227,7 +252,7 @@ function shareAlojamiento(event, nombre) {
 // ========================================
 // MODAL DETALLE
 // ========================================
-function showDetail(nombre) {
+async function showDetail(nombre) {
     const alojamiento = alojamientos.find(a => a.nombre === nombre);
     if (!alojamiento) return;
     
@@ -235,8 +260,18 @@ function showDetail(nombre) {
     
     document.getElementById('modalTitle').textContent = alojamiento.nombre;
     
-    // Carrusel de imágenes
-    currentImages = alojamiento.imagenes || [];
+    // Cargar TODAS las imágenes posibles
+    const imagenPrincipal = alojamiento.imagenes?.[0] || '';
+    if (imagenPrincipal) {
+        const todasLasImagenes = loadAllImages(alojamiento.nombre, imagenPrincipal);
+        
+        // Verificar cuáles existen realmente
+        const imagenesExistentes = await verificarImagenes(todasLasImagenes);
+        currentImages = imagenesExistentes;
+    } else {
+        currentImages = [];
+    }
+    
     currentModalSlide = 0;
     
     if (currentImages.length > 0) {
@@ -337,6 +372,21 @@ function showDetail(nombre) {
     document.body.style.overflow = 'hidden';
 }
 
+// Verificar qué imágenes existen realmente
+async function verificarImagenes(imagenes) {
+    const promesas = imagenes.map(img => 
+        new Promise(resolve => {
+            const testImg = new Image();
+            testImg.onload = () => resolve(img);
+            testImg.onerror = () => resolve(null);
+            testImg.src = img;
+        })
+    );
+    
+    const resultados = await Promise.all(promesas);
+    return resultados.filter(img => img !== null);
+}
+
 function closeModal() {
     document.getElementById('detailModal').classList.remove('active');
     document.body.style.overflow = 'auto';
@@ -368,7 +418,6 @@ function toggleFilters() {
     const sidebar = document.getElementById('filtersSidebar');
     if (sidebar) {
         sidebar.classList.toggle('active');
-        // Prevenir scroll cuando filtros están abiertos
         if (sidebar.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -389,7 +438,6 @@ document.addEventListener('click', (e) => {
     const filtersClose = document.querySelector('.filters-close');
     
     if (sidebar && filterToggle && sidebar.classList.contains('active')) {
-        // Si se hace clic fuera del sidebar, toggle o botón cerrar
         if (!sidebar.contains(e.target) && 
             !filterToggle.contains(e.target) && 
             e.target !== filtersClose) {
