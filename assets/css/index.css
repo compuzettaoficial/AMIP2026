@@ -843,7 +843,7 @@ main {
    CTA SECTION
 ======================================== */
 .cta-section {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, var(--primary), #1e40af);
     color: white;
     padding: 5rem 0;
     position: relative;
@@ -877,17 +877,19 @@ main {
 .cta-icon {
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(245, 158, 11, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
+    border: 2px solid rgba(245, 158, 11, 0.3);
 }
 
 .cta-icon i {
     font-size: 2.5rem;
+    color: var(--accent);
 }
 
 .cta-section h2 {
@@ -906,20 +908,21 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    background: white;
-    color: #10b981;
+    background: var(--accent);
+    color: white;
     padding: 1.25rem 3rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cta-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 40px rgba(245, 158, 11, 0.5);
+    background: #ea580c;
 }
 
 .cta-features {
