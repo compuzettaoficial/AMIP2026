@@ -365,7 +365,16 @@ function updateModalCounter() {
 // FILTROS MÓVIL
 // ========================================
 function toggleFilters() {
-    document.getElementById('filtersSidebar').classList.toggle('active');
+    const sidebar = document.getElementById('filtersSidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('active');
+        // Prevenir scroll cuando filtros están abiertos
+        if (sidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
 }
 
 // Cerrar modal al hacer clic fuera
@@ -373,20 +382,31 @@ document.getElementById('detailModal')?.addEventListener('click', (e) => {
     if (e.target.id === 'detailModal') closeModal();
 });
 
-// Cerrar filtros móvil al hacer clic fuera
+// Cerrar filtros móvil al hacer clic en el overlay
 document.addEventListener('click', (e) => {
     const sidebar = document.getElementById('filtersSidebar');
     const filterToggle = document.querySelector('.mobile-filters-toggle');
+    const filtersClose = document.querySelector('.filters-close');
     
-    if (sidebar && filterToggle && sidebar.classList.contains('active') && 
-        !sidebar.contains(e.target) && !filterToggle.contains(e.target)) {
-        sidebar.classList.remove('active');
+    if (sidebar && filterToggle && sidebar.classList.contains('active')) {
+        // Si se hace clic fuera del sidebar, toggle o botón cerrar
+        if (!sidebar.contains(e.target) && 
+            !filterToggle.contains(e.target) && 
+            e.target !== filtersClose) {
+            toggleFilters();
+        }
     }
 });
 
-// Tecla ESC para cerrar modal
+// Tecla ESC para cerrar modal y filtros
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+        closeModal();
+        const sidebar = document.getElementById('filtersSidebar');
+        if (sidebar && sidebar.classList.contains('active')) {
+            toggleFilters();
+        }
+    }
 });
 
 // ========================================
