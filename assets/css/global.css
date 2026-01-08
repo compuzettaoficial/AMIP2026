@@ -2,17 +2,16 @@
    VARIABLES Y RESET
 ======================================== */
 :root {
-    --primary: #5B95C2;
-    --secondary: #56B4A0;
-    --accent: #507991;
-    --green-primary: #3d9b7f;
-    --green-dark: #2d7a5f;
-    --bg-light: #E1E0D6;
-    --bg-medium: #D9CCB3;
-    --success: #10B981;
-    --dark: #1f2937;
-    --gray: #6b7280;
+    /* Colores Profesionales Rediseñados */
+    --primary: #1e3a8a;        /* Azul marino profundo */
+    --secondary: #0891b2;      /* Cyan profesional */
+    --accent: #f59e0b;         /* Naranja cálido */
+    --success: #10B981;        /* Verde éxito */
+    --dark: #1f2937;           /* Gris oscuro */
+    --gray: #6b7280;           /* Gris medio */
     --white: #ffffff;
+    --bg-light: #f9fafb;       /* Fondo claro neutro */
+    --bg-medium: #e5e7eb;      /* Fondo medio */
     
     /* Spacing System */
     --space-xs: 0.5rem;
@@ -65,17 +64,15 @@ body {
 }
 
 /* ========================================
-   HEADER (IDÉNTICO TODAS LAS PÁGINAS)
+   HEADER
 ======================================== */
 header {
     background: white;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
-    z-index: 98;
+    z-index: 100;
     padding: var(--space-sm) 0;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.95);
 }
 
 .header-content {
@@ -102,10 +99,18 @@ header {
     font-size: 1.25rem;
     color: var(--dark);
     letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .brand-name .highlight {
     color: var(--primary);
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: -2px;
+    line-height: 1.4;
 }
 
 nav {
@@ -159,10 +164,10 @@ nav a:hover::after {
 }
 
 /* ========================================
-   FOOTER MINIMALISTA OPCIÓN 2
+   FOOTER
 ======================================== */
 footer {
-    background: #1e293b;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: #d1d5db;
     padding: var(--space-xl) 0 var(--space-lg);
     margin-top: var(--space-2xl);
@@ -216,7 +221,7 @@ footer {
 }
 
 .footer-nav a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .footer-nav .separator {
@@ -249,7 +254,7 @@ footer {
 }
 
 .page-header {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     padding: 2.5rem 0;
     text-align: center;
@@ -292,9 +297,9 @@ footer {
 }
 
 .btn-primary:hover {
-    background: var(--accent);
+    background: #1e40af;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(91, 149, 194, 0.3);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
 }
 
 .btn-secondary {
@@ -303,9 +308,9 @@ footer {
 }
 
 .btn-secondary:hover {
-    background: #4a9d8b;
+    background: #0e7490;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(86, 180, 160, 0.3);
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
 }
 
 /* ========================================
@@ -348,7 +353,7 @@ footer {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(91, 149, 194, 0.1);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
 .btn-submit {
@@ -366,9 +371,9 @@ footer {
 }
 
 .btn-submit:hover {
-    background: var(--accent);
+    background: #1e40af;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(91, 149, 194, 0.3);
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
 }
 
 /* ========================================
@@ -423,13 +428,13 @@ footer {
     
     header {
         position: sticky;
-        z-index: 98;
+        z-index: 100;
     }
     
     .menu-toggle {
         display: flex;
         position: relative;
-        z-index: 10002;
+        z-index: 102;
     }
     
     nav {
@@ -439,12 +444,13 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.95);
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
-        z-index: 10001;
+        z-index: 101;
         overflow-y: auto;
-        gap: 0.5rem;
+        gap: 0;
     }
     
     nav.active {
@@ -465,18 +471,16 @@ footer {
         color: white;
         font-size: 1.1rem;
         text-align: center;
+        margin-bottom: 0.5rem;
     }
     
     nav a:hover {
-        background: rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.15);
+        color: white;
     }
     
     nav a::after {
         display: none;
-    }
-    
-    nav a:last-child {
-        border-bottom: none;
     }
     
     .page-header h1 {
@@ -510,5 +514,15 @@ footer {
     
     .footer-url {
         margin: var(--space-sm) 0;
+    }
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .desktop-only {
+        display: none;
     }
 }
