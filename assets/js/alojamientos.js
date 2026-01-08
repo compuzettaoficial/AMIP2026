@@ -3,9 +3,6 @@ let alojamientos = [];
 let currentModalSlide = 0;
 let currentImages = [];
 
-// ========================================
-// DEBUG: Verificar que shared.js está cargado
-// ========================================
 console.log('✅ alojamientos.js cargado');
 
 // ========================================
@@ -14,6 +11,11 @@ console.log('✅ alojamientos.js cargado');
 async function loadData() {
     try {
         const response = await fetch('data/alojamientos.json');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         alojamientos = await response.json();
         
         console.log('✅ Alojamientos cargados:', alojamientos.length);
@@ -24,7 +26,8 @@ async function loadData() {
             <div class="empty-state">
                 <i class="fas fa-exclamation-triangle"></i>
                 <h3>Error al cargar datos</h3>
-                <p>Verifica que el archivo "data/alojamientos.json" existe</p>
+                <p>No se pudo cargar la información de alojamientos.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">Verifica que el archivo "data/alojamientos.json" existe y es válido.</p>
             </div>
         `;
     }
@@ -40,7 +43,7 @@ function applyFilters() {
     const tipo = document.getElementById('filter-tipo').value;
     if (tipo !== 'todos') {
         if (tipo === 'cochera') {
-            // Solo mostrar hoteles con estacionamiento (no cocheras independientes duplicadas)
+            // Mostrar hoteles con estacionamiento
             filtered = filtered.filter(a => 
                 a.tipo === 'hotel' && a.estacionamiento?.tiene === true
             );
@@ -50,7 +53,7 @@ function applyFilters() {
     }
     
     // Búsqueda
-    const search = document.getElementById('filter-search').value.toLowerCase();
+    const search = document.getElementById('filter-search').value.toLowerCase().trim();
     if (search) {
         filtered = filtered.filter(a => 
             a.nombre.toLowerCase().includes(search) ||
@@ -118,9 +121,11 @@ function getPrice(alojamiento) {
 // CARGAR MÚLTIPLES IMÁGENES
 // ========================================
 function loadAllImages(nombre, imagenPrincipal) {
+    if (!imagenPrincipal) return [];
+    
     const images = [imagenPrincipal];
-    const baseName = imagenPrincipal.replace(/\.[^/.]+$/, ''); // Sin extensión
-    const ext = imagenPrincipal.split('.').pop(); // Extensión
+    const baseName = imagenPrincipal.replace(/\.[^/.]+$/, '');
+    const ext = imagenPrincipal.split('.').pop();
     
     // Intentar cargar hasta 10 imágenes adicionales
     for (let i = 2; i <= 10; i++) {
@@ -164,7 +169,7 @@ function createCard(alojamiento) {
     const whatsapp = isHotel ? alojamiento.contacto?.whatsapp : alojamiento.whatsapp;
     const telefono = isHotel ? alojamiento.contacto?.telefono : alojamiento.telefono;
     
-    // Badge: mostrar COCHERA si es hotel con estacionamiento y estamos filtrando por cocheras
+    // Badge
     const tipoFiltro = document.getElementById('filter-tipo').value;
     const mostrarComoCochera = isHotel && alojamiento.estacionamiento?.tiene && tipoFiltro === 'cochera';
     
@@ -174,16 +179,18 @@ function createCard(alojamiento) {
     if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
     if (alojamiento.promocion?.tienePromocion) features.push('<span class="feature-badge highlight"><i class="fas fa-tags"></i> Promo</span>');
     
+    const nombreEscapado = alojamiento.nombre.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    
     return `
-        <div class="card" onclick="showDetail('${alojamiento.nombre.replace(/'/g, "\\'")}')">
+        <div class="card" onclick="showDetail('${nombreEscapado}')">
             <div class="card-badge ${mostrarComoCochera ? 'cochera' : ''}">
                 ${mostrarComoCochera ? 'COCHERA' : 'HOTEL'}
             </div>
             
             ${img ? `
             <div class="card-img-container">
-                <img src="${img}" alt="${alojamiento.nombre}" class="card-img" onerror="this.style.display='none'">
-                <button class="card-share" onclick="shareAlojamiento(event, '${alojamiento.nombre.replace(/'/g, "\\'")}')">
+                <img src="${img}" alt="${alojamiento.nombre}" class="card-img" loading="lazy" onerror="this.parentElement.style.display='none'">
+                <button class="card-share" onclick="shareAlojamiento(event, '${nombreEscapado}')" aria-label="Compartir">
                     <i class="fas fa-share-alt"></i>
                 </button>
             </div>` : ''}
@@ -219,7 +226,7 @@ function createCard(alojamiento) {
                 
                 <div class="card-actions">
                     ${whatsapp ? `
-                    <a href="https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}" class="btn btn-secondary" onclick="event.stopPropagation()" target="_blank">
+                    <a href="https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}" class="btn btn-secondary" onclick="event.stopPropagation()" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>` : ''}
                     ${telefono ? `
@@ -249,10 +256,15 @@ function shareAlojamiento(event, nombre) {
             title: alojamiento.nombre,
             text: text,
             url: url
-        }).catch(() => {});
+        }).catch(() => {
+            // Fallback si el usuario cancela
+        });
     } else {
+        // Fallback para navegadores sin Web Share API
         navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-            alert('✔ Enlace copiado al portapapeles');
+            alert('✓ Enlace copiado al portapapeles');
+        }).catch(() => {
+            alert('No se pudo copiar el enlace');
         });
     }
 }
@@ -268,12 +280,10 @@ async function showDetail(nombre) {
     
     document.getElementById('modalTitle').textContent = alojamiento.nombre;
     
-    // Cargar TODAS las imágenes posibles
+    // Cargar todas las imágenes posibles
     const imagenPrincipal = alojamiento.imagenes?.[0] || '';
     if (imagenPrincipal) {
         const todasLasImagenes = loadAllImages(alojamiento.nombre, imagenPrincipal);
-        
-        // Verificar cuáles existen realmente
         const imagenesExistentes = await verificarImagenes(todasLasImagenes);
         currentImages = imagenesExistentes;
     } else {
@@ -282,14 +292,26 @@ async function showDetail(nombre) {
     
     currentModalSlide = 0;
     
+    const carousel = document.getElementById('modalCarousel');
     if (currentImages.length > 0) {
-        document.getElementById('modalCarousel').style.display = 'block';
+        carousel.style.display = 'block';
         document.getElementById('modalCarouselImages').innerHTML = currentImages.map(img => 
-            `<img src="${img}" alt="${alojamiento.nombre}" onerror="this.style.display='none'">`
+            `<img src="${img}" alt="${alojamiento.nombre}" loading="lazy" onerror="this.style.display='none'">`
         ).join('');
         updateModalCounter();
+        
+        // Ocultar botones si solo hay 1 imagen
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        if (currentImages.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        }
     } else {
-        document.getElementById('modalCarousel').style.display = 'none';
+        carousel.style.display = 'none';
     }
     
     // Contenido
@@ -300,7 +322,7 @@ async function showDetail(nombre) {
         <div class="info-section">
             <h3><i class="fas fa-info-circle"></i> Información</h3>
             <p><strong>Dirección:</strong> ${alojamiento.direccion} 
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alojamiento.direccion + ' Nuevo Chimbote')}" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alojamiento.direccion + ' Nuevo Chimbote')}" target="_blank" rel="noopener">
                     <i class="fas fa-map-marker-alt"></i> Ver en mapa
                 </a>
             </p>
@@ -368,10 +390,10 @@ async function showDetail(nombre) {
         <div class="info-section">
             <h3><i class="fas fa-phone"></i> Contacto</h3>
             ${contacto.telefono ? `<p>📞 <a href="tel:${contacto.telefono}">${contacto.telefono}</a></p>` : ''}
-            ${contacto.whatsapp ? `<p>💬 <a href="https://wa.me/${contacto.whatsapp.replace(/[^0-9]/g, '')}" target="_blank">${contacto.whatsapp}</a></p>` : ''}
+            ${contacto.whatsapp ? `<p>💬 <a href="https://wa.me/${contacto.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener">${contacto.whatsapp}</a></p>` : ''}
             ${contacto.email ? `<p>✉️ <a href="mailto:${contacto.email}">${contacto.email}</a></p>` : ''}
-            ${contacto.facebook ? `<p>📘 <a href="${contacto.facebook}" target="_blank">Facebook</a></p>` : ''}
-            ${contacto.web ? `<p>🌐 <a href="${contacto.web}" target="_blank">Sitio Web</a></p>` : ''}
+            ${contacto.facebook ? `<p>📘 <a href="${contacto.facebook}" target="_blank" rel="noopener">Facebook</a></p>` : ''}
+            ${contacto.web ? `<p>🌐 <a href="${contacto.web}" target="_blank" rel="noopener">Sitio Web</a></p>` : ''}
         </div>
     `;
     
@@ -380,7 +402,7 @@ async function showDetail(nombre) {
     document.body.style.overflow = 'hidden';
 }
 
-// Verificar qué imágenes existen realmente
+// Verificar qué imágenes existen
 async function verificarImagenes(imagenes) {
     const promesas = imagenes.map(img => 
         new Promise(resolve => {
@@ -415,8 +437,10 @@ function slideModalCarousel(direction) {
 }
 
 function updateModalCounter() {
-    document.getElementById('modalCounter').textContent = 
-        `${currentModalSlide + 1} / ${currentImages.length}`;
+    const counter = document.getElementById('modalCounter');
+    if (currentImages.length > 0) {
+        counter.textContent = `${currentModalSlide + 1} / ${currentImages.length}`;
+    }
 }
 
 // ========================================
@@ -425,8 +449,9 @@ function updateModalCounter() {
 function toggleFilters() {
     const sidebar = document.getElementById('filtersSidebar');
     if (sidebar) {
-        sidebar.classList.toggle('active');
-        if (sidebar.classList.contains('active')) {
+        const isActive = sidebar.classList.toggle('active');
+        
+        if (isActive) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
@@ -434,21 +459,27 @@ function toggleFilters() {
     }
 }
 
-// Cerrar modal al hacer clic fuera
-document.getElementById('detailModal')?.addEventListener('click', (e) => {
-    if (e.target.id === 'detailModal') closeModal();
-});
+// ========================================
+// EVENT LISTENERS
+// ========================================
 
-// Cerrar filtros móvil al hacer clic en el overlay
+// Cerrar modal al hacer clic fuera
+const detailModal = document.getElementById('detailModal');
+if (detailModal) {
+    detailModal.addEventListener('click', (e) => {
+        if (e.target.id === 'detailModal') {
+            closeModal();
+        }
+    });
+}
+
+// Cerrar filtros móvil al hacer clic fuera
 document.addEventListener('click', (e) => {
     const sidebar = document.getElementById('filtersSidebar');
     const filterToggle = document.querySelector('.mobile-filters-toggle');
-    const filtersClose = document.querySelector('.filters-close');
     
     if (sidebar && filterToggle && sidebar.classList.contains('active')) {
-        if (!sidebar.contains(e.target) && 
-            !filterToggle.contains(e.target) && 
-            e.target !== filtersClose) {
+        if (!sidebar.contains(e.target) && !filterToggle.contains(e.target)) {
             toggleFilters();
         }
     }
@@ -457,7 +488,11 @@ document.addEventListener('click', (e) => {
 // Tecla ESC para cerrar modal y filtros
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeModal();
+        const modal = document.getElementById('detailModal');
+        if (modal && modal.classList.contains('active')) {
+            closeModal();
+        }
+        
         const sidebar = document.getElementById('filtersSidebar');
         if (sidebar && sidebar.classList.contains('active')) {
             toggleFilters();
