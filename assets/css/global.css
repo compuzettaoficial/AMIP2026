@@ -154,7 +154,6 @@ nav a:hover::after {
     cursor: pointer;
     width: 44px;
     height: 44px;
-    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -423,7 +422,13 @@ footer {
     }
     
     header {
+        position: sticky;
+    }
+    
+    .menu-toggle {
+        display: flex;
         position: relative;
+        z-index: 1001;
     }
     
     nav {
@@ -433,12 +438,16 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
         z-index: 1000;
         overflow-y: auto;
         gap: 0.5rem;
+    }
+    
+    nav.active {
+        display: flex;
     }
     
     nav a {
@@ -463,16 +472,6 @@ footer {
         border-bottom: none;
     }
     
-    nav.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: flex;
-        position: relative;
-        z-index: 1001;
-    }
-    
     .page-header h1 {
         font-size: 1.75rem;
     }
@@ -490,7 +489,7 @@ footer {
     }
     
     .footer-nav {
-        display: none; /* Ocultar en mobile, ya está en header */
+        display: none;
     }
     
     .footer-brand {
