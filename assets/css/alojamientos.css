@@ -11,10 +11,10 @@
 /* MAIN LAYOUT */
 .main-layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 2rem;
     padding: 2rem 0;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh - 400px);
 }
 
 /* FILTERS SIDEBAR */
@@ -26,6 +26,14 @@
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.filters-header {
+    display: none;
+}
+
+.filters-close {
+    display: none;
 }
 
 .filters-title {
@@ -112,7 +120,7 @@
 
 /* RESULTS SECTION */
 .results-section {
-    min-height: 400px;
+    min-height: 600px;
 }
 
 .results-header {
@@ -137,7 +145,7 @@
 /* CARDS GRID */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -580,6 +588,7 @@
 @media (max-width: 1024px) {
     .main-layout {
         grid-template-columns: 1fr;
+        min-height: calc(100vh - 200px);
     }
     
     .filters-sidebar {
@@ -593,11 +602,41 @@
         z-index: 999;
         overflow-y: auto;
         border-radius: 0;
+        padding: 1rem;
     }
     
     .filters-sidebar.active {
         display: block;
         animation: slideInRight 0.3s ease;
+    }
+    
+    .filters-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .filters-close {
+        display: flex;
+        background: #ef4444;
+        color: white;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+    
+    .filters-close:hover {
+        background: #dc2626;
+        transform: rotate(90deg);
     }
     
     @keyframes slideInRight {
@@ -616,7 +655,7 @@
     }
     
     .cards-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
 
@@ -633,6 +672,7 @@
     
     .cards-grid {
         grid-template-columns: 1fr;
+        padding-bottom: 100px;
     }
     
     .card-actions {
