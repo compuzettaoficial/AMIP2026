@@ -90,6 +90,16 @@ main {
     text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
 }
 
+.hero-lema {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 1rem 0 1.5rem;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
 .hero-subtitle {
     font-size: 1.4rem;
     margin-bottom: 2.5rem;
@@ -666,15 +676,26 @@ main {
     border-radius: 24px;
 }
 
-.organizador-logo {
-    width: 150px;
-    height: 150px;
+.organizador-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.organizador-logo-main {
+    width: 180px;
+    height: 180px;
     object-fit: contain;
     background: white;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.organizador-intro {
+    flex: 1;
 }
 
 .organizador-description {
@@ -699,10 +720,18 @@ main {
 }
 
 .org-stat i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary);
     margin-bottom: 0.75rem;
     display: block;
+}
+
+.org-stat strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .org-stat span {
@@ -770,6 +799,44 @@ main {
 .org-link-card > i:last-child {
     color: var(--primary);
     font-size: 1.2rem;
+}
+
+.social-links-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+.social-links-section h4 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), #2563eb);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
 }
 
 /* ========================================
@@ -924,8 +991,21 @@ main {
         grid-template-columns: 1fr;
     }
     
+    .organizador-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .organizador-logo-main {
+        margin: 0 auto;
+    }
+    
     .organizador-stats {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .social-links-grid {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
@@ -998,6 +1078,10 @@ main {
     
     .organizador-stats {
         grid-template-columns: 1fr;
+    }
+    
+    .social-links-grid {
+        grid-template-columns: repeat(5, 1fr);
     }
     
     #backToTop {
