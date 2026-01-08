@@ -34,11 +34,10 @@ function applyFilters() {
     // Tipo
     const tipo = document.getElementById('filter-tipo').value;
     if (tipo !== 'todos') {
-        // Si es cochera, incluir hoteles que tengan cochera
         if (tipo === 'cochera') {
+            // Solo mostrar hoteles con estacionamiento (no cocheras independientes duplicadas)
             filtered = filtered.filter(a => 
-                a.tipo === 'cochera' || 
-                (a.tipo === 'hotel' && a.estacionamiento?.tiene === true)
+                a.tipo === 'hotel' && a.estacionamiento?.tiene === true
             );
         } else {
             filtered = filtered.filter(a => a.tipo === tipo);
@@ -160,6 +159,10 @@ function createCard(alojamiento) {
     const whatsapp = isHotel ? alojamiento.contacto?.whatsapp : alojamiento.whatsapp;
     const telefono = isHotel ? alojamiento.contacto?.telefono : alojamiento.telefono;
     
+    // Badge: mostrar COCHERA si es hotel con estacionamiento y estamos filtrando por cocheras
+    const tipoFiltro = document.getElementById('filter-tipo').value;
+    const mostrarComoCochera = isHotel && alojamiento.estacionamiento?.tiene && tipoFiltro === 'cochera';
+    
     // Features
     let features = [];
     if (alojamiento.accesible) features.push('<span class="feature-badge highlight"><i class="fas fa-wheelchair"></i> Accesible</span>');
@@ -168,8 +171,8 @@ function createCard(alojamiento) {
     
     return `
         <div class="card" onclick="showDetail('${alojamiento.nombre.replace(/'/g, "\\'")}')">
-            <div class="card-badge ${isHotel ? '' : 'cochera'}">
-                ${isHotel ? 'HOTEL' : 'COCHERA'}
+            <div class="card-badge ${mostrarComoCochera ? 'cochera' : ''}">
+                ${mostrarComoCochera ? 'COCHERA' : 'HOTEL'}
             </div>
             
             ${img ? `
@@ -195,10 +198,10 @@ function createCard(alojamiento) {
                         <i class="fas fa-walking"></i>
                         <span>${alojamiento.distanciaAproximada}</span>
                     </div>` : ''}
-                    ${!isHotel && alojamiento.capacidad ? `
+                    ${mostrarComoCochera ? `
                     <div class="card-info-item">
-                        <i class="fas fa-car"></i>
-                        <span>Capacidad: ${alojamiento.capacidad} vehículos</span>
+                        <i class="fas fa-parking"></i>
+                        <span>Estacionamiento ${alojamiento.estacionamiento.tipo}</span>
                     </div>` : ''}
                 </div>
                 
