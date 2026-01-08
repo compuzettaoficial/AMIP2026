@@ -4,6 +4,11 @@ let currentModalSlide = 0;
 let currentImages = [];
 
 // ========================================
+// DEBUG: Verificar que shared.js está cargado
+// ========================================
+console.log('✅ alojamientos.js cargado');
+
+// ========================================
 // CARGAR DATOS
 // ========================================
 async function loadData() {
