@@ -273,8 +273,8 @@
 }
 
 .feature-badge.highlight {
-    background: #fee2e2; /* Rojo suave para badges de características */
-    color: #dc2626;
+    background: #dbeafe; /* Azul suave */
+    color: #1e40af; /* Azul oscuro */
     font-weight: 600;
 }
 /* Badge principal de la tarjeta cuando tiene promoción */
