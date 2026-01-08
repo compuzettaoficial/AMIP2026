@@ -145,12 +145,19 @@
 /* CARDS GRID - CORREGIDO PARA 2-3 COLUMNAS */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-/* Para pantallas muy anchas, limitar a 3 columnas */
-@media (min-width: 1400px) {
+/* Para 2 columnas en tablets */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para 3 columnas en desktop */
+@media (min-width: 1200px) {
     .cards-grid {
         grid-template-columns: repeat(3, 1fr);
     }
