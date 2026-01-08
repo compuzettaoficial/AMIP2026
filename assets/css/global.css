@@ -429,7 +429,7 @@ footer {
     .menu-toggle {
         display: flex;
         position: relative;
-        z-index: 1002;
+        z-index: 10002;
     }
     
     nav {
@@ -442,13 +442,13 @@ footer {
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
-        z-index: 1001;
+        z-index: 10001;
         overflow-y: auto;
         gap: 0.5rem;
     }
     
     nav.active {
-        display: flex;
+        display: flex !important;
         animation: fadeIn 0.3s ease;
     }
     
