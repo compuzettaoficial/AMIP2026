@@ -142,11 +142,18 @@
     font-size: 1.3rem;
 }
 
-/* CARDS GRID */
+/* CARDS GRID - CORREGIDO PARA 2-3 COLUMNAS */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
+}
+
+/* Para pantallas muy anchas, limitar a 3 columnas */
+@media (min-width: 1400px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .card {
@@ -555,7 +562,7 @@
 }
 
 .servicio-item::before {
-    content: '✓';
+    content: '✔';
     color: var(--success);
     font-weight: bold;
     font-size: 1.2rem;
@@ -655,7 +662,7 @@
     }
     
     .cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 }
 
