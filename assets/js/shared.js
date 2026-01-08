@@ -13,29 +13,40 @@ function toggleMenu() {
     if (nav) {
         const isActive = nav.classList.toggle('active');
         
-        // Cambiar color del botón
+        // Actualizar estado del botón toggle
         if (menuToggle) {
             menuToggle.classList.toggle('active', isActive);
         }
         
-        // Prevenir scroll cuando el menú está abierto
+        // Controlar scroll del body
         if (isActive) {
             body.style.overflow = 'hidden';
         } else {
             body.style.overflow = 'auto';
         }
+        
+        console.log('Menú:', isActive ? 'Abierto' : 'Cerrado');
     }
 }
 
+// Asegurar que closeMenu también resetea correctamente
 function closeMenu() {
     const nav = document.getElementById('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
     const body = document.body;
     
     if (nav) {
         nav.classList.remove('active');
+        
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+        }
+        
         body.style.overflow = 'auto';
     }
 }
+
+console.log('✅ Corrección de menú mobile aplicada');
 
 // ========================================
 // CERRAR MENÚ AL HACER CLIC FUERA
