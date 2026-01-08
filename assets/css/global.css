@@ -435,13 +435,23 @@ footer {
         display: flex;
         position: relative;
         z-index: 102;
-        transition: background 0.3s;
+        transition: all 0.3s;
+        /* IMPORTANTE: Color por defecto siempre visible */
+        color: var(--primary) !important;
+        background: transparent;
     }
     
-/* Botón blanco cuando el menú está activo */
-.menu-toggle.active {
-    color: white !important;
-}
+    /* Botón cuando el menú está activo */
+    .menu-toggle.active {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Asegurar que el icono siempre sea visible */
+    .menu-toggle i {
+        color: inherit;
+        pointer-events: none;
+    }
     
     nav {
         display: none;
@@ -457,16 +467,16 @@ footer {
         z-index: 101;
         overflow-y: auto;
         gap: 0;
+        /* CLAVE: Resetear cualquier estado previo */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
     nav.active {
         display: flex !important;
-        animation: fadeIn 0.3s ease;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     nav a {
@@ -474,7 +484,7 @@ footer {
         border-bottom: 1px solid rgba(255,255,255,0.1);
         background: rgba(255,255,255,0.08);
         border-radius: 8px;
-        color: white;
+        color: white !important; /* Forzar color blanco */
         font-size: 1.1rem;
         text-align: center;
         margin-bottom: 0.5rem;
@@ -482,12 +492,13 @@ footer {
     
     nav a:hover {
         background: rgba(255,255,255,0.15);
-        color: white;
+        color: white !important;
     }
     
     nav a::after {
         display: none;
     }
+}
     
     /* Logo en el espacio inferior del menú */
 nav::after {
