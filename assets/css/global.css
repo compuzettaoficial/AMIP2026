@@ -2,11 +2,11 @@
    VARIABLES Y RESET
 ======================================== */
 :root {
-    /* Colores Profesionales Rediseñados */
+    /* Colores Profesionales RediseÃ±ados */
     --primary: #1e3a8a;        /* Azul marino profundo */
     --secondary: #0891b2;      /* Cyan profesional */
-    --accent: #f59e0b;         /* Naranja cálido */
-    --success: #10B981;        /* Verde éxito */
+    --accent: #f59e0b;         /* Naranja cÃ¡lido */
+    --success: #10B981;        /* Verde Ã©xito */
     --dark: #1f2937;           /* Gris oscuro */
     --gray: #6b7280;           /* Gris medio */
     --white: #ffffff;
@@ -72,7 +72,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0.75rem 0; /* Ligeramente reducido */
+    padding: var(--space-sm) 0;
 }
 
 .header-content {
@@ -88,15 +88,15 @@ header {
 }
 
 .logo-img {
-    width: 50px; /* Balance entre compacto y visible */
-    height: 50px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .brand-name {
     font-weight: 700;
-    font-size: 1.2rem; /* Mantiene legibilidad */
+    font-size: 1.25rem;
     color: var(--dark);
     letter-spacing: 0.5px;
     line-height: 1.2;
@@ -107,7 +107,7 @@ header {
 }
 
 .brand-tagline {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     opacity: 0.7;
     margin-top: -2px;
     line-height: 1.4;
@@ -377,7 +377,7 @@ footer {
 }
 
 /* ========================================
-   LOADING Y ESTADOS VACÍOS
+   LOADING Y ESTADOS VACÃOS
 ======================================== */
 .loading {
     text-align: center;
@@ -435,23 +435,13 @@ footer {
         display: flex;
         position: relative;
         z-index: 102;
-        transition: all 0.3s;
-        /* IMPORTANTE: Color por defecto siempre visible */
-        color: var(--primary) !important;
-        background: transparent;
+        transition: background 0.3s;
     }
     
-    /* Botón cuando el menú está activo */
-    .menu-toggle.active {
-        color: white !important;
-        background: rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Asegurar que el icono siempre sea visible */
-    .menu-toggle i {
-        color: inherit;
-        pointer-events: none;
-    }
+/* BotÃ³n blanco cuando el menÃº estÃ¡ activo */
+.menu-toggle.active {
+    color: white !important;
+}
     
     nav {
         display: none;
@@ -467,16 +457,16 @@ footer {
         z-index: 101;
         overflow-y: auto;
         gap: 0;
-        /* CLAVE: Resetear cualquier estado previo */
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
     nav.active {
         display: flex !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
     
     nav a {
@@ -484,7 +474,7 @@ footer {
         border-bottom: 1px solid rgba(255,255,255,0.1);
         background: rgba(255,255,255,0.08);
         border-radius: 8px;
-        color: white !important; /* Forzar color blanco */
+        color: white;
         font-size: 1.1rem;
         text-align: center;
         margin-bottom: 0.5rem;
@@ -492,15 +482,14 @@ footer {
     
     nav a:hover {
         background: rgba(255,255,255,0.15);
-        color: white !important;
+        color: white;
     }
     
     nav a::after {
         display: none;
     }
-}
     
-    /* Logo en el espacio inferior del menú */
+    /* Logo en el espacio inferior del menÃº */
 nav::after {
     content: '';
     display: block;
