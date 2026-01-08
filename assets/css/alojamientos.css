@@ -1,11 +1,10 @@
 /* ========================================
    ESTILOS ESPECÍFICOS DE ALOJAMIENTOS
-   COLOR PRIMARIO: VERDE
 ======================================== */
 
-/* PAGE HEADER - VERDE OSCURO (IGUAL QUE INDEX) */
+/* PAGE HEADER */
 .page-header {
-    background: linear-gradient(135deg, #3d9b7f, #2d7a5f);
+    background: linear-gradient(135deg, var(--primary), #2563eb);
 }
 
 /* MAIN LAYOUT */
@@ -25,7 +24,7 @@
     background: white;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 .filters-header {
@@ -38,7 +37,7 @@
 
 .filters-title {
     font-size: 1.5rem;
-    color: var(--green-primary);
+    color: var(--primary);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -70,8 +69,8 @@
 .filter-group select:focus,
 .filter-group input:focus {
     outline: none;
-    border-color: var(--green-primary);
-    box-shadow: 0 0 0 3px rgba(61, 155, 127, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
 .checkbox-group {
@@ -138,25 +137,23 @@
 }
 
 .results-count strong {
-    color: var(--green-primary);
+    color: var(--primary);
     font-size: 1.3rem;
 }
 
-/* CARDS GRID - CORREGIDO PARA 2-3 COLUMNAS */
+/* CARDS GRID */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-/* Para 2 columnas en tablets */
 @media (min-width: 768px) and (max-width: 1199px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Para 3 columnas en desktop */
 @media (min-width: 1200px) {
     .cards-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -167,22 +164,24 @@
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
+    border: 2px solid transparent;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 40px rgba(30, 58, 138, 0.15);
+    border-color: var(--primary);
 }
 
 .card-badge {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: var(--green-primary);
+    background: var(--primary);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
@@ -193,7 +192,7 @@
 }
 
 .card-badge.cochera {
-    background: var(--green-dark);
+    background: var(--secondary);
 }
 
 .card-img-container {
@@ -230,6 +229,7 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
+    color: var(--primary);
 }
 
 .card-share:hover {
@@ -268,8 +268,8 @@
 }
 
 .feature-badge.highlight {
-    background: #d1fae5;
-    color: var(--green-primary);
+    background: #dbeafe;
+    color: var(--primary);
 }
 
 .feature-badge i {
@@ -294,14 +294,14 @@
 
 .card-info-item i {
     margin-top: 2px;
-    color: var(--green-primary);
+    color: var(--primary);
     flex-shrink: 0;
 }
 
 .card-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1e3a5f;
+    color: var(--primary);
     margin: 1rem 0;
 }
 
@@ -335,7 +335,7 @@
     margin-top: 1rem;
 }
 
-/* BOTONES EN CARDS - COLORES DIFERENCIADOS */
+/* BOTONES EN CARDS */
 .card-actions .btn-secondary {
     background: #25D366;
 }
@@ -345,14 +345,11 @@
 }
 
 .card-actions .btn-primary {
-    background: #1e3a5f;
-    border: 2px solid #1e3a5f;
+    background: var(--accent);
 }
 
 .card-actions .btn-primary:hover {
-    background: #2c5282;
-    border-color: #2c5282;
-    transform: translateY(-2px);
+    background: #ea580c;
 }
 
 /* MODAL */
@@ -414,7 +411,7 @@
 .modal-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--green-primary);
+    color: var(--primary);
     line-height: 1.3;
 }
 
@@ -511,7 +508,7 @@
 }
 
 .info-section h3 {
-    color: var(--green-primary);
+    color: var(--primary);
     margin-bottom: 1rem;
     font-size: 1.3rem;
     display: flex;
@@ -525,7 +522,7 @@
 }
 
 .info-section a {
-    color: var(--green-primary);
+    color: var(--secondary);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
@@ -533,7 +530,7 @@
 
 .info-section a:hover {
     text-decoration: underline;
-    color: var(--green-dark);
+    color: var(--primary);
 }
 
 .info-grid {
@@ -552,7 +549,7 @@
 }
 
 .info-item i {
-    color: var(--green-primary);
+    color: var(--primary);
     font-size: 1.2rem;
 }
 
@@ -572,7 +569,7 @@
 }
 
 .servicio-item::before {
-    content: '✔';
+    content: '✓';
     color: var(--success);
     font-weight: bold;
     font-size: 1.2rem;
@@ -584,7 +581,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+    background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     border: none;
     width: 60px;
@@ -592,8 +589,8 @@
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(61, 155, 127, 0.4);
-    z-index: 97;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+    z-index: 89;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
