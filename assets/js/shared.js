@@ -7,10 +7,16 @@
 // ========================================
 function toggleMenu() {
     const nav = document.getElementById('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
     const body = document.body;
     
     if (nav) {
         const isActive = nav.classList.toggle('active');
+        
+        // Cambiar color del botón
+        if (menuToggle) {
+            menuToggle.classList.toggle('active', isActive);
+        }
         
         // Prevenir scroll cuando el menú está abierto
         if (isActive) {
