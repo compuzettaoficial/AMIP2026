@@ -42,7 +42,7 @@
                 
                 <nav id="nav" aria-label="Navegación principal">
                     <a href="#evento" onclick="closeMenu()">Evento</a>
-                    <a href="#organizador" onclick="closeMenu()">Organizador</a>
+                    <a href="#programa" onclick="closeMenu()">Programa</a>
                     <a href="alojamientos.html">Alojamientos</a>
                     <a href="contacto.html">Contacto</a>
                 </nav>
@@ -52,99 +52,316 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Convención Nacional en PERÚ - AMIP 2026</h1>
-            <p class="hero-subtitle">Nuevo Chimbote, Perú</p>
+            <div class="hero-badge">🎉 Próximo Evento</div>
+            <h1>Convención Nacional en PERÚ<br><span class="highlight-text">AMIP 2026</span></h1>
+            <p class="hero-subtitle">Un encuentro que transformará vidas y fortalecerá la misión</p>
+            
             <div class="hero-info">
-                <div class="date-box">
-                    <i class="fas fa-calendar"></i> 20-23 Febrero 2026
+                <div class="hero-info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <strong>20-23 Febrero 2026</strong>
+                        <span>4 días de bendición</span>
+                    </div>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Instituto+Carlos+Salazar+Romero+Nuevo+Chimbote" target="_blank" class="hero-info-item" rel="noopener">
+                <div class="hero-info-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Instituto Carlos Salazar Romero</span>
+                    <div>
+                        <strong>Nuevo Chimbote, Perú</strong>
+                        <span>Instituto Carlos Salazar Romero</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="#evento" class="btn-hero primary">
+                    <i class="fas fa-info-circle"></i> Más información
+                </a>
+                <a href="alojamientos.html" class="btn-hero secondary">
+                    <i class="fas fa-hotel"></i> Buscar alojamiento
                 </a>
             </div>
         </div>
+        <div class="hero-overlay"></div>
     </section>
 
+    <!-- STATS BANNER -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <strong>4 Días</strong>
+                        <span>de programación</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <strong>Miles</strong>
+                        <span>de asistentes esperados</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <div class="stat-content">
+                        <strong>AMIP</strong>
+                        <span>organiza este evento</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="stat-content">
+                        <strong>8+ Hoteles</strong>
+                        <span>disponibles cerca</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTO SECTION -->
     <section class="evento-section" id="evento">
         <div class="container">
-            <h2 class="section-title">Sobre el Evento</h2>
-            <p class="section-subtitle">Conoce el lugar de la convención</p>
+            <div class="section-header">
+                <span class="section-label">El lugar</span>
+                <h2 class="section-title">Instituto Carlos Salazar Romero</h2>
+                <p class="section-subtitle">Modernas instalaciones preparadas para recibir a miles de hermanos en la fe</p>
+            </div>
             
             <div class="venue-showcase">
-                <div class="venue-image-container">
-                    <img src="https://hospitalidadenaccion.org/assets/images/event/carlos_salazar_romero.jpg" 
-                         alt="Instituto Carlos Salazar Romero" 
-                         class="venue-image"
-                         onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200'">
-                    <div class="venue-overlay">
-                        <div class="venue-info">
-                            <h3><i class="fas fa-building"></i> Instituto Carlos Salazar Romero</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> Nuevo Chimbote, Perú</p>
+                <div class="venue-main">
+                    <div class="venue-image-container">
+                        <img src="https://hospitalidadenaccion.org/assets/images/event/carlos_salazar_romero.jpg" 
+                             alt="Instituto Carlos Salazar Romero" 
+                             class="venue-image"
+                             onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200'">
+                        <div class="venue-badge">
+                            <i class="fas fa-check-circle"></i> Sede confirmada
+                        </div>
+                    </div>
+                    
+                    <div class="venue-features">
+                        <div class="feature-item">
+                            <i class="fas fa-building"></i>
+                            <span>Amplias instalaciones</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-parking"></i>
+                            <span>Estacionamiento disponible</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wheelchair"></i>
+                            <span>Accesibilidad completa</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Ubicación céntrica</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="venue-info-card">
+                    <h3><i class="fas fa-map-pin"></i> Ubicación</h3>
+                    <p><strong>Nuevo Chimbote, Perú</strong></p>
+                    <p>Instituto de Educación Superior Tecnológico Público Carlos Salazar Romero</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Instituto+Carlos+Salazar+Romero+Nuevo+Chimbote" 
+                       target="_blank" 
+                       class="btn-map"
+                       rel="noopener">
+                        <i class="fas fa-directions"></i> Ver en Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="event-details" id="organizador">
+    <!-- PROGRAMA SECTION -->
+    <section class="programa-section" id="programa">
         <div class="container">
-            <div class="event-details-grid">
-                <div class="event-detail-card">
-                    <h3><i class="fas fa-church"></i> Organizado por AMIP</h3>
-                    <p>Asociación Misionera de Iglesias Pentecostales</p>
-                    <img src="assets/images/logos/logo-amip.jpg" alt="AMIP Logo" class="organizer-logo">
-                    <div class="organizer-links">
-                        <a href="https://amipinstitucional.org/" target="_blank" class="org-link" rel="noopener">
-                            <i class="fas fa-globe"></i> Sitio institucional
-                        </a>
-                        <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="org-link" rel="noopener">
-                            <i class="fab fa-facebook"></i> Ministerio Juvenil
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="event-detail-card">
-                    <h3><i class="fas fa-calendar-alt"></i> Programa</h3>
-                    <ul>
-                        <li><strong>Día 1:</strong> Inauguración y conferencias</li>
-                        <li><strong>Día 2:</strong> Talleres y reuniones</li>
-                        <li><strong>Día 3:</strong> Actividades especiales</li>
-                        <li><strong>Día 4:</strong> Clausura</li>
+            <div class="section-header">
+                <span class="section-label">Qué esperar</span>
+                <h2 class="section-title">Programa del Evento</h2>
+                <p class="section-subtitle">Cuatro días de conferencias, talleres y encuentros espirituales</p>
+            </div>
+            
+            <div class="programa-grid">
+                <div class="programa-card">
+                    <div class="programa-day">Día 1</div>
+                    <h3><i class="fas fa-door-open"></i> Inauguración</h3>
+                    <p>Ceremonia de apertura y conferencias magistrales que darán inicio a este encuentro histórico.</p>
+                    <ul class="programa-list">
+                        <li>Ceremonia de inauguración</li>
+                        <li>Conferencia principal</li>
+                        <li>Alabanza y adoración</li>
                     </ul>
                 </div>
                 
-                <div class="event-detail-card">
-                    <h3><i class="fas fa-clock"></i> Horarios</h3>
-                    <p>
-                        <strong>Mañana:</strong> 9:00 AM - 12:00 PM<br>
-                        <strong>Tarde:</strong> 3:00 PM - 6:00 PM<br>
-                        <strong>Noche:</strong> 7:00 PM - 10:00 PM
-                    </p>
-                    <div class="divider"></div>
-                    <h4 class="speaker-title">
-                        <i class="fas fa-microphone"></i> Expositor principal
-                    </h4>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="assets/images/event/expositor-omar.png" alt="Ps. Omar Tejeiro" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-                        <p class="speaker-name" style="margin: 0;">
-                            <strong>Pastor y Misionero: Omar Tejeiro</strong><br>
-                            Presidente de la Misión AMIP
-                        </p>
+                <div class="programa-card">
+                    <div class="programa-day">Día 2</div>
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Talleres</h3>
+                    <p>Sesiones de capacitación y talleres especializados para el crecimiento ministerial.</p>
+                    <ul class="programa-list">
+                        <li>Talleres simultáneos</li>
+                        <li>Reuniones por áreas</li>
+                        <li>Tiempo de comunión</li>
+                    </ul>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-day">Día 3</div>
+                    <h3><i class="fas fa-star"></i> Actividades Especiales</h3>
+                    <p>Eventos especiales y presentaciones que enriquecerán la experiencia espiritual.</p>
+                    <ul class="programa-list">
+                        <li>Ministerio juvenil</li>
+                        <li>Actividades especiales</li>
+                        <li>Reuniones de oración</li>
+                    </ul>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-day">Día 4</div>
+                    <h3><i class="fas fa-praying-hands"></i> Clausura</h3>
+                    <p>Ceremonia de cierre con mensaje final y envío misionero para el próximo año.</p>
+                    <ul class="programa-list">
+                        <li>Mensaje de clausura</li>
+                        <li>Envío misionero</li>
+                        <li>Ceremonia de cierre</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="horarios-card">
+                <h3><i class="fas fa-clock"></i> Horarios Generales</h3>
+                <div class="horarios-grid">
+                    <div class="horario-item">
+                        <strong>Mañana</strong>
+                        <span>9:00 AM - 12:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <strong>Tarde</strong>
+                        <span>3:00 PM - 6:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <strong>Noche</strong>
+                        <span>7:00 PM - 10:00 PM</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- EXPOSITOR SECTION -->
+    <section class="expositor-section">
+        <div class="container">
+            <div class="expositor-content">
+                <div class="expositor-image">
+                    <img src="assets/images/event/expositor-omar.png" alt="Pastor Omar Tejeiro">
+                    <div class="expositor-badge">
+                        <i class="fas fa-microphone-alt"></i> Expositor Principal
+                    </div>
+                </div>
+                <div class="expositor-info">
+                    <h2>Pastor y Misionero<br><span class="highlight-name">Omar Tejeiro</span></h2>
+                    <p class="expositor-role">Presidente de la Misión AMIP</p>
+                    <p class="expositor-description">
+                        Con años de experiencia en el ministerio y una pasión inquebrantable por la obra misionera, 
+                        el Pastor Omar Tejeiro guiará este encuentro con mensajes que transformarán corazones y 
+                        fortalecerán el compromiso con la Gran Comisión.
+                    </p>
+                    <div class="expositor-features">
+                        <div class="feature"><i class="fas fa-check"></i> Líder reconocido</div>
+                        <div class="feature"><i class="fas fa-check"></i> Experiencia internacional</div>
+                        <div class="feature"><i class="fas fa-check"></i> Corazón misionero</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZADOR SECTION -->
+    <section class="organizador-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Quiénes somos</span>
+                <h2 class="section-title">Organizado por AMIP</h2>
+                <p class="section-subtitle">Asociación Misionera de Iglesias Pentecostales</p>
+            </div>
+            
+            <div class="organizador-content">
+                <div class="organizador-main">
+                    <img src="assets/images/logos/logo-amip.jpg" alt="Logo AMIP" class="organizador-logo">
+                    <p class="organizador-description">
+                        La Asociación Misionera de Iglesias Pentecostales (AMIP) es una organización comprometida 
+                        con la evangelización y el fortalecimiento de las iglesias en todo Perú y más allá de sus fronteras.
+                    </p>
+                    <div class="organizador-stats">
+                        <div class="org-stat">
+                            <i class="fas fa-church"></i>
+                            <span>Iglesias asociadas en todo Perú</span>
+                        </div>
+                        <div class="org-stat">
+                            <i class="fas fa-users"></i>
+                            <span>Miles de miembros activos</span>
+                        </div>
+                        <div class="org-stat">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Alcance misionero internacional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="organizador-links">
+                    <h3>Conócenos mejor</h3>
+                    <a href="https://amipinstitucional.org/" target="_blank" class="org-link-card" rel="noopener">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>Sitio institucional</strong>
+                            <span>amipinstitucional.org</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="org-link-card" rel="noopener">
+                        <i class="fab fa-facebook"></i>
+                        <div>
+                            <strong>Ministerio Juvenil</strong>
+                            <span>Síguenos en Facebook</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <h2>¿Necesitas Alojamiento?</h2>
-            <p>Encuentra hoteles y cocheras cerca del evento</p>
-            <a href="alojamientos.html" class="cta-btn">
-                <i class="fas fa-hotel"></i> Ver Alojamientos
-            </a>
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <h2>¿Necesitas Alojamiento?</h2>
+                <p>Tenemos una selección de hoteles y cocheras cerca del evento con precios especiales</p>
+                <a href="alojamientos.html" class="cta-btn">
+                    <span>Ver Alojamientos Disponibles</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="cta-features">
+                    <div><i class="fas fa-check-circle"></i> Precios especiales</div>
+                    <div><i class="fas fa-check-circle"></i> Cerca del evento</div>
+                    <div><i class="fas fa-check-circle"></i> Reserva directa</div>
+                </div>
+            </div>
         </div>
     </section>
 
