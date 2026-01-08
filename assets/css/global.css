@@ -490,16 +490,16 @@ footer {
     }
     
     /* Logo en el espacio inferior del menú */
-    nav::after {
-        content: '';
-        display: block;
-        width: 120px;
-        height: 120px;
-        margin: 2rem auto 0;
-        background: url('assets/images/logos/logo-circulo-azul.png') center/contain no-repeat;
-        opacity: 0.3;
-        flex-shrink: 0;
-    }
+nav::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 2rem auto 0;
+    background: url('/assets/images/logos/logo-circulo-blanco.png') center/contain no-repeat;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
     
     .page-header h1 {
         font-size: 1.75rem;
