@@ -273,9 +273,25 @@
 }
 
 .feature-badge.highlight {
-    background: #dbeafe;
-    color: var(--primary);
+    background: #fee2e2; /* Rojo suave para badges de características */
+    color: #dc2626;
+    font-weight: 600;
 }
+/* Badge principal de la tarjeta cuando tiene promoción */
+.card-badge.promo {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 
 .feature-badge i {
     font-size: 0.85rem;
@@ -325,13 +341,25 @@
 }
 
 .promo-tag {
-    background: var(--success);
+    background: linear-gradient(135deg, #dc2626, #b91c1c); /* Rojo vibrante */
     color: white;
     padding: 0.3rem 0.6rem;
     border-radius: 6px;
     font-size: 0.75rem;
     margin-left: 0.5rem;
     font-weight: 600;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    animation: pulse-promo 2s ease-in-out infinite;
+}
+
+/* Animación sutil para llamar la atención */
+@keyframes pulse-promo {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(220, 38, 38, 0.5);
+    }
 }
 
 .card-actions {
