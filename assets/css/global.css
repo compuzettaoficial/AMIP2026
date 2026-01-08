@@ -72,13 +72,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0.5rem 0; /* REDUCIDO de var(--space-sm) */
+    padding: 0.5rem 0; /* Compacto en todas las pantallas */
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 50px; /* Altura mínima controlada */
 }
 
 .logo {
@@ -88,15 +89,15 @@ header {
 }
 
 .logo-img {
-    width: 45px; /* REDUCIDO de 55px */
-    height: 45px; /* REDUCIDO de 55px */
+    width: 40px; /* Más pequeño */
+    height: 40px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .brand-name {
     font-weight: 700;
-    font-size: 1.1rem; /* REDUCIDO de 1.25rem */
+    font-size: 1rem; /* Reducido */
     color: var(--dark);
     letter-spacing: 0.5px;
     line-height: 1.2;
@@ -107,60 +108,10 @@ header {
 }
 
 .brand-tagline {
-    font-size: 0.75rem; /* REDUCIDO de 0.85rem */
+    font-size: 0.7rem; /* Más pequeño */
     opacity: 0.7;
     margin-top: -2px;
-    line-height: 1.4;
-}
-
-nav {
-    display: flex;
-    gap: var(--space-lg);
-}
-
-nav a {
-    color: var(--dark);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    padding: var(--space-xs) 0;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-nav a:hover {
-    color: var(--primary);
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--primary);
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.3;
 }
 
 /* ========================================
