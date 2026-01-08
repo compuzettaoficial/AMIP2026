@@ -423,12 +423,13 @@ footer {
     
     header {
         position: sticky;
+        z-index: 99;
     }
     
     .menu-toggle {
         display: flex;
         position: relative;
-        z-index: 1001;
+        z-index: 1002;
     }
     
     nav {
@@ -441,7 +442,7 @@ footer {
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
-        z-index: 1000;
+        z-index: 1001;
         overflow-y: auto;
         gap: 0.5rem;
     }
