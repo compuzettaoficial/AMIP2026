@@ -54,7 +54,16 @@
     <div class="container">
         <div class="main-layout">
             <aside class="filters-sidebar" id="filtersSidebar">
-                <h2 class="filters-title">
+                <div class="filters-header">
+                    <h2 class="filters-title">
+                        <i class="fas fa-filter"></i> Filtros
+                    </h2>
+                    <button class="filters-close" onclick="toggleFilters()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <h2 class="filters-title" style="display: none;">
                     <i class="fas fa-filter"></i> Filtros
                 </h2>
                 
