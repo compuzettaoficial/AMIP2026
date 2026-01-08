@@ -176,7 +176,7 @@ function createCard(alojamiento) {
     // Features
     let features = [];
     if (alojamiento.accesible) features.push('<span class="feature-badge highlight"><i class="fas fa-wheelchair"></i> Accesible</span>');
-    if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
+    if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge highlight"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
     if (alojamiento.promocion?.tienePromocion) features.push('<span class="feature-badge highlight"><i class="fas fa-tags"></i> Promo</span>');
     
     const nombreEscapado = alojamiento.nombre.replace(/'/g, "\\'").replace(/"/g, '&quot;');
