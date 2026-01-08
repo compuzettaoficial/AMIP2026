@@ -314,6 +314,187 @@
       "notas": "2 estrellas, opción económica en Chimbote"
     }
   },
+
+{
+    "tipo": "hotel",
+    "nombre": "Hotel Paraíso del Norte",
+    "imagenes": ["assets/images/alojamientos/hotel-paraiso.jpg"],
+    "direccion": "Av. José Pardo 450, Urb. Bellamar, Nuevo Chimbote",
+    "distanciaAproximada": "800m del instituto, 10 min caminando",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno gratuito"
+    },
+    "contacto": {
+      "telefono": "043-315789",
+      "whatsapp": "+51987654321",
+      "email": "reservas@hotelparaiso.com",
+      "facebook": "https://facebook.com/hotelparaisonorte",
+      "web": "https://hotelparaiso.com"
+    },
+    "precios": {
+      "simple": 130,
+      "doble": 150,
+      "matrimonial": 170
+    },
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "AMIP2026",
+      "preciosEvento": {
+        "simple": 95,
+        "doble": 110,
+        "matrimonial": 125
+      }
+    },
+    "servicios": [
+      "42 habitaciones renovadas",
+      "Desayuno buffet incluido",
+      "WiFi alta velocidad gratis",
+      "Aire acondicionado",
+      "TV cable HD",
+      "Minibar",
+      "Agua caliente 24h",
+      "Recepción 24 horas",
+      "Servicio de lavandería",
+      "Sala de reuniones disponible"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2025-01-08T00:00:00.000Z",
+      "notas": "PROMOCIÓN ESPECIAL AMIP 2026: 30% descuento. Hotel 3 estrellas cercano al evento, ideal para familias"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Gran Hotel Nuevo Horizonte",
+    "imagenes": ["assets/images/alojamientos/hotel-horizonte.jpg"],
+    "direccion": "Jr. Tumbes 890, Urb. Belén, Nuevo Chimbote",
+    "distanciaAproximada": "1.5 km del instituto, 18 min caminando",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno vigilado"
+    },
+    "contacto": {
+      "telefono": "043-318900",
+      "whatsapp": "+51998765432",
+      "email": "info@hotelhorizonte.pe",
+      "facebook": "",
+      "web": "https://hotelhorizonte.pe"
+    },
+    "precios": {
+      "simple": 110,
+      "doble": 130,
+      "matrimonial": 150
+    },
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "INTEGRIDAD2026",
+      "preciosEvento": {
+        "simple": 80,
+        "doble": 95,
+        "matrimonial": 110
+      }
+    },
+    "servicios": [
+      "35 habitaciones",
+      "Desayuno continental incluido",
+      "WiFi gratis en todas las áreas",
+      "Estacionamiento vigilado 24h",
+      "TV por cable",
+      "Baño privado con ducha",
+      "Ventilador o aire acondicionado",
+      "Área de comedor compartida",
+      "Servicio de taxi bajo pedido"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2025-01-08T00:00:00.000Z",
+      "notas": "OFERTA AMIP: 25% descuento reservando con código. Ambiente familiar cristiano"
+    }
+  },
+  {
+    "tipo": "cochera",
+    "nombre": "Estacionamiento Seguro Bellamar",
+    "imagenes": ["assets/images/alojamientos/parking-bellamar.jpg"],
+    "direccion": "Mz. D Lt. 15, Urb. Bellamar, Nuevo Chimbote",
+    "distanciaAproximada": "600m del instituto, muy cercano",
+    "accesible": true,
+    "capacidad": 45,
+    "precioDia": 18,
+    "precioNoche": 25,
+    "telefono": "043-317555",
+    "whatsapp": "+51987123456",
+    "horario": "24 horas - Atención permanente",
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "AMIP4DIAS",
+      "preciosEvento": {
+        "precioDia": 12,
+        "precioNoche": 18,
+        "paquete4dias": 40
+      }
+    },
+    "servicios": [
+      "Vigilancia 24/7 con personal capacitado",
+      "Cámaras de seguridad HD",
+      "Techado completo",
+      "Seguro contra daños",
+      "Limpieza básica sin costo",
+      "Acceso controlado con tarjeta",
+      "Iluminación LED toda la noche",
+      "Área de espera techada",
+      "PROMO: Paquete 4 días S/40 (evento completo)"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2025-01-08T00:00:00.000Z",
+      "notas": "PROMOCIÓN AMIP: Paquete especial 4 días S/40 (ahorro de S/32). Muy cerca del evento"
+    }
+  },
+  {
+    "tipo": "cochera",
+    "nombre": "Parking Institucional San Pedro",
+    "imagenes": ["assets/images/alojamientos/parking-san-pedro.jpg"],
+    "direccion": "Av. Pardo 1250, frente a Colegio San Pedro, Nuevo Chimbote",
+    "distanciaAproximada": "400m del instituto, 5 min caminando",
+    "accesible": true,
+    "capacidad": 60,
+    "precioDia": 20,
+    "precioNoche": 28,
+    "telefono": "043-319800",
+    "whatsapp": "+51999888777",
+    "horario": "Lunes a Domingo 6:00 AM - 11:00 PM, Vigilancia nocturna",
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "CONVENCION2026",
+      "preciosEvento": {
+        "precioDia": 15,
+        "precioNoche": 20,
+        "bonoGrupo": "5 vehículos o más: 10% adicional"
+      }
+    },
+    "servicios": [
+      "Amplio espacio techado y al aire libre",
+      "Vigilancia permanente",
+      "Sistema de cámaras 360°",
+      "Personal de seguridad certificado",
+      "Póliza de seguro incluida",
+      "Lavado básico S/5 adicional",
+      "Zona de buses y camionetas",
+      "Cercanía inmediata al evento",
+      "Descuento grupal: 5+ vehículos 10% extra"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2025-01-08T00:00:00.000Z",
+      "notas": "OFERTA AMIP 2026: 25% descuento + bono grupal. Ubicación privilegiada a pasos del instituto"
+    }
+  },
+
+
+  
   {
     "tipo": "cochera",
     "nombre": "Cochera Nuevo Chimbote",
