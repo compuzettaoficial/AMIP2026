@@ -3,9 +3,9 @@
    COLOR PRIMARIO: VERDE
 ======================================== */
 
-/* PAGE HEADER - VERDE */
+/* PAGE HEADER - VERDE OSCURO (IGUAL QUE INDEX) */
 .page-header {
-    background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+    background: linear-gradient(135deg, #3d9b7f, #2d7a5f);
 }
 
 /* MAIN LAYOUT */
@@ -301,7 +301,7 @@
 .card-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--green-dark);
+    color: #1e3a5f;
     margin: 1rem 0;
 }
 
@@ -335,7 +335,7 @@
     margin-top: 1rem;
 }
 
-/* BOTONES EN CARDS - VERDE */
+/* BOTONES EN CARDS - COLORES DIFERENCIADOS */
 .card-actions .btn-secondary {
     background: #25D366;
 }
@@ -345,11 +345,14 @@
 }
 
 .card-actions .btn-primary {
-    background: var(--green-primary);
+    background: #1e3a5f;
+    border: 2px solid #1e3a5f;
 }
 
 .card-actions .btn-primary:hover {
-    background: var(--green-dark);
+    background: #2c5282;
+    border-color: #2c5282;
+    transform: translateY(-2px);
 }
 
 /* MODAL */
