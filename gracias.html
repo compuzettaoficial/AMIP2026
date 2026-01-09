@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Enviado - Hospitalidad en Acción</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <style>
+        .success-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+        
+        .success-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease 0.2s both;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .success-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .success-card h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-action {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary-action:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-secondary-action {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary-action:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+        
+        .auto-redirect {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-medium);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .success-card h1 {
+                font-size: 1.5rem;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+            }
+            
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="Ir a inicio">
+                    <img src="assets/images/logos/logo-circulo-azul.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div>
+                        <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                        <div class="brand-tagline">Sistema de apoyo logístico para eventos</div>
+                    </div>
+                </a>
+                
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="nav" aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#evento">Evento</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1>¡Mensaje Enviado Exitosamente!</h1>
+            
+            <p>Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos a la brevedad posible.</p>
+            
+            <p style="font-size: 1rem;">Si tu consulta es urgente, puedes visitarnos en <strong>hospitalidadenaccion.org</strong></p>
+            
+            <div class="success-actions">
+                <a href="index.html" class="btn-action btn-primary-action">
+                    <i class="fas fa-home"></i> Volver al Inicio
+                </a>
+                <a href="alojamientos.html" class="btn-action btn-secondary-action">
+                    <i class="fas fa-hotel"></i> Ver Alojamientos
+                </a>
+            </div>
+            
+            <div class="auto-redirect">
+                <i class="fas fa-info-circle"></i> Serás redirigido al inicio en <span id="countdown">10</span> segundos
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-minimal">
+                <div class="footer-brand">
+                    <strong>HOSPITALIDAD EN <span>ACCIÓN</span></strong>
+                </div>
+                <div class="footer-url">
+                    hospitalidadenaccion.org
+                </div>
+                <nav class="footer-nav" aria-label="Navegación footer">
+                    <a href="index.html">Inicio</a>
+                    <span class="separator">•</span>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <span class="separator">•</span>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-copyright">
+                    © 2025 · Desarrollado por Compuzetta
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="assets/js/shared.js"></script>
+    <script>
+        // Auto-redirect después de 10 segundos
+        let countdown = 10;
+        const countdownEl = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownEl.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
