@@ -761,3 +761,9 @@
         padding: 1rem;
     }
 }
+/* Badge especial para hotel con cochera */
+.card-badge.hotel-cochera {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+}
