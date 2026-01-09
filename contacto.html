@@ -227,13 +227,13 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <a href="index.html" class="logo" aria-label="Ir a inicio">
                     <img src="assets/images/logos/logo-circulo-azul.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
                     <div>
                         <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
                         <div class="brand-tagline">Sistema de apoyo logístico para eventos</div>
                     </div>
-                </div>
+                </a>
                 
                 <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
                     <i class="fas fa-bars"></i>
@@ -408,6 +408,10 @@
             </div>
         </div>
     </footer>
+
+    <button id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     </div>
 
     <script src="assets/js/shared.js"></script>
