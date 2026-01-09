@@ -2,11 +2,11 @@
    VARIABLES Y RESET
 ======================================== */
 :root {
-    /* Colores Profesionales RediseÃ±ados */
+    /* Colores Profesionales Rediseñados */
     --primary: #1e3a8a;        /* Azul marino profundo */
     --secondary: #0891b2;      /* Cyan profesional */
-    --accent: #f59e0b;         /* Naranja cÃ¡lido */
-    --success: #10B981;        /* Verde Ã©xito */
+    --accent: #f59e0b;         /* Naranja cálido */
+    --success: #10B981;        /* Verde éxito */
     --dark: #1f2937;           /* Gris oscuro */
     --gray: #6b7280;           /* Gris medio */
     --white: #ffffff;
@@ -85,6 +85,12 @@ header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
 }
 
 .logo-img {
@@ -92,6 +98,11 @@ header {
     height: 55px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
 .brand-name {
@@ -111,6 +122,7 @@ header {
     opacity: 0.7;
     margin-top: -2px;
     line-height: 1.4;
+    color: var(--dark);
 }
 
 nav {
@@ -377,7 +389,7 @@ footer {
 }
 
 /* ========================================
-   LOADING Y ESTADOS VACÃOS
+   LOADING Y ESTADOS VACÍOS
 ======================================== */
 .loading {
     text-align: center;
@@ -417,6 +429,30 @@ footer {
 }
 
 /* ========================================
+   BOTÓN VOLVER ARRIBA
+======================================== */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 90;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#backToTop:hover {
+    background: #1e40af;
+    transform: translateY(-4px);
+}
+/* ========================================
    RESPONSIVE
 ======================================== */
 @media (max-width: 768px) {
@@ -438,10 +474,10 @@ footer {
         transition: background 0.3s;
     }
     
-/* BotÃ³n blanco cuando el menÃº estÃ¡ activo */
-.menu-toggle.active {
-    color: white !important;
-}
+    /* Botón blanco cuando el menú está activo */
+    .menu-toggle.active {
+        color: white !important;
+    }
     
     nav {
         display: none;
@@ -489,17 +525,17 @@ footer {
         display: none;
     }
     
-    /* Logo en el espacio inferior del menÃº */
-nav::after {
-    content: '';
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: 2rem auto 0;
-    background: url('/assets/images/logos/logo-circulo-blanco.png') center/contain no-repeat;
-    opacity: 0.4;
-    flex-shrink: 0;
-}
+    /* Logo en el espacio inferior del menú */
+    nav::after {
+        content: '';
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin: 2rem auto 0;
+        background: url('/assets/images/logos/logo-circulo-blanco.png') center/contain no-repeat;
+        opacity: 0.4;
+        flex-shrink: 0;
+    }
     
     .page-header h1 {
         font-size: 1.75rem;
@@ -532,6 +568,20 @@ nav::after {
     
     .footer-url {
         margin: var(--space-sm) 0;
+    }
+    
+    /* Botón volver arriba ajustado en móvil */
+    #backToTop {
+        bottom: 85px; /* Encima del botón de filtros */
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        z-index: 89;
+    }
+    
+    /* Si está en página de alojamientos, ajustar para stack vertical */
+    body:has(.mobile-filters-toggle) #backToTop {
+        bottom: 95px; /* Más arriba porque hay botón de filtros abajo */
     }
 }
 
