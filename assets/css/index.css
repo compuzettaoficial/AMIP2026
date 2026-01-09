@@ -896,7 +896,7 @@ main {
    CTA SECTION
 ======================================== */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary), #1e40af);
+    background: linear-gradient(135deg, #f59e0b 0%, #fb923c 50%, #fbbf24 100%);
     color: white;
     padding: 5rem 0;
     position: relative;
