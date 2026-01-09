@@ -897,8 +897,8 @@ main {
 ======================================== */
 .cta-section {
     background: 
-        linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(30, 64, 175, 0.9)),
-        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600') center/cover;
+linear-gradient(135deg, rgba(245, 158, 11, 0.55), rgba(217, 119, 6, 0.50)), 
+url(../images/alojamientos/alojamiento2.jpg) center / cover
     color: white;
     padding: 5rem 0;
     position: relative;
