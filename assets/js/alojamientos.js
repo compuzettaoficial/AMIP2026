@@ -43,9 +43,9 @@ function applyFilters() {
     const tipo = document.getElementById('filter-tipo').value;
     if (tipo !== 'todos') {
         if (tipo === 'cochera') {
-            // Mostrar hoteles con estacionamiento
+            // Mostrar cocheras independientes + hoteles con estacionamiento
             filtered = filtered.filter(a => 
-                a.tipo === 'hotel' && a.estacionamiento?.tiene === true
+                a.tipo === 'cochera' || (a.tipo === 'hotel' && a.estacionamiento?.tiene === true)
             );
         } else {
             filtered = filtered.filter(a => a.tipo === tipo);
@@ -130,12 +130,18 @@ function getPrice(alojamiento) {
 // ========================================
 // CARGAR MÚLTIPLES IMÁGENES
 // ========================================
-function loadAllImages(nombre, imagenPrincipal) {
+function loadAllImages(nombre, imagenPrincipal, esHotelConCochera = false) {
     if (!imagenPrincipal) return [];
     
     const images = [imagenPrincipal];
     const baseName = imagenPrincipal.replace(/\.[^/.]+$/, '');
     const ext = imagenPrincipal.split('.').pop();
+    
+    // Si es hotel con cochera, agregar la foto específica de cochera
+    if (esHotelConCochera) {
+        const cocheraImg = `${baseName}-cochera.${ext}`;
+        images.push(cocheraImg);
+    }
     
     // Intentar cargar hasta 10 imágenes adicionales
     for (let i = 2; i <= 10; i++) {
@@ -144,6 +150,20 @@ function loadAllImages(nombre, imagenPrincipal) {
     }
     
     return images;
+}
+
+// Función para obtener imagen de cochera específica
+function getCocheraImage(alojamiento) {
+    if (alojamiento.tipo !== 'hotel' || !alojamiento.imagenes?.[0]) {
+        return alojamiento.imagenes?.[0] || '';
+    }
+    
+    const imgPrincipal = alojamiento.imagenes[0];
+    const baseName = imgPrincipal.replace(/\.[^/.]+$/, '');
+    const ext = imgPrincipal.split('.').pop();
+    
+    // Retornar la ruta esperada de la imagen de cochera
+    return `${baseName}-cochera.${ext}`;
 }
 
 // ========================================
@@ -175,30 +195,74 @@ function createCard(alojamiento) {
     const originalPrice = (alojamiento.promocion?.tienePromocion && alojamiento.precios?.simple) 
         ? alojamiento.precios.simple : null;
     
-    const img = alojamiento.imagenes?.[0] || '';
     const whatsapp = isHotel ? alojamiento.contacto?.whatsapp : alojamiento.whatsapp;
     const telefono = isHotel ? alojamiento.contacto?.telefono : alojamiento.telefono;
     
-    // Badge
+    // Determinar si se muestra como cochera
     const tipoFiltro = document.getElementById('filter-tipo').value;
     const mostrarComoCochera = isHotel && alojamiento.estacionamiento?.tiene && tipoFiltro === 'cochera';
+    
+    // Imagen a usar
+    let img = alojamiento.imagenes?.[0] || '';
+    if (mostrarComoCochera) {
+        // Intentar usar foto de cochera específica
+        const cocheraImg = getCocheraImage(alojamiento);
+        img = cocheraImg;
+    }
     
     // Features
     let features = [];
     if (alojamiento.accesible) features.push('<span class="feature-badge highlight"><i class="fas fa-wheelchair"></i> Accesible</span>');
-    if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge highlight"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
+    
+    if (mostrarComoCochera) {
+        // Mostrar info de estacionamiento
+        features.push(`<span class="feature-badge highlight"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
+        if (isHotel) {
+            features.push('<span class="feature-badge highlight"><i class="fas fa-hotel"></i> Incluye hospedaje</span>');
+        }
+    } else {
+        if (alojamiento.estacionamiento?.tiene) features.push(`<span class="feature-badge highlight"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
+    }
+    
     if (alojamiento.promocion?.tienePromocion) features.push('<span class="feature-badge highlight"><i class="fas fa-tags"></i> Promo</span>');
     
     const nombreEscapado = alojamiento.nombre.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     
+    // Badge personalizado
+    let badgeText = 'HOTEL';
+    let badgeClass = '';
+    
+    if (mostrarComoCochera) {
+        badgeText = '🏨 HOTEL CON ESTACIONAMIENTO';
+        badgeClass = 'hotel-cochera';
+    } else if (alojamiento.tipo === 'cochera') {
+        badgeText = 'COCHERA';
+        badgeClass = 'cochera';
+    }
+    
+    // Info específica para hoteles mostrados como cochera
+    let infoCochera = '';
+    if (mostrarComoCochera) {
+        const precioHotel = alojamiento.promocion?.tienePromocion && alojamiento.promocion.preciosEvento 
+            ? alojamiento.promocion.preciosEvento.simple 
+            : alojamiento.precios?.simple || 0;
+        
+        infoCochera = `
+            <div class="card-info-item" style="background: #dbeafe; padding: 0.5rem; border-radius: 6px; margin: 0.5rem 0;">
+                <i class="fas fa-info-circle"></i>
+                <span><strong>Estacionamiento incluido</strong> al hospedarse (desde S/ ${precioHotel}/noche)</span>
+            </div>
+        `;
+    }
+    
     return `
         <div class="card" onclick="showDetail('${nombreEscapado}')">
-            <div class="card-badge ${mostrarComoCochera ? 'cochera' : ''}">
-                ${mostrarComoCochera ? 'COCHERA' : 'HOTEL'}
+            <div class="card-badge ${badgeClass}">
+                ${badgeText}
             </div>
             
             <div class="card-img-container">
-                ${img ? `<img src="${img}" alt="${alojamiento.nombre}" class="card-img" loading="lazy" onerror="this.style.display='none'">` : ''}
+                ${img ? `<img src="${img}" alt="${alojamiento.nombre}" class="card-img" loading="lazy" onerror="this.onerror=null; this.src='${alojamiento.imagenes?.[0] || ''}'">` : ''}
                 ${img ? `<button class="card-share" onclick="shareAlojamiento(event, '${nombreEscapado}')" aria-label="Compartir">
                     <i class="fas fa-share-alt"></i>
                 </button>` : ''}
@@ -219,18 +283,16 @@ function createCard(alojamiento) {
                         <i class="fas fa-walking"></i>
                         <span>${alojamiento.distanciaAproximada}</span>
                     </div>` : ''}
-                    ${mostrarComoCochera ? `
-                    <div class="card-info-item">
-                        <i class="fas fa-parking"></i>
-                        <span>Estacionamiento ${alojamiento.estacionamiento.tipo}</span>
-                    </div>` : ''}
+                    ${infoCochera}
                 </div>
                 
                 <div class="card-price">
-                    S/ ${price}
-                    ${isHotel ? '' : '<small>/día</small>'}
-                    ${originalPrice ? `<span class="price-original">S/ ${originalPrice}</span>` : ''}
-                    ${alojamiento.promocion?.tienePromocion ? '<span class="promo-tag">PROMO</span>' : ''}
+                    ${mostrarComoCochera ? 
+                        `Desde S/ ${alojamiento.precios?.simple || 0}<small>/noche con estacionamiento</small>` :
+                        `S/ ${price}${isHotel ? '' : '<small>/día</small>'}`
+                    }
+                    ${originalPrice && !mostrarComoCochera ? `<span class="price-original">S/ ${originalPrice}</span>` : ''}
+                    ${alojamiento.promocion?.tienePromocion && !mostrarComoCochera ? '<span class="promo-tag">PROMO</span>' : ''}
                 </div>
                 
                 <div class="card-actions">
@@ -271,12 +333,13 @@ function shareAlojamiento(event, nombre) {
     } else {
         // Fallback para navegadores sin Web Share API
         navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-            alert('✓ Enlace copiado al portapapeles');
+            alert('✔ Enlace copiado al portapapeles');
         }).catch(() => {
             alert('No se pudo copiar el enlace');
         });
     }
 }
+
 // ========================================
 // MODAL DETALLE
 // ========================================
@@ -285,13 +348,15 @@ async function showDetail(nombre) {
     if (!alojamiento) return;
     
     const isHotel = alojamiento.tipo === 'hotel';
+    const tipoFiltro = document.getElementById('filter-tipo').value;
+    const esHotelConCochera = isHotel && alojamiento.estacionamiento?.tiene;
     
     document.getElementById('modalTitle').textContent = alojamiento.nombre;
     
     // Cargar todas las imágenes posibles
     const imagenPrincipal = alojamiento.imagenes?.[0] || '';
     if (imagenPrincipal) {
-        const todasLasImagenes = loadAllImages(alojamiento.nombre, imagenPrincipal);
+        const todasLasImagenes = loadAllImages(alojamiento.nombre, imagenPrincipal, esHotelConCochera);
         const imagenesExistentes = await verificarImagenes(todasLasImagenes);
         currentImages = imagenesExistentes;
     } else {
@@ -337,9 +402,20 @@ async function showDetail(nombre) {
             ${alojamiento.distanciaAproximada ? `<p><strong>Distancia:</strong> ${alojamiento.distanciaAproximada}</p>` : ''}
             ${!isHotel && alojamiento.capacidad ? `<p><strong>Capacidad:</strong> ${alojamiento.capacidad} vehículos</p>` : ''}
             ${alojamiento.accesible ? '<p><i class="fas fa-wheelchair"></i> <strong>Accesible para personas con silla de ruedas</strong></p>' : ''}
-            ${alojamiento.estacionamiento?.tiene ? `<p><i class="fas fa-parking"></i> <strong>Estacionamiento ${alojamiento.estacionamiento.tipo}</strong></p>` : ''}
         </div>
     `;
+    
+    // Info de estacionamiento para hoteles
+    if (isHotel && alojamiento.estacionamiento?.tiene) {
+        bodyHTML += `
+            <div class="info-section" style="background: #dbeafe; border-left: 4px solid var(--primary);">
+                <h3><i class="fas fa-parking"></i> Estacionamiento del Hotel</h3>
+                <p><strong>Tipo:</strong> ${alojamiento.estacionamiento.tipo}</p>
+                <p><strong>✅ INCLUIDO PARA HUÉSPEDES</strong> - No tiene costo adicional al hospedarse</p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">El estacionamiento está disponible sin cargo extra para quienes se hospedan en el hotel.</p>
+            </div>
+        `;
+    }
     
     // Precios
     if (isHotel) {
@@ -368,6 +444,9 @@ async function showDetail(nombre) {
                         <span><strong>Matrimonial:</strong> S/ ${precios.matrimonial}</span>
                     </div>
                 </div>
+                ${alojamiento.estacionamiento?.tiene ? 
+                    '<p style="font-size: 0.9rem; margin-top: 1rem; color: var(--success);"><i class="fas fa-check-circle"></i> <strong>Estacionamiento incluido en todas las tarifas</strong></p>' 
+                    : ''}
             </div>
         `;
     } else {
@@ -376,12 +455,13 @@ async function showDetail(nombre) {
                 <h3><i class="fas fa-dollar-sign"></i> Tarifas</h3>
                 <p><strong>Por día:</strong> S/ ${alojamiento.precioDia}</p>
                 ${alojamiento.precioNoche ? `<p><strong>Por noche:</strong> S/ ${alojamiento.precioNoche}</p>` : ''}
+                ${alojamiento.horario ? `<p><strong>Horario:</strong> ${alojamiento.horario}</p>` : ''}
             </div>
         `;
     }
     
     // Servicios
-    if (isHotel && alojamiento.servicios?.length) {
+    if (alojamiento.servicios?.length) {
         bodyHTML += `
             <div class="info-section">
                 <h3><i class="fas fa-concierge-bell"></i> Servicios</h3>
