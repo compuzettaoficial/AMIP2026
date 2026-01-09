@@ -94,6 +94,16 @@ function applyFilters() {
     });
     
     renderCards(filtered);
+    
+    // Scroll automático a los resultados después de filtrar (solo en móvil)
+    if (window.innerWidth <= 1024) {
+        const resultsSection = document.querySelector('.results-section');
+        if (resultsSection) {
+            setTimeout(() => {
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
 }
 
 function resetFilters() {
@@ -187,13 +197,12 @@ function createCard(alojamiento) {
                 ${mostrarComoCochera ? 'COCHERA' : 'HOTEL'}
             </div>
             
-            ${img ? `
             <div class="card-img-container">
-                <img src="${img}" alt="${alojamiento.nombre}" class="card-img" loading="lazy" onerror="this.parentElement.style.display='none'">
-                <button class="card-share" onclick="shareAlojamiento(event, '${nombreEscapado}')" aria-label="Compartir">
+                ${img ? `<img src="${img}" alt="${alojamiento.nombre}" class="card-img" loading="lazy" onerror="this.style.display='none'">` : ''}
+                ${img ? `<button class="card-share" onclick="shareAlojamiento(event, '${nombreEscapado}')" aria-label="Compartir">
                     <i class="fas fa-share-alt"></i>
-                </button>
-            </div>` : ''}
+                </button>` : ''}
+            </div>
             
             <div class="card-content">
                 <h3 class="card-title">${alojamiento.nombre}</h3>
@@ -268,7 +277,6 @@ function shareAlojamiento(event, nombre) {
         });
     }
 }
-
 // ========================================
 // MODAL DETALLE
 // ========================================
