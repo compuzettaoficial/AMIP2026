@@ -324,6 +324,7 @@ main {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     height: 500px;
+    margin-bottom: 1.5rem;
 }
 
 .venue-image {
@@ -349,6 +350,30 @@ main {
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
+/* Features debajo de la imagen */
+.venue-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.feature-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Card derecho simplificado */
 .venue-info-card {
     background: white;
     padding: 0;
@@ -358,12 +383,15 @@ main {
     position: sticky;
     top: 100px;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .venue-info-header {
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     padding: 2rem;
+    flex-shrink: 0;
 }
 
 .venue-info-header h3 {
@@ -383,7 +411,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--accent);
     color: white;
     padding: 0.875rem 1.5rem;
     border-radius: 12px;
@@ -391,57 +419,54 @@ main {
     font-weight: 600;
     margin-top: 1rem;
     transition: all 0.3s;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 .btn-map:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateX(4px);
-}
-
-.venue-features-sidebar {
-    background: #f9fafb;
-    padding: 1.5rem;
-}
-
-.venue-features-sidebar h4 {
-    color: var(--dark);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.feature-item-sidebar {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    color: var(--dark);
-    transition: all 0.3s;
-}
-
-.feature-item-sidebar:hover {
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.feature-item-sidebar i {
-    color: var(--primary);
-    font-size: 1.2rem;
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
 }
 
 .venue-map {
     padding: 1.5rem;
     background: white;
+    flex-grow: 1;
 }
 
 .venue-map iframe {
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* Ocultar elementos no usados en esta versión */
+.venue-features-sidebar {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .venue-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .venue-info-card {
+        position: static;
+    }
+    
+    .venue-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .venue-image-container {
+        height: 300px;
+    }
+    
+    .venue-features {
+        grid-template-columns: 1fr;
+    }
 }
 /* ========================================
    PROGRAMA SECTION
