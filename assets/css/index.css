@@ -897,8 +897,8 @@ main {
 ======================================== */
 .cta-section {
     background: 
-linear-gradient(135deg, rgba(245, 158, 11, 0.55), rgba(217, 119, 6, 0.50)), 
-url(../images/alojamientos/alojamiento2.jpg) center / cover
+        linear-gradient(135deg, rgba(245, 158, 11, 0.55), rgba(217, 119, 6, 0.50)),
+        url(../images/alojamientos/alojamiento2.jpg) center/cover;
     color: white;
     padding: 5rem 0;
     position: relative;
@@ -916,9 +916,6 @@ url(../images/alojamientos/alojamiento2.jpg) center / cover
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(245, 158, 11, 0.5);
 }
-
-
-
 
 @keyframes rotate {
     from { transform: rotate(0deg); }
