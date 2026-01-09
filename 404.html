@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - Hospitalidad en Acción</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <style>
+        .error-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+        
+        .error-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 700px;
+            text-align: center;
+        }
+        
+        .error-number {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .error-card h1 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-action {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary-action:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-secondary-action {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-secondary-action:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        .suggestions {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+        
+        .suggestions h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            text-align: left;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .suggestion-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        .suggestion-item a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .suggestion-item a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .error-number {
+                font-size: 5rem;
+            }
+            
+            .error-card h1 {
+                font-size: 1.5rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="Ir a inicio">
+                    <img src="assets/images/logos/logo-circulo-azul.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div>
+                        <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                        <div class="brand-tagline">Sistema de apoyo logístico para eventos</div>
+                    </div>
+                </a>
+                
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="nav" aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#evento">Evento</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="error-container">
+        <div class="error-card">
+            <div class="error-icon">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            
+            <div class="error-number">404</div>
+            
+            <h1>Página no encontrada</h1>
+            
+            <p>Lo sentimos, la página que buscas no existe o ha sido movida. Puede que hayas escrito mal la dirección o que el enlace esté desactualizado.</p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="btn-action btn-primary-action">
+                    <i class="fas fa-home"></i> Ir al Inicio
+                </a>
+                <a href="alojamientos.html" class="btn-action btn-secondary-action">
+                    <i class="fas fa-hotel"></i> Ver Alojamientos
+                </a>
+            </div>
+            
+            <div class="suggestions">
+                <h3>¿Buscabas alguna de estas páginas?</h3>
+                <div class="suggestions-grid">
+                    <div class="suggestion-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="index.html#evento">Información del Evento</a>
+                    </div>
+                    <div class="suggestion-item">
+                        <i class="fas fa-clock"></i>
+                        <a href="index.html#programa">Programa AMIP 2026</a>
+                    </div>
+                    <div class="suggestion-item">
+                        <i class="fas fa-bed"></i>
+                        <a href="alojamientos.html">Hoteles Disponibles</a>
+                    </div>
+                    <div class="suggestion-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="contacto.html">Contacto y Ayuda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-minimal">
+                <div class="footer-brand">
+                    <strong>HOSPITALIDAD EN <span>ACCIÓN</span></strong>
+                </div>
+                <div class="footer-url">
+                    hospitalidadenaccion.org
+                </div>
+                <nav class="footer-nav" aria-label="Navegación footer">
+                    <a href="index.html">Inicio</a>
+                    <span class="separator">•</span>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <span class="separator">•</span>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-copyright">
+                    © 2025 · Desarrollado por Compuzetta
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="assets/js/shared.js"></script>
+</body>
+</html>
