@@ -309,7 +309,7 @@ main {
 
 .venue-showcase {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     align-items: start;
 }
@@ -349,40 +349,24 @@ main {
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
-.venue-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: #f9fafb;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    color: var(--dark);
-}
-
-.feature-item i {
-    color: var(--primary);
-    font-size: 1.2rem;
-}
-
 .venue-info-card {
+    background: white;
+    padding: 0;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.venue-info-header {
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     padding: 2rem;
-    border-radius: 24px;
-    height: fit-content;
-    position: sticky;
-    top: 100px;
 }
 
-.venue-info-card h3 {
+.venue-info-header h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     display: flex;
@@ -390,7 +374,7 @@ main {
     gap: 0.5rem;
 }
 
-.venue-info-card p {
+.venue-info-header p {
     margin: 0.75rem 0;
     line-height: 1.6;
 }
@@ -415,6 +399,50 @@ main {
     transform: translateX(4px);
 }
 
+.venue-features-sidebar {
+    background: #f9fafb;
+    padding: 1.5rem;
+}
+
+.venue-features-sidebar h4 {
+    color: var(--dark);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature-item-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--dark);
+    transition: all 0.3s;
+}
+
+.feature-item-sidebar:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-item-sidebar i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.venue-map {
+    padding: 1.5rem;
+    background: white;
+}
+
+.venue-map iframe {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
 /* ========================================
    PROGRAMA SECTION
 ======================================== */
@@ -946,31 +974,6 @@ main {
 }
 
 /* ========================================
-   BOTÓN VOLVER ARRIBA
-======================================== */
-#backToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 90;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#backToTop:hover {
-    background: #1e40af;
-    transform: translateY(-4px);
-}
-
-/* ========================================
    RESPONSIVE
 ======================================== */
 @media (max-width: 1200px) {
@@ -1067,10 +1070,6 @@ main {
         gap: 1rem;
     }
     
-    .venue-features {
-        grid-template-columns: 1fr;
-    }
-    
     .programa-grid {
         grid-template-columns: 1fr;
     }
@@ -1085,13 +1084,5 @@ main {
     
     .social-links-grid {
         grid-template-columns: repeat(5, 1fr);
-    }
-    
-    #backToTop {
-        bottom: 80px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        z-index: 89;
     }
 }
