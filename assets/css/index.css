@@ -1188,7 +1188,7 @@ main {
 
 .hoteles-promo-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1236,7 +1236,7 @@ main {
 .hotel-promo-image {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 160px;
     overflow: hidden;
     background: #f3f4f6;
 }
@@ -1253,11 +1253,11 @@ main {
 }
 
 .hotel-promo-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .hotel-promo-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--dark);
     margin-bottom: 0.75rem;
@@ -1316,7 +1316,7 @@ main {
 }
 
 .hotel-promo-price-new {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
 }
@@ -1442,12 +1442,17 @@ main {
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .hoteles-promo-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
+    .hoteles-promo-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        gap: 1.5rem;
+    }
+    
     .hoteles-promo-section {
         padding: 3rem 0;
     }
