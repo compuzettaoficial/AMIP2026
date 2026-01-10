@@ -10,10 +10,10 @@ main {
    HERO SECTION - REDISEÑADO
 ======================================== */
 .hero {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.88)), 
+    background: linear-gradient(135deg, rgb(17 33 79 / 67%), rgb(0 0 0 / 78%)), 
    /*      url('/assets/images/event/evento14.jpg') center/cover fixed;    */
         url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1920') center/cover fixed;
-
+   
     color: white;
     padding: 6rem 0 4rem;
     text-align: center;
