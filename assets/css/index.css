@@ -11,7 +11,9 @@ main {
 ======================================== */
 .hero {
     background: linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.88)), 
-        url('/assets/images/event/evento14.jpg') center/cover fixed;
+   /*      url('/assets/images/event/evento14.jpg') center/cover fixed;    */
+        url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1920') center/cover fixed;
+
     color: white;
     padding: 6rem 0 4rem;
     text-align: center;
