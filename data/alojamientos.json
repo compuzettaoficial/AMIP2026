@@ -3,7 +3,7 @@
     "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-hospedaje-feliz.jpg"
+      "assets/images/alojamientos/hotel-hospedaje-feliz.jpg"
     ],
     "direccion": "no detallada",
     "distanciaAproximada": "10 min aprox",
@@ -40,7 +40,7 @@
     ],
     "metadata": {
       "creadoPor": "YO",
-      "fechaCreacion": "2026-01-10T21:18:37.422Z",
+      "fechaCreacion": "2026-01-10T21:33:08.985Z",
       "notas": "FELIZ"
     }
   },
@@ -48,7 +48,7 @@
     "tipo": "hotel",
     "nombre": "Costa del Inka",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-costa-del-inka.jpg"
+      "assets/images/alojamientos/hotel-costa-del-inka.jpg"
     ],
     "direccion": "Av. Anchoveta Mz. W2 Lt. 24-25, Urbanización Miguel Grau",
     "distanciaAproximada": "1-2 km del instituto, aprox. 15 min caminando",
@@ -83,7 +83,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:38.399Z",
+      "fechaCreacion": "2026-01-10T21:33:09.754Z",
       "notas": "Hotel moderno con estacionamiento privado"
     }
   },
@@ -91,7 +91,7 @@
     "tipo": "hotel",
     "nombre": "Hotel Sengor",
     "imagenes": [
-      "assets/images/alojamientos/hotel-hotel-sengor.jpg"
+      "assets/images/alojamientos/hotel-sengor.jpg"
     ],
     "direccion": "Urbanización Santo Tomás, Calle Los Claveles Mz. A Lt. 18",
     "distanciaAproximada": "1-2 km del instituto",
@@ -129,7 +129,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:39.357Z",
+      "fechaCreacion": "2026-01-10T21:33:10.480Z",
       "notas": "Opción económica, 1 estrella, buena calificación 8.8-9.1"
     }
   },
@@ -137,7 +137,7 @@
     "tipo": "hotel",
     "nombre": "Hotel Los Cocos",
     "imagenes": [
-      "assets/images/alojamientos/hotel-hotel-los-cocos.jpg"
+      "assets/images/alojamientos/hotel-los-cocos.jpg"
     ],
     "direccion": "Av. Pacífico E-1, Urb. Buenos Aires",
     "distanciaAproximada": "500m-1km del instituto, muy cercano",
@@ -182,7 +182,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:40.351Z",
+      "fechaCreacion": "2026-01-10T21:33:11.206Z",
       "notas": "3 estrellas, muy cerca de Plaza Mayor, accesible"
     }
   },
@@ -190,7 +190,7 @@
     "tipo": "hotel",
     "nombre": "Hotel Buenos Aires",
     "imagenes": [
-      "assets/images/alojamientos/hotel-hotel-buenos-aires.jpg"
+      "assets/images/alojamientos/hotel-buenos-aires.jpg"
     ],
     "direccion": "Jirón Huambacho 296, Urbanización Buenos Aires",
     "distanciaAproximada": "1-2 km del instituto, 12 min del centro",
@@ -227,7 +227,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:41.332Z",
+      "fechaCreacion": "2026-01-10T21:33:11.926Z",
       "notas": "Zona residencial, cerca de Panamericana Norte"
     }
   },
@@ -235,7 +235,7 @@
     "tipo": "hotel",
     "nombre": "Hotel Maresta Lodge",
     "imagenes": [
-      "assets/images/alojamientos/hotel-hotel-maresta-lodge.jpg"
+      "assets/images/alojamientos/hotel-maresta-lodge.jpg"
     ],
     "direccion": "Jirón Samanco 320, Urbanización Buenos Aires 1ra Etapa",
     "distanciaAproximada": "1-2 km del instituto",
@@ -272,7 +272,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:42.334Z",
+      "fechaCreacion": "2026-01-10T21:33:12.699Z",
       "notas": "4 estrellas, hotel de mayor categoría asociado a cadena Casa Andina"
     }
   },
@@ -280,7 +280,7 @@
     "tipo": "hotel",
     "nombre": "Paraíso del Norte",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-paraiso-del-norte.jpg"
+      "assets/images/alojamientos/hotel-paraiso-del-norte.jpg"
     ],
     "direccion": "Av. José Pardo 450, Urb. Bellamar, Nuevo Chimbote",
     "distanciaAproximada": "800m del instituto, 10 min caminando",
@@ -326,7 +326,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:43.335Z",
+      "fechaCreacion": "2026-01-10T21:33:13.425Z",
       "notas": "PROMOCIÓN ESPECIAL AMIP 2026: 30% descuento. Hotel 3 estrellas cercano al evento, ideal para familias"
     }
   },
@@ -379,7 +379,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:44.389Z",
+      "fechaCreacion": "2026-01-10T21:33:14.163Z",
       "notas": "OFERTA AMIP: 25% descuento reservando con código. Ambiente familiar cristiano"
     }
   },
@@ -413,7 +413,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:45.115Z",
+      "fechaCreacion": "2026-01-10T21:33:14.694Z",
       "notas": "PROMOCIÓN AMIP: Paquete especial 4 días S/40 (ahorro de S/32). Muy cerca del evento"
     }
   },
@@ -421,7 +421,7 @@
     "tipo": "cochera",
     "nombre": "Parking Institucional San Pedro",
     "imagenes": [
-      "assets/images/alojamientos/parking-parking-institucional-san-pedro.jpg"
+      "assets/images/alojamientos/parking-institucional-san-pedro.jpg"
     ],
     "direccion": "Av. Pardo 1250, frente a Colegio San Pedro, Nuevo Chimbote",
     "distanciaAproximada": "400m del instituto, 5 min caminando",
@@ -448,7 +448,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:45.785Z",
+      "fechaCreacion": "2026-01-10T21:33:15.232Z",
       "notas": "OFERTA AMIP 2026: 25% descuento + bono grupal. Ubicación privilegiada a pasos del instituto"
     }
   },
@@ -478,7 +478,7 @@
     ],
     "metadata": {
       "creadoPor": "sistema",
-      "fechaCreacion": "2026-01-10T21:18:46.471Z",
+      "fechaCreacion": "2026-01-10T21:33:15.770Z",
       "notas": "istema de seguridad completo, ubicación céntrica"
     }
   }
