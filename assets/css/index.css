@@ -63,8 +63,8 @@ main {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(245, 158, 11, 0.2);
-    border: 2px solid var(--accent);
+    background: rgba(245 11 11 / 98%);
+ /*   border: 2px solid var(--accent);  */
     color: var(--accent);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
