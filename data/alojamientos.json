@@ -1,0 +1,125 @@
+[
+  {
+    "tipo": "hotel",
+    "nombre": "HOTEL DE PRUEBA",
+    "imagenes": [
+      "imagenes/placeholder.jpg"
+    ],
+    "direccion": "HOTEL DE PRUEBA DESCRIPCION",
+    "distanciaAproximada": "5 MINUTOS A PIE",
+    "contacto": {
+      "telefono": "45634563456",
+      "whatsapp": "45643564356",
+      "email": "ASASA@MAIL.COM",
+      "facebook": "FACE PRUEBA",
+      "web": "PAGINA PRUEBA"
+    },
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "precios": {
+      "simple": 80,
+      "doble": 120,
+      "matrimonial": 150
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "WIFI"
+    ],
+    "metadata": {
+      "creadoPor": "NOTAS ADICIONALES",
+      "fechaCreacion": "2026-01-10T06:37:12.873Z",
+      "notas": ""
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "HOTEL 2",
+    "imagenes": [
+      "imagenes/placeholder.jpg"
+    ],
+    "direccion": "HOTEL 2 DIRECCION",
+    "distanciaAproximada": "10MIN",
+    "contacto": {
+      "telefono": "5645634",
+      "whatsapp": "4356435643",
+      "email": "345@MAIL.COM",
+      "facebook": "FACE 2",
+      "web": "PAGINA2"
+    },
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "precios": {
+      "simple": 80,
+      "doble": 130,
+      "matrimonial": 200
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "DESAYUNO"
+    ],
+    "metadata": {
+      "creadoPor": "SDFSDF",
+      "fechaCreacion": "2026-01-10T06:37:12.875Z",
+      "notas": ""
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "HOTEL3",
+    "imagenes": [
+      "imagenes/placeholder.jpg"
+    ],
+    "direccion": "DIRECCION HOTEL3",
+    "distanciaAproximada": "40MIN",
+    "contacto": {
+      "telefono": "34534532453",
+      "whatsapp": "45643456",
+      "email": "ASDAS@GMAIL.COM",
+      "facebook": "ASDFASDF",
+      "web": "ASDFSADF"
+    },
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "precios": {
+      "simple": 90,
+      "doble": 140,
+      "matrimonial": 200
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "TV"
+    ],
+    "metadata": {
+      "creadoPor": "desconocido",
+      "fechaCreacion": "2026-01-10T06:37:12.875Z",
+      "notas": ""
+    }
+  }
+]
