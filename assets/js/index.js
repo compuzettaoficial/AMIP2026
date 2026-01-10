@@ -137,7 +137,7 @@ function crearCardHotelPromo(hotel) {
                     </a>` : ''}
                     
                     <a href="alojamientos.html" class="hotel-promo-btn ver-mas">
-                        <i class="fas fa-info-circle"></i> Ver Detalles Completos
+                        <i class="fas fa-info-circle"></i> Ver Más Detalles
                     </a>
                 </div>
             </div>
