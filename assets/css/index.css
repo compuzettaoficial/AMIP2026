@@ -65,7 +65,7 @@ main {
     display: inline-block;
     background: rgba(245 11 11 / 98%);
  /*   border: 2px solid var(--accent);  */
-    color: var(--accent);
+    color: var(--bg-light);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     font-weight: 700;
