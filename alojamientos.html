@@ -67,6 +67,7 @@
                     <i class="fas fa-filter"></i> Filtros
                 </h2>
                 
+                <!-- TIPO DE ALOJAMIENTO -->
                 <div class="filter-group">
                     <label>Tipo de alojamiento</label>
                     <select id="filter-tipo" onchange="applyFilters()">
@@ -76,13 +77,23 @@
                     </select>
                 </div>
                 
+                <!-- PROMOCIÓN - AHORA EN LA PARTE SUPERIOR -->
+                <div class="checkbox-group checkbox-destacado">
+                    <input type="checkbox" id="filter-promo" onchange="applyFilters()">
+                    <label for="filter-promo">
+                        <i class="fas fa-tags"></i> Solo con promoción
+                    </label>
+                </div>
+                
                 <div class="filter-divider"></div>
                 
+                <!-- BÚSQUEDA -->
                 <div class="filter-group">
-                    <label>Búsqueda por nombre</label>
+                    <label>Buscar por nombre</label>
                     <input type="text" id="filter-search" placeholder="Buscar..." oninput="applyFilters()">
                 </div>
                 
+                <!-- PRECIO -->
                 <div class="filter-group">
                     <label>Precio máximo</label>
                     <select id="filter-precio" onchange="applyFilters()">
@@ -94,6 +105,7 @@
                     </select>
                 </div>
                 
+                <!-- ORDENAR -->
                 <div class="filter-group">
                     <label>Ordenar por</label>
                     <select id="sort-options" onchange="applyFilters()">
@@ -106,21 +118,20 @@
                 
                 <div class="filter-divider"></div>
                 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="filter-promo" onchange="applyFilters()">
-                    <label for="filter-promo">Solo con promoción</label>
+                <!-- CARACTERÍSTICAS -->
+                <div class="filter-group-compact">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="filter-estacionamiento" onchange="applyFilters()">
+                        <label for="filter-estacionamiento">Con estacionamiento</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="filter-accesible" onchange="applyFilters()">
+                        <label for="filter-accesible">Accesible (silla de ruedas)</label>
+                    </div>
                 </div>
                 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="filter-estacionamiento" onchange="applyFilters()">
-                    <label for="filter-estacionamiento">Con estacionamiento</label>
-                </div>
-                
-                <div class="checkbox-group">
-                    <input type="checkbox" id="filter-accesible" onchange="applyFilters()">
-                    <label for="filter-accesible">Accesible (silla de ruedas)</label>
-                </div>
-                
+                <!-- BOTÓN RESETEAR -->
                 <button class="reset-filters" onclick="resetFilters()">
                     <i class="fas fa-redo"></i> Resetear Filtros
                 </button>
