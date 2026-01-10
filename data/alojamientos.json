@@ -1,77 +1,455 @@
 [
   {
-    "tipo": "cochera",
-    "nombre": "SADFSDF",
+    "tipo": "hotel",
+    "nombre": "Hospedaje Feliz",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-sadfsdf.jpg"
+      "assets/images/alojamientos/alojamiento-hospedaje-feliz.jpg"
     ],
-    "direccion": "",
-    "distanciaAproximada": "",
+    "direccion": "no detallada",
+    "distanciaAproximada": "10 min aprox",
     "accesible": true,
-    "capacidad": 0,
-    "precioDia": 0,
-    "precioNoche": null,
-    "telefono": "",
-    "whatsapp": "",
-    "email": "",
-    "facebook": "",
-    "web": "",
-    "horario": "24 horas",
-    "servicios": [],
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "2222222222",
+      "whatsapp": "+51 3413242424",
+      "email": "hospedaje@gmail.com",
+      "facebook": "facebookfeliz",
+      "web": "https://hospedajefeliz.com"
+    },
+    "precios": {
+      "simple": 80,
+      "doble": 120,
+      "matrimonial": 160
+    },
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "AMIP",
+      "preciosEvento": {
+        "simple": 70,
+        "doble": 110,
+        "matrimonial": 150
+      }
+    },
+    "servicios": [
+      "TV"
+    ],
     "metadata": {
-      "creadoPor": "Desconocido",
-      "fechaCreacion": "2026-01-10T21:02:08.848Z",
-      "notas": ""
+      "creadoPor": "YO",
+      "fechaCreacion": "2026-01-10T21:18:37.422Z",
+      "notas": "FELIZ"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Costa del Inka",
+    "imagenes": [
+      "assets/images/alojamientos/alojamiento-costa-del-inka.jpg"
+    ],
+    "direccion": "Av. Anchoveta Mz. W2 Lt. 24-25, Urbanización Miguel Grau",
+    "distanciaAproximada": "1-2 km del instituto, aprox. 15 min caminando",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043-319657",
+      "whatsapp": "+51987893845",
+      "email": "costadelinka@gmail.com",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 100,
+      "doble": 120,
+      "matrimonial": 140
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "36 habitaciones",
+      "Desayuno incluido",
+      "WiFi gratis"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:38.399Z",
+      "notas": "Hotel moderno con estacionamiento privado"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hotel Sengor",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hotel-sengor.jpg"
+    ],
+    "direccion": "Urbanización Santo Tomás, Calle Los Claveles Mz. A Lt. 18",
+    "distanciaAproximada": "1-2 km del instituto",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "Consultar en reserva",
+      "whatsapp": "+51000000000",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 80,
+      "doble": 90,
+      "matrimonial": 100
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "28 habitaciones",
+      "WiFi gratis",
+      "TV pantalla plana",
+      "Baño privado",
+      "Salón de uso común",
+      "Servicio de habitaciones"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:39.357Z",
+      "notas": "Opción económica, 1 estrella, buena calificación 8.8-9.1"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hotel Los Cocos",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hotel-los-cocos.jpg"
+    ],
+    "direccion": "Av. Pacífico E-1, Urb. Buenos Aires",
+    "distanciaAproximada": "500m-1km del instituto, muy cercano",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043-312805",
+      "whatsapp": "",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 150,
+      "doble": 165,
+      "matrimonial": 180
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "29 habitaciones",
+      "WiFi gratis",
+      "Estacionamiento privado gratuito",
+      "Restaurante",
+      "Bar",
+      "Terraza",
+      "Jardín",
+      "Recepción 24 horas",
+      "Servicio de habitaciones",
+      "Aire acondicionado",
+      "TV cable con Netflix",
+      "Frigobar",
+      "Admite mascotas"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:40.351Z",
+      "notas": "3 estrellas, muy cerca de Plaza Mayor, accesible"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hotel Buenos Aires",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hotel-buenos-aires.jpg"
+    ],
+    "direccion": "Jirón Huambacho 296, Urbanización Buenos Aires",
+    "distanciaAproximada": "1-2 km del instituto, 12 min del centro",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "externo",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043-310631",
+      "whatsapp": "+51998240860",
+      "email": "hotelbuenosaires.chimbote@hotmail.com",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 100,
+      "doble": 120,
+      "matrimonial": 140
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "WiFi",
+      "Estacionamiento",
+      "Desayuno buffet disponible S/ 19 adicional",
+      "Servicio de cena bajo solicitud",
+      "Zona residencial tranquila"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:41.332Z",
+      "notas": "Zona residencial, cerca de Panamericana Norte"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hotel Maresta Lodge",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hotel-maresta-lodge.jpg"
+    ],
+    "direccion": "Jirón Samanco 320, Urbanización Buenos Aires 1ra Etapa",
+    "distanciaAproximada": "1-2 km del instituto",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043-310055",
+      "whatsapp": "",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 180,
+      "doble": 200,
+      "matrimonial": 220
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "Jardín",
+      "Restaurante",
+      "Bar",
+      "WiFi",
+      "Estacionamiento"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:42.334Z",
+      "notas": "4 estrellas, hotel de mayor categoría asociado a cadena Casa Andina"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Paraíso del Norte",
+    "imagenes": [
+      "assets/images/alojamientos/alojamiento-paraiso-del-norte.jpg"
+    ],
+    "direccion": "Av. José Pardo 450, Urb. Bellamar, Nuevo Chimbote",
+    "distanciaAproximada": "800m del instituto, 10 min caminando",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043-315789",
+      "whatsapp": "+51987654321",
+      "email": "reservas@hotelparaiso.com",
+      "facebook": "https://facebook.com/hotelparaisonorte",
+      "web": "https://hotelparaiso.com"
+    },
+    "precios": {
+      "simple": 130,
+      "doble": 150,
+      "matrimonial": 170
+    },
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "AMIP2026",
+      "preciosEvento": {
+        "simple": 95,
+        "doble": 110,
+        "matrimonial": 125
+      }
+    },
+    "servicios": [
+      "42 habitaciones renovadas",
+      "Desayuno buffet incluido",
+      "WiFi alta velocidad gratis",
+      "Aire acondicionado",
+      "TV cable HD",
+      "Minibar",
+      "Agua caliente 24h",
+      "Recepción 24 horas",
+      "Servicio de lavandería",
+      "Sala de reuniones disponible"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:43.335Z",
+      "notas": "PROMOCIÓN ESPECIAL AMIP 2026: 30% descuento. Hotel 3 estrellas cercano al evento, ideal para familias"
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Gran Hotel Nuevo Horizonte",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-gran-hotel-nuevo-horizonte.jpg"
+    ],
+    "direccion": "Jr. Tumbes 890, Urb. Belén, Nuevo Chimbote",
+    "distanciaAproximada": "1.5 km del instituto, 18 min caminando",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "interno",
+      "gratuito": false,
+      "precio": 10
+    },
+    "contacto": {
+      "telefono": "043-318900",
+      "whatsapp": "+51998765432",
+      "email": "info@hotelhorizonte.pe",
+      "facebook": "",
+      "web": "https://hotelhorizonte.pe"
+    },
+    "precios": {
+      "simple": 110,
+      "doble": 130,
+      "matrimonial": 150
+    },
+    "promocion": {
+      "tienePromocion": true,
+      "codigo": "INTEGRIDAD2026",
+      "preciosEvento": {
+        "simple": 80,
+        "doble": 95,
+        "matrimonial": 110
+      }
+    },
+    "servicios": [
+      "35 habitaciones",
+      "Desayuno continental incluido",
+      "WiFi gratis en todas las áreas",
+      "Estacionamiento vigilado 24h",
+      "TV por cable",
+      "Baño privado con ducha",
+      "Ventilador o aire acondicionado",
+      "Área de comedor compartida",
+      "Servicio de taxi bajo pedido"
+    ],
+    "metadata": {
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:44.389Z",
+      "notas": "OFERTA AMIP: 25% descuento reservando con código. Ambiente familiar cristiano"
     }
   },
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Seguro Bellamar",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-estacionamiento-seguro-bellamar.jpg"
+      "assets/images/alojamientos/parking-estacionamiento-seguro-bellamar.jpg"
     ],
-    "direccion": "",
-    "distanciaAproximada": "",
+    "direccion": "Mz. D Lt. 15, Urb. Bellamar, Nuevo Chimbote",
+    "distanciaAproximada": "600m del instituto, muy cercano",
     "accesible": true,
-    "capacidad": 0,
-    "precioDia": 0,
-    "precioNoche": null,
-    "telefono": "",
-    "whatsapp": "",
+    "capacidad": 45,
+    "precioDia": 18,
+    "precioNoche": 25,
+    "telefono": "043-317555",
+    "whatsapp": "+51987123456",
     "email": "",
     "facebook": "",
     "web": "",
-    "horario": "24 horas",
-    "servicios": [],
+    "horario": "24 horas - Atención permanente",
+    "servicios": [
+      "Vigilancia 24/7 con personal capacitado",
+      "Cámaras de seguridad HD",
+      "Techado completo",
+      "Seguro contra daños",
+      "Limpieza básica sin costo",
+      "Acceso controlado con tarjeta",
+      "Iluminación LED toda la noche",
+      "Área de espera techada"
+    ],
     "metadata": {
-      "creadoPor": "Desconocido",
-      "fechaCreacion": "2026-01-10T21:02:22.386Z",
-      "notas": ""
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:45.115Z",
+      "notas": "PROMOCIÓN AMIP: Paquete especial 4 días S/40 (ahorro de S/32). Muy cerca del evento"
     }
   },
   {
     "tipo": "cochera",
     "nombre": "Parking Institucional San Pedro",
     "imagenes": [
-      "assets/images/alojamientos/alojamiento-parking-institucional-san-pedro.jpg"
+      "assets/images/alojamientos/parking-parking-institucional-san-pedro.jpg"
     ],
-    "direccion": "",
-    "distanciaAproximada": "",
+    "direccion": "Av. Pardo 1250, frente a Colegio San Pedro, Nuevo Chimbote",
+    "distanciaAproximada": "400m del instituto, 5 min caminando",
     "accesible": true,
-    "capacidad": 0,
-    "precioDia": 0,
-    "precioNoche": null,
-    "telefono": "",
-    "whatsapp": "",
+    "capacidad": 60,
+    "precioDia": 20,
+    "precioNoche": 28,
+    "telefono": "043-319800",
+    "whatsapp": "+51999888777",
     "email": "",
     "facebook": "",
     "web": "",
-    "horario": "24 horas",
-    "servicios": [],
+    "horario": "Lunes a Domingo 6:00 AM - 11:00 PM, Vigilancia nocturna",
+    "servicios": [
+      "Amplio espacio techado y al aire libre",
+      "Vigilancia permanente",
+      "Sistema de cámaras 360°",
+      "Personal de seguridad certificado",
+      "Póliza de seguro incluida",
+      "Lavado básico S/5 adicional",
+      "Zona de buses y camionetas",
+      "Cercanía inmediata al evento",
+      "Descuento grupal: 5+ vehículos 10% extra"
+    ],
     "metadata": {
-      "creadoPor": "Desconocido",
-      "fechaCreacion": "2026-01-10T21:02:23.266Z",
-      "notas": ""
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:45.785Z",
+      "notas": "OFERTA AMIP 2026: 25% descuento + bono grupal. Ubicación privilegiada a pasos del instituto"
     }
   },
   {
@@ -80,23 +458,28 @@
     "imagenes": [
       "assets/images/alojamientos/parking-cochera-nuevo-chimbote.jpg"
     ],
-    "direccion": "",
-    "distanciaAproximada": "",
+    "direccion": "VFFF+XWC, Nuevo Chimbote 02711",
+    "distanciaAproximada": "Ubicación céntrica en Nuevo Chimbote",
     "accesible": true,
-    "capacidad": 0,
-    "precioDia": 0,
-    "precioNoche": null,
-    "telefono": "",
+    "capacidad": 50,
+    "precioDia": 15,
+    "precioNoche": 20,
+    "telefono": "Consultar directamente",
     "whatsapp": "",
     "email": "",
     "facebook": "",
     "web": "",
-    "horario": "24 horas",
-    "servicios": [],
+    "horario": "Atención 6:00 AM - 10:00 PM, vigilancia 24/7",
+    "servicios": [
+      "Vigilancia 24 horas",
+      "Cámaras de seguridad",
+      "Personal capacitado",
+      "Acceso controlado"
+    ],
     "metadata": {
-      "creadoPor": "Desconocido",
-      "fechaCreacion": "2026-01-10T21:02:24.138Z",
-      "notas": ""
+      "creadoPor": "sistema",
+      "fechaCreacion": "2026-01-10T21:18:46.471Z",
+      "notas": "istema de seguridad completo, ubicación céntrica"
     }
   }
 ]
