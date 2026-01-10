@@ -1154,16 +1154,16 @@ main {
 
 /* Botón específico para alojamiento en hero */
 .btn-hero.alojamiento {
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    background: linear-gradient(135deg, var(--accent), #fb923c);
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 20px rgba(8, 145, 178, 0.3);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
 
 .btn-hero.alojamiento:hover {
-    background: linear-gradient(135deg, #0e7490, #0891b2);
+    background: linear-gradient(135deg, #fb923c, #f97316);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(8, 145, 178, 0.4);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
 }
 
 /* Botón CTA de alojamiento */
