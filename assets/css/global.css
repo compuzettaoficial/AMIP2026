@@ -1,25 +1,25 @@
 /* ========================================
-   VARIABLES Y RESET
+   VARIABLES Y RESET - OPTIMIZADO 1280x720
 ======================================== */
 :root {
     /* Colores Profesionales Rediseñados */
-    --primary: #1e3a8a;        /* Azul marino profundo */
-    --secondary: #0891b2;      /* Cyan profesional */
-    --accent: #f59e0b;         /* Naranja cálido */
-    --success: #10B981;        /* Verde éxito */
-    --dark: #1f2937;           /* Gris oscuro */
-    --gray: #6b7280;           /* Gris medio */
+    --primary: #1e3a8a;
+    --secondary: #0891b2;
+    --accent: #f59e0b;
+    --success: #10B981;
+    --dark: #1f2937;
+    --gray: #6b7280;
     --white: #ffffff;
-    --bg-light: #f9fafb;       /* Fondo claro neutro */
-    --bg-medium: #e5e7eb;      /* Fondo medio */
+    --bg-light: #f9fafb;
+    --bg-medium: #e5e7eb;
     
-    /* Spacing System */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
+    /* Spacing System - REDUCIDO para 1280px */
+    --space-xs: 0.4rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
 }
 
 * {
@@ -30,6 +30,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 14px; /* 🆕 Base más pequeña (era 16px) */
     line-height: 1.6;
     color: var(--dark);
     background: var(--bg-light);
@@ -37,7 +38,6 @@ body {
     padding: 0;
 }
 
-/* Page Wrapper para layout sticky footer */
 .page-wrapper {
     min-height: 100vh;
     display: flex;
@@ -58,13 +58,13 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1150px; /* 🆕 Ajustado para 1280px (era 1200px) */
     margin: 0 auto;
     padding: 0 var(--space-md);
 }
 
 /* ========================================
-   HEADER
+   HEADER - COMPACTO
 ======================================== */
 header {
     background: white;
@@ -72,7 +72,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: var(--space-sm) 0;
+    padding: 0.65rem 0; /* 🆕 Más compacto */
 }
 
 .header-content {
@@ -84,7 +84,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
@@ -94,8 +94,8 @@ header {
 }
 
 .logo-img {
-    width: 55px;
-    height: 55px;
+    width: 48px; /* 🆕 Más pequeño (era 55px) */
+    height: 48px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
     transition: transform 0.3s ease;
@@ -107,7 +107,7 @@ header {
 
 .brand-name {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.1rem; /* 🆕 Reducido (era 1.25rem) */
     color: var(--dark);
     letter-spacing: 0.5px;
     line-height: 1.2;
@@ -118,7 +118,7 @@ header {
 }
 
 .brand-tagline {
-    font-size: 0.85rem;
+    font-size: 0.75rem; /* 🆕 Más pequeño (era 0.85rem) */
     opacity: 0.7;
     margin-top: -2px;
     line-height: 1.4;
@@ -134,11 +134,11 @@ nav a {
     color: var(--dark);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem; /* 🆕 Reducido (era 0.95rem) */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     padding: var(--space-xs) 0;
-    min-height: 44px;
+    min-height: 40px; /* 🆕 Reducido (era 44px) */
     display: flex;
     align-items: center;
 }
@@ -176,7 +176,7 @@ nav a:hover::after {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER - COMPACTO
 ======================================== */
 footer {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -194,7 +194,7 @@ footer {
 }
 
 .footer-brand {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* 🆕 Reducido (era 1.5rem) */
     line-height: 1.2;
 }
 
@@ -209,7 +209,7 @@ footer {
 
 .footer-url {
     color: #94a3b8;
-    font-size: 1.1rem;
+    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
     margin: 0;
 }
 
@@ -225,9 +225,9 @@ footer {
 .footer-nav a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     transition: color 0.3s;
-    min-height: 44px;
+    min-height: 40px;
     display: flex;
     align-items: center;
 }
@@ -238,12 +238,12 @@ footer {
 
 .footer-nav .separator {
     color: #64748b;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .footer-copyright {
     color: #64748b;
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
 }
 
 /* ========================================
@@ -251,7 +251,7 @@ footer {
 ======================================== */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem; /* 🆕 Reducido (era 2.5rem) */
     color: var(--primary);
     margin-bottom: var(--space-xs);
     font-weight: 800;
@@ -262,25 +262,25 @@ footer {
     text-align: center;
     color: var(--gray);
     margin-bottom: var(--space-xl);
-    font-size: 1.1rem;
+    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
 }
 
 .page-header {
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
-    padding: 2.5rem 0;
+    padding: 2rem 0; /* 🆕 Reducido (era 2.5rem) */
     text-align: center;
 }
 
 .page-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* 🆕 Reducido (era 2.5rem) */
     font-weight: 800;
     margin-bottom: var(--space-xs);
     line-height: 1.2;
 }
 
 .page-header p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
     opacity: 0.95;
 }
 
@@ -288,7 +288,7 @@ footer {
    BOTONES
 ======================================== */
 .btn {
-    padding: 0.7rem var(--space-sm);
+    padding: 0.6rem 0.9rem; /* 🆕 Más compacto */
     border: none;
     border-radius: 8px;
     font-weight: 600;
@@ -298,9 +298,9 @@ footer {
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     text-decoration: none;
-    min-height: 44px;
+    min-height: 40px; /* 🆕 Reducido (era 44px) */
 }
 
 .btn-primary {
@@ -330,9 +330,9 @@ footer {
 ======================================== */
 .form-container {
     background: white;
-    padding: 2.5rem;
+    padding: 2rem; /* 🆕 Reducido (era 2.5rem) */
     border-radius: 16px;
-    max-width: 650px;
+    max-width: 600px; /* 🆕 Reducido (era 650px) */
     margin: 0 auto;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
@@ -346,18 +346,19 @@ footer {
     font-weight: 600;
     margin-bottom: var(--space-xs);
     color: var(--dark);
+    font-size: 0.9rem; /* 🆕 Agregado */
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 0.875rem;
+    padding: 0.75rem; /* 🆕 Reducido (era 0.875rem) */
     border: 2px solid #e5e7eb;
     border-radius: 8px;
     font-family: inherit;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 1rem;
+    font-size: 0.9rem; /* 🆕 Reducido (era 1rem) */
 }
 
 .form-group input:focus,
@@ -370,16 +371,16 @@ footer {
 
 .btn-submit {
     width: 100%;
-    padding: var(--space-sm);
+    padding: 0.9rem; /* 🆕 Reducido */
     background: var(--primary);
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem; /* 🆕 Reducido (era 1rem) */
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 50px;
+    min-height: 45px; /* 🆕 Reducido (era 50px) */
 }
 
 .btn-submit:hover {
@@ -398,7 +399,7 @@ footer {
 }
 
 .loading i {
-    font-size: 2rem;
+    font-size: 1.8rem; /* 🆕 Reducido (era 2rem) */
     margin-bottom: var(--space-sm);
     animation: spin 1s linear infinite;
 }
@@ -414,7 +415,7 @@ footer {
 }
 
 .empty-state i {
-    font-size: 4rem;
+    font-size: 3.5rem; /* 🆕 Reducido (era 4rem) */
     color: var(--gray);
     margin-bottom: var(--space-sm);
 }
@@ -439,8 +440,8 @@ footer {
     background: var(--primary);
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 45px; /* 🆕 Reducido (era 50px) */
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -452,6 +453,7 @@ footer {
     background: #1e40af;
     transform: translateY(-4px);
 }
+
 /* ========================================
    RESPONSIVE
 ======================================== */
@@ -474,7 +476,6 @@ footer {
         transition: background 0.3s;
     }
     
-    /* Botón blanco cuando el menú está activo */
     .menu-toggle.active {
         color: white !important;
     }
@@ -525,7 +526,6 @@ footer {
         display: none;
     }
     
-    /* Logo en el espacio inferior del menú */
     nav::after {
         content: '';
         display: block;
@@ -570,18 +570,16 @@ footer {
         margin: var(--space-sm) 0;
     }
     
-    /* Botón volver arriba ajustado en móvil */
     #backToTop {
-        bottom: 85px; /* Encima del botón de filtros */
+        bottom: 85px;
         right: 20px;
         width: 48px;
         height: 48px;
         z-index: 89;
     }
     
-    /* Si está en página de alojamientos, ajustar para stack vertical */
     body:has(.mobile-filters-toggle) #backToTop {
-        bottom: 95px; /* Más arriba porque hay botón de filtros abajo */
+        bottom: 95px;
     }
 }
 
