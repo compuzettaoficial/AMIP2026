@@ -20,6 +20,10 @@ async function loadData() {
         
         console.log('✅ Alojamientos cargados:', alojamientos.length);
         applyFilters();
+        
+        // 🆕 DETECTAR PARÁMETRO URL Y ABRIR MODAL
+        detectarHotelEnURL();
+        
     } catch (error) {
         console.error('❌ Error cargando datos:', error);
         document.getElementById('cardsGrid').innerHTML = `
@@ -30,6 +34,30 @@ async function loadData() {
                 <p style="font-size: 0.9rem; margin-top: 1rem;">Verifica que el archivo "data/alojamientos.json" existe y es válido.</p>
             </div>
         `;
+    }
+}
+
+// 🆕 DETECTAR HOTEL EN URL Y ABRIR MODAL
+function detectarHotelEnURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hotelParam = urlParams.get('hotel');
+    
+    if (hotelParam) {
+        console.log('🔍 Hotel detectado en URL:', hotelParam);
+        
+        // Buscar el hotel en los datos
+        const hotel = alojamientos.find(a => a.nombre === hotelParam);
+        
+        if (hotel) {
+            console.log('✅ Hotel encontrado, abriendo modal...');
+            
+            // Esperar un poco para que se rendericen las cards
+            setTimeout(() => {
+                showDetail(hotel.nombre);
+            }, 500);
+        } else {
+            console.warn('⚠️ Hotel no encontrado:', hotelParam);
+        }
     }
 }
 
@@ -165,7 +193,6 @@ function getCocheraImage(alojamiento) {
     // Retornar la ruta esperada de la imagen de cochera
     return `${baseName}-cochera.${ext}`;
 }
-
 // ========================================
 // RENDERIZAR TARJETAS
 // ========================================
@@ -333,13 +360,12 @@ function shareAlojamiento(event, nombre) {
     } else {
         // Fallback para navegadores sin Web Share API
         navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-            alert('✔ Enlace copiado al portapapeles');
+            alert('✓ Enlace copiado al portapapeles');
         }).catch(() => {
             alert('No se pudo copiar el enlace');
         });
     }
 }
-
 // ========================================
 // MODAL DETALLE
 // ========================================
