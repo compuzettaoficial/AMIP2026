@@ -11,9 +11,9 @@ main {
    HERO SECTION - COMPACTO
 ======================================== */
 .hero {
-    background: linear-gradient(135deg, rgb(17 33 79 / 67%), rgb(0 0 0 / 78%)), 
+    background: linear-gradient(135deg, rgb(79 46 17 / 33%), rgb(7 11 41 / 69%)), 
         url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1920') center/cover fixed;
-   
+
     color: white;
     padding: 4rem 0 3rem;
     text-align: center;
@@ -91,7 +91,7 @@ main {
     display: block;
     background: linear-gradient(180deg, #ffffff 0%, #e0e7ff 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+ /*   -webkit-text-fill-color: transparent; */
     background-clip: text;
 }
 
