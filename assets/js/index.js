@@ -77,6 +77,8 @@ function crearCardHotelPromo(hotel) {
     }
     
     const nombreEscapado = hotel.nombre.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    // URL encode para parámetro
+    const nombreURL = encodeURIComponent(hotel.nombre);
     
     return `
         <div class="hotel-promo-card">
@@ -136,7 +138,7 @@ function crearCardHotelPromo(hotel) {
                         <i class="fas fa-phone"></i> Llamar
                     </a>` : ''}
                     
-                    <a href="alojamientos.html" class="hotel-promo-btn ver-mas">
+                    <a href="alojamientos.html?hotel=${nombreURL}" class="hotel-promo-btn ver-mas">
                         <i class="fas fa-info-circle"></i> Ver Más Detalles
                     </a>
                 </div>
