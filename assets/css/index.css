@@ -724,41 +724,48 @@ main {
 }
 
 /* ========== FIN PARTE 2B ========== */
+
+
 /* ========================================
-   ORGANIZADOR SECTION - COMPACTO
+   PARTE 3 DE 3 - Organizador + CTA + Hoteles + Responsive
+   PEGAR DEBAJO DE LA PARTE 2B
+======================================== */
+
+/* ========================================
+   ORGANIZADOR SECTION
 ======================================== */
 .organizador-section {
     background: white;
-    padding: 4rem 0; /* 🆕 Reducido (era 5rem) */
+    padding: 4rem 0;
 }
 
 .organizador-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2.5rem; /* 🆕 Reducido (era 3rem) */
+    gap: 2.5rem;
     align-items: start;
 }
 
 .organizador-main {
     background: #f9fafb;
-    padding: 2.5rem; /* 🆕 Reducido (era 3rem) */
-    border-radius: 20px; /* 🆕 Reducido */
+    padding: 2.5rem;
+    border-radius: 20px;
 }
 
 .organizador-header {
     display: flex;
     align-items: flex-start;
-    gap: 1.6rem; /* 🆕 Reducido (era 2rem) */
-    margin-bottom: 2rem; /* 🆕 Reducido */
+    gap: 1.6rem;
+    margin-bottom: 2rem;
 }
 
 .organizador-logo-main {
-    width: 150px; /* 🆕 Reducido (era 180px) */
+    width: 150px;
     height: 150px;
     object-fit: contain;
     background: white;
-    padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
-    border-radius: 16px; /* 🆕 Reducido */
+    padding: 1.2rem;
+    border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     flex-shrink: 0;
 }
@@ -768,63 +775,63 @@ main {
 }
 
 .organizador-description {
-    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
+    font-size: 1rem;
     line-height: 1.8;
     color: var(--dark);
-    margin-bottom: 1.6rem; /* 🆕 Reducido */
+    margin-bottom: 1.6rem;
 }
 
 .organizador-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
+    gap: 1.2rem;
 }
 
 .org-stat {
     background: white;
-    padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
-    border-radius: 14px; /* 🆕 Reducido */
+    padding: 1.2rem;
+    border-radius: 14px;
     text-align: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .org-stat i {
-    font-size: 2.2rem; /* 🆕 Reducido (era 2.5rem) */
+    font-size: 2.2rem;
     color: var(--primary);
-    margin-bottom: 0.6rem; /* 🆕 Reducido */
+    margin-bottom: 0.6rem;
     display: block;
 }
 
 .org-stat strong {
     display: block;
-    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
+    font-size: 1rem;
     color: var(--primary);
     margin-bottom: 0.4rem;
     font-weight: 700;
 }
 
 .org-stat span {
-    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
+    font-size: 0.85rem;
     color: var(--gray);
     line-height: 1.4;
     display: block;
 }
 
 .organizador-links h3 {
-    font-size: 1.3rem; /* 🆕 Reducido (era 1.5rem) */
+    font-size: 1.3rem;
     color: var(--primary);
-    margin-bottom: 1.2rem; /* 🆕 Reducido */
+    margin-bottom: 1.2rem;
 }
 
 .org-link-card {
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* 🆕 Reducido */
+    gap: 0.8rem;
     background: white;
-    padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
-    border-radius: 14px; /* 🆕 Reducido */
+    padding: 1.2rem;
+    border-radius: 14px;
     text-decoration: none;
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    margin-bottom: 0.8rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border: 2px solid transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -837,15 +844,15 @@ main {
 }
 
 .org-link-card > i:first-child {
-    width: 45px; /* 🆕 Reducido (era 50px) */
+    width: 45px;
     height: 45px;
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
-    border-radius: 10px; /* 🆕 Reducido */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem; /* 🆕 Reducido (era 1.5rem) */
+    font-size: 1.3rem;
     flex-shrink: 0;
 }
 
@@ -856,49 +863,49 @@ main {
 .org-link-card strong {
     display: block;
     color: var(--dark);
-    font-size: 1rem; /* 🆕 Reducido (era 1.05rem) */
+    font-size: 1rem;
     margin-bottom: 0.2rem;
 }
 
 .org-link-card span {
     color: var(--gray);
-    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
+    font-size: 0.85rem;
 }
 
 .org-link-card > i:last-child {
     color: var(--primary);
-    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
+    font-size: 1.1rem;
 }
 
 .social-links-section {
-    margin-top: 1.6rem; /* 🆕 Reducido */
-    padding-top: 1.6rem; /* 🆕 Reducido */
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
     border-top: 2px solid #e5e7eb;
 }
 
 .social-links-section h4 {
-    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
+    font-size: 1rem;
     color: var(--dark);
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .social-links-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
+    gap: 0.6rem;
 }
 
 .social-link {
-    width: 45px; /* 🆕 Reducido (era 50px) */
+    width: 45px;
     height: 45px;
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
-    border-radius: 10px; /* 🆕 Reducido */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem; /* 🆕 Reducido (era 1.3rem) */
+    font-size: 1.2rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
 }
@@ -909,15 +916,14 @@ main {
 }
 
 /* ========================================
-   CTA SECTION - COMPACTO
+   CTA SECTION
 ======================================== */
 .cta-section {
     background: 
         linear-gradient(135deg, rgb(41 41 41 / 15%), rgb(0 0 0 / 78%)),
         url(../images/event/alojamiento4.jpg) center/cover;
-
     color: white;
-    padding: 4rem 0; /* 🆕 Reducido (era 5rem) */
+    padding: 4rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -940,52 +946,52 @@ main {
     position: relative;
     z-index: 1;
     text-align: center;
-    max-width: 650px; /* 🆕 Reducido (era 700px) */
+    max-width: 650px;
     margin: 0 auto;
 }
 
 .cta-icon {
-    width: 70px; /* 🆕 Reducido (era 80px) */
+    width: 70px;
     height: 70px;
     background: linear-gradient(135deg, var(--accent), #fb923c);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.6rem; /* 🆕 Reducido */
+    margin: 0 auto 1.6rem;
     border: 3px solid rgba(245, 158, 11, 0.3);
     box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
 }
 
 .cta-icon i {
-    font-size: 2.2rem; /* 🆕 Reducido (era 2.5rem) */
+    font-size: 2.2rem;
     color: white;
 }
 
 .cta-section h2 {
-    font-size: 2.2rem; /* 🆕 Reducido (era 2.5rem) */
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .cta-section p {
-    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
+    font-size: 1.1rem;
     opacity: 0.95;
-    margin-bottom: 2rem; /* 🆕 Reducido */
+    margin-bottom: 2rem;
     line-height: 1.6;
 }
 
 .cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem; /* 🆕 Reducido */
+    gap: 0.8rem;
     background: linear-gradient(135deg, var(--accent), #fb923c);
     color: white;
-    padding: 1.1rem 2.5rem; /* 🆕 Más compacto */
+    padding: 1.1rem 2.5rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
+    font-size: 1rem;
     box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1009,8 +1015,8 @@ main {
 .cta-features {
     display: flex;
     justify-content: center;
-    gap: 1.6rem; /* 🆕 Reducido (era 2rem) */
-    margin-top: 1.6rem; /* 🆕 Reducido */
+    gap: 1.6rem;
+    margin-top: 1.6rem;
     flex-wrap: wrap;
 }
 
@@ -1018,17 +1024,17 @@ main {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.9rem; /* 🆕 Reducido (era 0.95rem) */
+    font-size: 0.9rem;
     opacity: 0.95;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 0.4rem 0.9rem; /* 🆕 Más compacto */
+    padding: 0.4rem 0.9rem;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cta-features i {
-    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
+    font-size: 1.1rem;
     color: var(--accent);
 }
 
@@ -1037,19 +1043,19 @@ main {
 ======================================== */
 .hoteles-promo-section {
     background: white;
-    padding: 4rem 0; /* 🆕 Reducido (era 5rem) */
+    padding: 4rem 0;
 }
 
 .hoteles-promo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 🆕 3 COLUMNAS */
-    gap: 1.5rem; /* 🆕 Reducido (era 2rem) */
-    margin-bottom: 2.5rem; /* 🆕 Reducido */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .hotel-promo-card {
     background: white;
-    border-radius: 14px; /* 🆕 Reducido (era 16px) */
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1065,14 +1071,14 @@ main {
 
 .hotel-promo-badge {
     position: absolute;
-    top: 10px; /* 🆕 Reducido */
+    top: 10px;
     right: 10px;
     background: linear-gradient(135deg, #dc2626, #b91c1c);
     color: white;
-    padding: 0.4rem 0.8rem; /* 🆕 Más compacto */
+    padding: 0.4rem 0.8rem;
     border-radius: 50px;
     font-weight: 800;
-    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
+    font-size: 0.85rem;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
     animation: pulse-badge 2s ease-in-out infinite;
@@ -1086,7 +1092,7 @@ main {
 .hotel-promo-image {
     position: relative;
     width: 100%;
-    height: 140px; /* 🆕 Reducido (era 160px) */
+    height: 140px;
     overflow: hidden;
     background: #f3f4f6;
 }
@@ -1103,14 +1109,14 @@ main {
 }
 
 .hotel-promo-content {
-    padding: 1.1rem; /* 🆕 Reducido (era 1.25rem) */
+    padding: 1.1rem;
 }
 
 .hotel-promo-title {
-    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--dark);
-    margin-bottom: 0.6rem; /* 🆕 Reducido */
+    margin-bottom: 0.6rem;
     line-height: 1.3;
 }
 
@@ -1119,8 +1125,8 @@ main {
     align-items: center;
     gap: 0.4rem;
     color: var(--gray);
-    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .hotel-promo-ubicacion i {
@@ -1131,8 +1137,8 @@ main {
 .hotel-promo-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem; /* 🆕 Reducido */
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
 }
 
 .hotel-promo-feature {
@@ -1141,9 +1147,9 @@ main {
     gap: 0.2rem;
     background: #dbeafe;
     color: #1e40af;
-    padding: 0.25rem 0.5rem; /* 🆕 Más compacto */
+    padding: 0.25rem 0.5rem;
     border-radius: 5px;
-    font-size: 0.7rem; /* 🆕 Reducido (era 0.75rem) */
+    font-size: 0.7rem;
     font-weight: 600;
 }
 
@@ -1153,26 +1159,26 @@ main {
 
 .hotel-promo-pricing {
     background: #f9fafb;
-    padding: 0.9rem; /* 🆕 Reducido (era 1rem) */
+    padding: 0.9rem;
     border-radius: 8px;
-    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    margin-bottom: 0.8rem;
 }
 
 .hotel-promo-prices {
     display: flex;
     align-items: baseline;
-    gap: 0.6rem; /* 🆕 Reducido */
+    gap: 0.6rem;
     margin-bottom: 0.4rem;
 }
 
 .hotel-promo-price-new {
-    font-size: 1.3rem; /* 🆕 Reducido (era 1.5rem) */
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--primary);
 }
 
 .hotel-promo-price-old {
-    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
+    font-size: 1rem;
     color: var(--gray);
     text-decoration: line-through;
 }
@@ -1183,18 +1189,18 @@ main {
     gap: 0.25rem;
     background: linear-gradient(135deg, #10b981, #059669);
     color: white;
-    padding: 0.2rem 0.5rem; /* 🆕 Más compacto */
+    padding: 0.2rem 0.5rem;
     border-radius: 5px;
-    font-size: 0.75rem; /* 🆕 Reducido (era 0.8rem) */
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .hotel-promo-codigo {
     background: #fef3c7;
     color: #92400e;
-    padding: 0.35rem 0.7rem; /* 🆕 Más compacto */
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
-    font-size: 0.75rem; /* 🆕 Reducido (era 0.8rem) */
+    font-size: 0.75rem;
     font-weight: 700;
     margin-top: 0.4rem;
     text-align: center;
@@ -1202,7 +1208,7 @@ main {
 }
 
 .hotel-promo-info {
-    font-size: 0.75rem; /* 🆕 Reducido (era 0.8rem) */
+    font-size: 0.75rem;
     color: var(--gray);
     margin-top: 0.4rem;
 }
@@ -1210,7 +1216,7 @@ main {
 .hotel-promo-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem; /* 🆕 Reducido */
+    gap: 0.5rem;
 }
 
 .hotel-promo-btn {
@@ -1218,10 +1224,10 @@ main {
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
-    padding: 0.65rem 0.9rem; /* 🆕 Más compacto */
+    padding: 0.65rem 0.9rem;
     border-radius: 7px;
     font-weight: 700;
-    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
+    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
@@ -1264,7 +1270,7 @@ main {
 
 .promo-cta {
     text-align: center;
-    margin-top: 2.5rem; /* 🆕 Reducido */
+    margin-top: 2.5rem;
 }
 
 .btn-ver-todos {
@@ -1273,11 +1279,11 @@ main {
     gap: 0.6rem;
     background: linear-gradient(135deg, var(--accent), #fb923c);
     color: white;
-    padding: 1rem 2rem; /* 🆕 Más compacto */
+    padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.95rem; /* 🆕 Reducido (era 1rem) */
+    font-size: 0.95rem;
     box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1289,7 +1295,7 @@ main {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE COMPLETO
 ======================================== */
 @media (max-width: 1024px) {
     .stats-grid {
@@ -1337,4 +1343,17 @@ main {
         grid-template-columns: 1fr;
         text-align: center;
     }
+    
+    /* 🆕 FIX PARA ORGANIZADOR EN MÓVIL */
+    .organizador-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .organizador-logo-main {
+        margin: 0 auto;
+    }
 }
+
+/* ========== FIN PARTE 2C - ARCHIVO COMPLETO ========== */
