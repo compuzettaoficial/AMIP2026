@@ -913,8 +913,9 @@ main {
 ======================================== */
 .cta-section {
     background: 
-        linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.88)),
-        url(../images/alojamientos/alojamiento2.jpg) center/cover;
+        linear-gradient(135deg, rgb(41 41 41 / 15%), rgb(0 0 0 / 78%)),
+        url(../images/event/alojamiento4.jpg) center/cover;
+
     color: white;
     padding: 4rem 0; /* 🆕 Reducido (era 5rem) */
     position: relative;
