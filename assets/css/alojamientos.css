@@ -767,3 +767,80 @@
     padding: 0.5rem 1rem;
     font-size: 0.7rem;
 }
+/* ========================================
+   AGREGAR AL FINAL DE alojamientos.css
+   Estilos para filtros más compactos
+======================================== */
+
+/* Checkbox de promoción destacado */
+.checkbox-destacado {
+    background: #fef3c7;
+    border: 2px solid #fbbf24;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+}
+
+.checkbox-destacado label {
+    color: #92400e;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-destacado label i {
+    color: #f59e0b;
+    font-size: 1rem;
+}
+
+.checkbox-destacado:hover {
+    background: #fde68a;
+    border-color: #f59e0b;
+}
+
+/* Grupo compacto para características */
+.filter-group-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Reducir espaciado general en filtros */
+.filter-group {
+    margin-bottom: 1rem; /* era 1.25rem */
+}
+
+.filter-divider {
+    margin: 1rem 0; /* era 1.25rem */
+}
+
+/* Mejorar contraste de labels */
+.filter-group label {
+    font-size: 0.9rem; /* era 0.85rem */
+    color: var(--dark);
+    font-weight: 700;
+}
+
+/* Hacer sidebar ligeramente más angosto en desktop */
+@media (min-width: 1025px) {
+    .main-layout {
+        grid-template-columns: 260px 1fr; /* era 280px */
+    }
+    
+    .filters-sidebar {
+        padding: 1.25rem; /* era 1.5rem */
+    }
+}
+
+/* Ajustes para móvil */
+@media (max-width: 1024px) {
+    .checkbox-destacado {
+        padding: 1rem;
+    }
+    
+    .checkbox-destacado label {
+        font-size: 1rem;
+    }
+}
