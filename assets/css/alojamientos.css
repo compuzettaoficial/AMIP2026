@@ -1,5 +1,6 @@
 /* ========================================
-   ESTILOS ESPECÍFICOS DE ALOJAMIENTOS
+   ALOJAMIENTOS - OPTIMIZADO 1280x720
+   Desktop: 3 columnas | Tablets: 2 | Móvil: 1
 ======================================== */
 
 /* PAGE HEADER */
@@ -10,21 +11,21 @@
 /* MAIN LAYOUT */
 .main-layout {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: 240px 1fr; /* 🆕 Reducido (era 280px) */
+    gap: 1.5rem; /* 🆕 Reducido (era 2rem) */
+    padding: 1.5rem 0; /* 🆕 Reducido (era 2rem) */
     min-height: calc(100vh - 400px);
 }
 
-/* FILTERS SIDEBAR */
+/* FILTERS SIDEBAR - COMPACTO */
 .filters-sidebar {
     position: sticky;
-    top: 100px;
+    top: 85px; /* 🆕 Reducido (era 100px) */
     height: fit-content;
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 100px);
     background: white;
-    padding: 1.5rem;
-    border-radius: 16px;
+    padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
+    border-radius: 14px; /* 🆕 Reducido (era 16px) */
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     overflow-y: auto;
     z-index: 50;
@@ -39,33 +40,33 @@
 }
 
 .filters-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* 🆕 Reducido (era 1.3rem) */
     color: var(--primary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem; /* 🆕 Reducido */
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .filter-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem; /* 🆕 Ya estaba reducido */
 }
 
 .filter-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
     color: var(--dark);
 }
 
 .filter-group select,
 .filter-group input {
     width: 100%;
-    padding: 0.65rem;
+    padding: 0.55rem; /* 🆕 Reducido (era 0.65rem) */
     border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    border-radius: 7px;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -79,43 +80,77 @@
 .checkbox-group {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.6rem;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
 }
 
 .checkbox-group input[type="checkbox"] {
     width: auto;
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 16px; /* 🆕 Reducido (era 18px) */
+    height: 16px;
 }
 
 .checkbox-group label {
     margin: 0;
     font-weight: 500;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
+}
+
+/* Checkbox destacado para promoción */
+.checkbox-destacado {
+    background: #fef3c7;
+    border: 2px solid #fbbf24;
+    padding: 0.65rem; /* 🆕 Reducido (era 0.75rem) */
+    border-radius: 7px;
+    margin-top: 0.6rem;
+}
+
+.checkbox-destacado label {
+    color: #92400e;
+    font-weight: 700;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.checkbox-destacado label i {
+    color: #f59e0b;
+    font-size: 0.95rem;
+}
+
+.checkbox-destacado:hover {
+    background: #fde68a;
+    border-color: #f59e0b;
+}
+
+.filter-group-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
 }
 
 .filter-divider {
     height: 1px;
     background: #e5e7eb;
-    margin: 1.25rem 0;
+    margin: 1rem 0;
 }
 
 .reset-filters {
     width: 100%;
-    padding: 0.65rem;
+    padding: 0.55rem; /* 🆕 Reducido (era 0.65rem) */
     background: var(--gray);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 1rem;
-    min-height: 44px;
-    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    min-height: 38px; /* 🆕 Reducido (era 44px) */
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
 }
 
 .reset-filters:hover {
@@ -131,43 +166,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .results-count {
-    font-size: 1.1rem;
+    font-size: 1rem; /* 🆕 Reducido (era 1.1rem) */
     color: var(--gray);
 }
 
 .results-count strong {
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* 🆕 Reducido (era 1.3rem) */
 }
 
-/* CARDS GRID */
+/* CARDS GRID - 3 COLUMNAS EN DESKTOP */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1200px) {
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr); /* 🆕 3 COLUMNAS FIJAS */
+    gap: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
 }
 
 .card {
     background: white;
-    border-radius: 16px;
+    border-radius: 14px; /* 🆕 Reducido (era 16px) */
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -186,13 +209,13 @@
 
 .card-badge {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 10px; /* 🆕 Reducido (era 12px) */
+    left: 10px;
     background: var(--primary);
     color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem; /* 🆕 Más compacto */
+    border-radius: 18px;
+    font-size: 0.7rem; /* 🆕 Reducido (era 0.75rem) */
     font-weight: 700;
     z-index: 10;
     text-transform: uppercase;
@@ -202,10 +225,16 @@
     background: var(--secondary);
 }
 
+.card-badge.hotel-cochera {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    padding: 0.4rem 0.8rem; /* 🆕 Más compacto */
+    font-size: 0.65rem; /* 🆕 Reducido (era 0.7rem) */
+}
+
 .card-img-container {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 170px; /* 🆕 Reducido (era 200px) */
     overflow: hidden;
     background: #f3f4f6;
     display: flex;
@@ -224,35 +253,34 @@
     transform: scale(1.1);
 }
 
-/* Placeholder cuando no hay imagen */
 .card-img-container:not(:has(img)) {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .card-img-container:not(:has(img))::before {
     content: '\f1ad';
     font-family: 'Font Awesome 6 Free';
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 3rem; /* 🆕 Reducido (era 3.5rem) */
     color: #9ca3af;
 }
 
 .card-img-container:not(:has(img))::after {
     content: 'Sin imagen';
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
     color: #9ca3af;
     font-weight: 500;
 }
 
 .card-share {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
     background: rgba(255,255,255,0.9);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 36px; /* 🆕 Reducido (era 40px) */
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -269,35 +297,35 @@
 }
 
 .card-content {
-    padding: 1rem;
+    padding: 0.9rem; /* 🆕 Reducido (era 1rem) */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem; /* 🆕 Reducido (era 1.3rem) */
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem; /* 🆕 Reducido */
     color: var(--dark);
     line-height: 1.3;
 }
 
 .card-features {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 0.4rem; /* 🆕 Reducido (era 0.5rem) */
+    margin-bottom: 0.8rem; /* 🆕 Reducido */
     flex-wrap: wrap;
 }
 
 .feature-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem; /* 🆕 Reducido */
     background: #f3f4f6;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem; /* 🆕 Más compacto */
+    border-radius: 5px;
+    font-size: 0.7rem; /* 🆕 Reducido (era 0.75rem) */
     color: var(--gray);
 }
 
@@ -308,22 +336,22 @@
 }
 
 .feature-badge i {
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* 🆕 Reducido (era 0.85rem) */
 }
 
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    margin: 1rem 0;
-    font-size: 0.9rem;
+    gap: 0.5rem; /* 🆕 Reducido (era 0.6rem) */
+    margin: 0.8rem 0; /* 🆕 Reducido */
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     color: var(--gray);
 }
 
 .card-info-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
     line-height: 1.4;
 }
 
@@ -334,15 +362,15 @@
 }
 
 .card-price {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* 🆕 Reducido (era 1.8rem) */
     font-weight: 700;
     color: var(--primary);
-    margin: 1rem 0;
+    margin: 0.8rem 0; /* 🆕 Reducido */
     margin-top: auto;
 }
 
 .card-price small {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     color: var(--gray);
     font-weight: 400;
 }
@@ -350,17 +378,17 @@
 .price-original {
     text-decoration: line-through;
     color: var(--gray);
-    font-size: 1.2rem;
-    margin-left: 0.5rem;
+    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
+    margin-left: 0.4rem;
 }
 
 .promo-tag {
     background: linear-gradient(135deg, #dc2626, #b91c1c);
     color: white;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem; /* 🆕 Más compacto */
+    border-radius: 5px;
+    font-size: 0.7rem; /* 🆕 Reducido (era 0.75rem) */
+    margin-left: 0.4rem;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
     animation: pulse-promo 2s ease-in-out infinite;
@@ -378,13 +406,14 @@
 .card-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    gap: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
+    margin-top: 0.8rem; /* 🆕 Reducido */
 }
 
-/* BOTONES EN CARDS */
 .card-actions .btn-secondary {
     background: #25D366;
+    padding: 0.6rem 0.9rem; /* 🆕 Más compacto */
+    font-size: 0.8rem; /* 🆕 Reducido */
 }
 
 .card-actions .btn-secondary:hover {
@@ -393,12 +422,15 @@
 
 .card-actions .btn-primary {
     background: var(--accent);
+    padding: 0.6rem 0.9rem; /* 🆕 Más compacto */
+    font-size: 0.8rem; /* 🆕 Reducido */
 }
 
 .card-actions .btn-primary:hover {
     background: #ea580c;
 }
-/* MODAL */
+
+/* MODAL - COMPACTO */
 .modal {
     display: none;
     position: fixed;
@@ -409,7 +441,7 @@
     background: rgba(0,0,0,0.85);
     z-index: 1000;
     overflow-y: auto;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem; /* 🆕 Reducido */
     animation: fadeIn 0.3s ease;
 }
 
@@ -426,8 +458,8 @@
 
 .modal-content {
     background: white;
-    border-radius: 20px;
-    max-width: 900px;
+    border-radius: 18px; /* 🆕 Reducido (era 20px) */
+    max-width: 850px; /* 🆕 Reducido (era 900px) */
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
@@ -446,7 +478,7 @@
 }
 
 .modal-header {
-    padding: 2rem;
+    padding: 1.6rem; /* 🆕 Reducido (era 2rem) */
     border-bottom: 2px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
@@ -455,7 +487,7 @@
 }
 
 .modal-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* 🆕 Reducido (era 1.8rem) */
     font-weight: 700;
     color: var(--primary);
     line-height: 1.3;
@@ -464,11 +496,11 @@
 .modal-close {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 1.8rem; /* 🆕 Reducido (era 2rem) */
     cursor: pointer;
     color: var(--gray);
-    width: 40px;
-    height: 40px;
+    width: 36px; /* 🆕 Reducido (era 40px) */
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -484,7 +516,7 @@
 
 .modal-carousel {
     position: relative;
-    height: 400px;
+    height: 350px; /* 🆕 Reducido (era 400px) */
     background: #000;
 }
 
@@ -509,14 +541,14 @@
     background: rgba(255,255,255,0.9);
     color: var(--dark);
     border: none;
-    padding: 1rem;
+    padding: 0.9rem; /* 🆕 Reducido */
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* 🆕 Reducido (era 1.3rem) */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 45px; /* 🆕 Reducido (era 50px) */
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -526,45 +558,46 @@
     background: white;
 }
 
-.modal-carousel-btn.prev { left: 20px; }
-.modal-carousel-btn.next { right: 20px; }
+.modal-carousel-btn.prev { left: 16px; }
+.modal-carousel-btn.next { right: 16px; }
 
 .modal-carousel-counter {
     position: absolute;
-    bottom: 20px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0,0,0,0.7);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem; /* 🆕 Más compacto */
+    border-radius: 18px;
+    font-size: 0.85rem; /* 🆕 Reducido (era 0.9rem) */
     z-index: 10;
 }
 
 .modal-body {
-    padding: 2rem;
+    padding: 1.6rem; /* 🆕 Reducido (era 2rem) */
 }
 
 .info-section {
     background: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
+    padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
+    border-radius: 10px; /* 🆕 Reducido */
+    margin-bottom: 1.2rem; /* 🆕 Reducido */
 }
 
 .info-section h3 {
     color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    margin-bottom: 0.8rem; /* 🆕 Reducido */
+    font-size: 1.2rem; /* 🆕 Reducido (era 1.3rem) */
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .info-section p {
-    margin: 0.5rem 0;
+    margin: 0.4rem 0;
     line-height: 1.8;
+    font-size: 0.9rem; /* 🆕 Agregado */
 }
 
 .info-section a {
@@ -581,44 +614,46 @@
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🆕 Reducido */
+    gap: 0.8rem; /* 🆕 Reducido */
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem;
+    gap: 0.4rem;
+    padding: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
     background: white;
-    border-radius: 8px;
+    border-radius: 7px;
+    font-size: 0.85rem; /* 🆕 Agregado */
 }
 
 .info-item i {
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
 }
 
 .servicios-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🆕 Reducido */
+    gap: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
 }
 
 .servicio-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem;
+    gap: 0.4rem;
+    padding: 0.6rem; /* 🆕 Reducido (era 0.75rem) */
     background: white;
-    border-radius: 8px;
+    border-radius: 7px;
+    font-size: 0.85rem; /* 🆕 Agregado */
 }
 
 .servicio-item::before {
     content: '✓';
     color: var(--success);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* 🆕 Reducido (era 1.2rem) */
 }
 
 /* MOBILE FILTERS TOGGLE */
@@ -630,10 +665,10 @@
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 55px; /* 🆕 Reducido (era 60px) */
+    height: 55px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* 🆕 Reducido (era 1.5rem) */
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
     z-index: 89;
@@ -644,7 +679,11 @@
     transform: scale(1.1);
 }
 
-/* RESPONSIVE */
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+/* TABLETS - 2 COLUMNAS */
 @media (max-width: 1024px) {
     .main-layout {
         grid-template-columns: 1fr;
@@ -676,8 +715,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.8rem;
         border-bottom: 2px solid #e5e7eb;
     }
     
@@ -686,10 +725,10 @@
         background: #ef4444;
         color: white;
         border: none;
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         cursor: pointer;
         align-items: center;
         justify-content: center;
@@ -716,33 +755,35 @@
         justify-content: center;
     }
     
+    /* 2 COLUMNAS EN TABLETS */
     .cards-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Ajustar botón volver arriba en móvil para stack vertical */
     #backToTop {
-        bottom: 95px; /* Encima del botón de filtros */
+        bottom: 95px;
         right: 20px;
-        width: 48px;
-        height: 48px;
+        width: 45px;
+        height: 45px;
     }
 }
 
+/* MÓVILES - 1 COLUMNA */
 @media (max-width: 768px) {
     .modal-carousel {
-        height: 250px;
+        height: 220px; /* 🆕 Reducido (era 250px) */
     }
     
     .modal-carousel-btn {
-        width: 40px;
-        height: 40px;
-        padding: 0.8rem;
+        width: 36px; /* 🆕 Reducido (era 40px) */
+        height: 36px;
+        padding: 0.7rem;
     }
     
+    /* 1 COLUMNA EN MÓVILES */
     .cards-grid {
         grid-template-columns: 1fr;
-        padding-bottom: 120px; /* Espacio para los botones flotantes */
+        padding-bottom: 120px;
     }
     
     .card-actions {
@@ -750,97 +791,14 @@
     }
     
     .card-img-container {
-        height: 180px;
+        height: 160px; /* 🆕 Reducido (era 180px) */
     }
     
     .modal-body {
-        padding: 1.5rem;
+        padding: 1.2rem; /* 🆕 Reducido (era 1.5rem) */
     }
     
     .info-section {
-        padding: 1rem;
-    }
-}
-/* Badge especial para hotel con cochera */
-.card-badge.hotel-cochera {
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-}
-/* ========================================
-   AGREGAR AL FINAL DE alojamientos.css
-   Estilos para filtros más compactos
-======================================== */
-
-/* Checkbox de promoción destacado */
-.checkbox-destacado {
-    background: #fef3c7;
-    border: 2px solid #fbbf24;
-    padding: 0.75rem;
-    border-radius: 8px;
-    margin-top: 0.75rem;
-}
-
-.checkbox-destacado label {
-    color: #92400e;
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.checkbox-destacado label i {
-    color: #f59e0b;
-    font-size: 1rem;
-}
-
-.checkbox-destacado:hover {
-    background: #fde68a;
-    border-color: #f59e0b;
-}
-
-/* Grupo compacto para características */
-.filter-group-compact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-/* Reducir espaciado general en filtros */
-.filter-group {
-    margin-bottom: 1rem; /* era 1.25rem */
-}
-
-.filter-divider {
-    margin: 1rem 0; /* era 1.25rem */
-}
-
-/* Mejorar contraste de labels */
-.filter-group label {
-    font-size: 0.9rem; /* era 0.85rem */
-    color: var(--dark);
-    font-weight: 700;
-}
-
-/* Hacer sidebar ligeramente más angosto en desktop */
-@media (min-width: 1025px) {
-    .main-layout {
-        grid-template-columns: 260px 1fr; /* era 280px */
-    }
-    
-    .filters-sidebar {
-        padding: 1.25rem; /* era 1.5rem */
-    }
-}
-
-/* Ajustes para móvil */
-@media (max-width: 1024px) {
-    .checkbox-destacado {
-        padding: 1rem;
-    }
-    
-    .checkbox-destacado label {
-        font-size: 1rem;
+        padding: 0.9rem; /* 🆕 Reducido (era 1rem) */
     }
 }
