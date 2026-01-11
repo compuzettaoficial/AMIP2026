@@ -71,7 +71,6 @@ function applyFilters() {
     const tipo = document.getElementById('filter-tipo').value;
     if (tipo !== 'todos') {
         if (tipo === 'cochera') {
-            // Mostrar cocheras independientes + hoteles con estacionamiento
             filtered = filtered.filter(a => 
                 a.tipo === 'cochera' || (a.tipo === 'hotel' && a.estacionamiento?.tiene === true)
             );
@@ -165,13 +164,11 @@ function loadAllImages(nombre, imagenPrincipal, esHotelConCochera = false) {
     const baseName = imagenPrincipal.replace(/\.[^/.]+$/, '');
     const ext = imagenPrincipal.split('.').pop();
     
-    // Si es hotel con cochera, agregar la foto específica de cochera
     if (esHotelConCochera) {
         const cocheraImg = `${baseName}-cochera.${ext}`;
         images.push(cocheraImg);
     }
     
-    // Intentar cargar hasta 10 imágenes adicionales
     for (let i = 2; i <= 10; i++) {
         const imgPath = `${baseName}-${i}.${ext}`;
         images.push(imgPath);
@@ -180,7 +177,6 @@ function loadAllImages(nombre, imagenPrincipal, esHotelConCochera = false) {
     return images;
 }
 
-// Función para obtener imagen de cochera específica
 function getCocheraImage(alojamiento) {
     if (alojamiento.tipo !== 'hotel' || !alojamiento.imagenes?.[0]) {
         return alojamiento.imagenes?.[0] || '';
@@ -190,9 +186,9 @@ function getCocheraImage(alojamiento) {
     const baseName = imgPrincipal.replace(/\.[^/.]+$/, '');
     const ext = imgPrincipal.split('.').pop();
     
-    // Retornar la ruta esperada de la imagen de cochera
     return `${baseName}-cochera.${ext}`;
 }
+
 // ========================================
 // RENDERIZAR TARJETAS
 // ========================================
@@ -225,24 +221,19 @@ function createCard(alojamiento) {
     const whatsapp = isHotel ? alojamiento.contacto?.whatsapp : alojamiento.whatsapp;
     const telefono = isHotel ? alojamiento.contacto?.telefono : alojamiento.telefono;
     
-    // Determinar si se muestra como cochera
     const tipoFiltro = document.getElementById('filter-tipo').value;
     const mostrarComoCochera = isHotel && alojamiento.estacionamiento?.tiene && tipoFiltro === 'cochera';
     
-    // Imagen a usar
     let img = alojamiento.imagenes?.[0] || '';
     if (mostrarComoCochera) {
-        // Intentar usar foto de cochera específica
         const cocheraImg = getCocheraImage(alojamiento);
         img = cocheraImg;
     }
     
-    // Features
     let features = [];
     if (alojamiento.accesible) features.push('<span class="feature-badge highlight"><i class="fas fa-wheelchair"></i> Accesible</span>');
     
     if (mostrarComoCochera) {
-        // Mostrar info de estacionamiento
         features.push(`<span class="feature-badge highlight"><i class="fas fa-parking"></i> ${alojamiento.estacionamiento.tipo}</span>`);
         if (isHotel) {
             features.push('<span class="feature-badge highlight"><i class="fas fa-hotel"></i> Incluye hospedaje</span>');
@@ -255,7 +246,6 @@ function createCard(alojamiento) {
     
     const nombreEscapado = alojamiento.nombre.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     
-    // Badge personalizado
     let badgeText = 'HOTEL';
     let badgeClass = '';
     
@@ -267,7 +257,6 @@ function createCard(alojamiento) {
         badgeClass = 'cochera';
     }
     
-    // Info específica para hoteles mostrados como cochera
     let infoCochera = '';
     if (mostrarComoCochera) {
         const precioHotel = alojamiento.promocion?.tienePromocion && alojamiento.promocion.preciosEvento 
@@ -354,11 +343,8 @@ function shareAlojamiento(event, nombre) {
             title: alojamiento.nombre,
             text: text,
             url: url
-        }).catch(() => {
-            // Fallback si el usuario cancela
-        });
+        }).catch(() => {});
     } else {
-        // Fallback para navegadores sin Web Share API
         navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
             alert('✓ Enlace copiado al portapapeles');
         }).catch(() => {
@@ -379,7 +365,6 @@ async function showDetail(nombre) {
     
     document.getElementById('modalTitle').textContent = alojamiento.nombre;
     
-    // Cargar todas las imágenes posibles
     const imagenPrincipal = alojamiento.imagenes?.[0] || '';
     if (imagenPrincipal) {
         const todasLasImagenes = loadAllImages(alojamiento.nombre, imagenPrincipal, esHotelConCochera);
@@ -399,7 +384,6 @@ async function showDetail(nombre) {
         ).join('');
         updateModalCounter();
         
-        // Ocultar botones si solo hay 1 imagen
         const prevBtn = carousel.querySelector('.prev');
         const nextBtn = carousel.querySelector('.next');
         if (currentImages.length <= 1) {
@@ -413,10 +397,8 @@ async function showDetail(nombre) {
         carousel.style.display = 'none';
     }
     
-    // Contenido
     let bodyHTML = '';
     
-    // Información general
     bodyHTML += `
         <div class="info-section">
             <h3><i class="fas fa-info-circle"></i> Información</h3>
@@ -431,7 +413,6 @@ async function showDetail(nombre) {
         </div>
     `;
     
-    // Info de estacionamiento para hoteles
     if (isHotel && alojamiento.estacionamiento?.tiene) {
         bodyHTML += `
             <div class="info-section" style="background: #dbeafe; border-left: 4px solid var(--primary);">
@@ -443,7 +424,6 @@ async function showDetail(nombre) {
         `;
     }
     
-    // Precios
     if (isHotel) {
         const precios = alojamiento.promocion?.tienePromocion && alojamiento.promocion.preciosEvento 
             ? alojamiento.promocion.preciosEvento : alojamiento.precios;
@@ -486,7 +466,6 @@ async function showDetail(nombre) {
         `;
     }
     
-    // Servicios
     if (alojamiento.servicios?.length) {
         bodyHTML += `
             <div class="info-section">
@@ -498,7 +477,6 @@ async function showDetail(nombre) {
         `;
     }
     
-    // Contacto
     const contacto = isHotel ? alojamiento.contacto : alojamiento;
     bodyHTML += `
         <div class="info-section">
@@ -516,7 +494,6 @@ async function showDetail(nombre) {
     document.body.style.overflow = 'hidden';
 }
 
-// Verificar qué imágenes existen
 async function verificarImagenes(imagenes) {
     const promesas = imagenes.map(img => 
         new Promise(resolve => {
@@ -577,7 +554,6 @@ function toggleFilters() {
 // EVENT LISTENERS
 // ========================================
 
-// Cerrar modal al hacer clic fuera
 const detailModal = document.getElementById('detailModal');
 if (detailModal) {
     detailModal.addEventListener('click', (e) => {
@@ -587,7 +563,6 @@ if (detailModal) {
     });
 }
 
-// Cerrar filtros móvil al hacer clic fuera
 document.addEventListener('click', (e) => {
     const sidebar = document.getElementById('filtersSidebar');
     const filterToggle = document.querySelector('.mobile-filters-toggle');
@@ -599,7 +574,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Tecla ESC para cerrar modal y filtros
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const modal = document.getElementById('detailModal');
