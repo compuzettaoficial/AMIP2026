@@ -200,7 +200,7 @@ main {
 }
 
 .btn-hero.primary {
-    background: var(--accent);
+    background: var(--primary);
     color: white;
     box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
