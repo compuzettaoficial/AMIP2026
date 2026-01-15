@@ -222,6 +222,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
+   "urlMaps": "https://maps.app.goo.gl/Lc4LKP63Kfer5qUa8",
     "imagenes": [
       "assets/images/alojamientos/hotel-hospedaje-feliz.jpg"
     ],
@@ -235,11 +236,11 @@
       "precio": 0
     },
     "contacto": {
-      "telefono": "2222222222",
-      "whatsapp": "+51 3413242424",
-      "email": "hospedaje@gmail.com",
-      "facebook": "facebookfeliz",
-      "web": "https://hospedajefeliz.com"
+      "telefono": "",
+      "whatsapp": "+51",
+      "email": "",
+      "facebook": "",
+      "web": ""
     },
     "precios": {
       "simple": 80,
@@ -247,12 +248,12 @@
       "matrimonial": 160
     },
     "promocion": {
-      "tienePromocion": true,
-      "codigo": "AMIP",
+      "tienePromocion": null,
+      "codigo":"",
       "preciosEvento": {
-        "simple": 70,
-        "doble": 110,
-        "matrimonial": 150
+        "simple":,
+        "doble":,
+        "matrimonial": 
       }
     },
     "servicios": [
