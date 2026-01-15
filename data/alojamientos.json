@@ -39,14 +39,14 @@
     ],
     "metadata": {
       "creadoPor": "Néstor",
-      "fechaCreacion": "2026-01-15T06:58:02.420Z",
+      "fechaCreacion": "2026-01-15T07:17:49.159Z",
       "notas": "En las Habitaciones Dobles, pueden ingresar hasta 3 personas\nPor alquiler de 3 camas dobles, garaje para 1 auto gratis. (consulte disponibilidad)"
     }
   },
   {
     "tipo": "hotel",
     "nombre": "Hostal Vianori",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/7jfb2JM6W8cURjfXA",
     "imagenes": [
       "assets/images/alojamientos/hotel-hostal-vianori.jpg"
     ],
@@ -79,14 +79,14 @@
     "servicios": [],
     "metadata": {
       "creadoPor": "Néstor",
-      "fechaCreacion": "2026-01-15T06:58:03.956Z",
+      "fechaCreacion": "2026-01-15T07:17:50.696Z",
       "notas": ""
     }
   },
   {
     "tipo": "hotel",
     "nombre": "Hotel El Virrey",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/HK3F2y2CD8QYQWrT7",
     "imagenes": [
       "assets/images/alojamientos/hotel-el-virrey.jpg"
     ],
@@ -125,7 +125,7 @@
     ],
     "metadata": {
       "creadoPor": "Néstor",
-      "fechaCreacion": "2026-01-15T06:58:05.454Z",
+      "fechaCreacion": "2026-01-15T07:17:52.186Z",
       "notas": "Aceptan Tarjetas Visa y Mastercard"
     }
   },
