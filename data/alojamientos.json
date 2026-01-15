@@ -498,12 +498,12 @@
   },
   {
     "tipo": "hotel",
-    "nombre": "Paraíso del Norte",
+    "nombre": "Nombre de Hotel",
     "imagenes": [
-      "assets/images/alojamientos/hotel-paraiso-del-norte.jpg"
+      "assets/images/alojamientos/nombre-de-hotel.jpg"
     ],
-    "direccion": "Av. José Pardo 450, Urb. Bellamar, Nuevo Chimbote",
-    "distanciaAproximada": "800m del instituto, 10 min caminando",
+    "direccion": "",
+    "distanciaAproximada": "",
     "accesible": true,
     "estacionamiento": {
       "tiene": true,
@@ -512,11 +512,11 @@
       "precio": 0
     },
     "contacto": {
-      "telefono": "043-315789",
-      "whatsapp": "+51987654321",
-      "email": "reservas@hotelparaiso.com",
-      "facebook": "https://facebook.com/hotelparaisonorte",
-      "web": "https://hotelparaiso.com"
+      "telefono": "043-000000",
+      "whatsapp": "+51900000000",
+      "email": "",
+      "facebook": "0",
+      "web": ""
     },
     "precios": {
       "simple": 130,
@@ -547,7 +547,7 @@
     "metadata": {
       "creadoPor": "sistema",
       "fechaCreacion": "2026-01-10T21:33:13.425Z",
-      "notas": "PROMOCIÓN ESPECIAL AMIP 2026: 30% descuento. Hotel 3 estrellas cercano al evento, ideal para familias"
+      "notas": "Esto es una muestra de los Hoteles, dirijase a Alojamientos y encontrará los hoteles disponibles reales"
     }
   },
   {
