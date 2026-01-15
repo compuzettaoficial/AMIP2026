@@ -129,6 +129,49 @@
       "notas": "Aceptan Tarjetas Visa y Mastercard"
     }
   },
+    {
+    "tipo": "hotel",
+    "nombre": "Hotel Costa Bela",
+    "urlMaps": "https://maps.app.goo.gl/SLciwqe4LRZZZRWD6",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-costa-bela.jpg"
+    ],
+    "direccion": "Av. Pacífico No. 586 - Urb. Buenos Aires, Chimbote",
+    "distanciaAproximada": "100m, 2m caminando",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "externo",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "981198456",
+      "whatsapp": "+51 981198456",
+      "email": "reservas@hotelcostabela.com",
+      "facebook": "",
+      "web": "https://hotelcostabela.com/wp/"
+    },
+    "precios": {
+      "simple": 150,
+      "doble": 280,
+      "matrimonial": 180
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "WiFi",
+      "TV cable"
+    ],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-15T14:01:53.267Z",
+      "notas": ""
+    }
+  },
   {
     "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
