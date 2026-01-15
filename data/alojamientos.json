@@ -43,6 +43,46 @@
       "notas": "En las Habitaciones Dobles, pueden ingresar hasta 3 personas\nPor alquiler de 3 camas dobles, garaje para 1 auto gratis. (consulte disponibilidad)"
     }
   },
+    {
+    "tipo": "hotel",
+    "nombre": "Hostal Vianori",
+    "urlMaps": "",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hostal-vianori.jpg"
+    ],
+    "direccion": "Calle los Ficus FI Lote 21 - URB Santa Rosa - Cerca de la CLINICA BAHIA",
+    "distanciaAproximada": "800m, 12min caminando",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "externo",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "970585259",
+      "whatsapp": "+51 970585259",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 40,
+      "doble": 70,
+      "matrimonial": 50
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-15T06:13:15.433Z",
+      "notas": ""
+    }
+  },
   {
     "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
