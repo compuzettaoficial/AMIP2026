@@ -1,6 +1,49 @@
 [
   {
     "tipo": "hotel",
+    "nombre": "HOSTAL EL GRAN MARQUEZ G&J",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hostal-el-gran-marquez-g-j.jpg"
+    ],
+    "direccion": "URB. JOSE CARLOS MARIATEGUI  MZA. N3 LOTE. 35A (A espaldas de los Bomberos)",
+    "distanciaAproximada": "10 min caminando",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "externo",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "977780798",
+      "whatsapp": "+51 977780798",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 65,
+      "doble": 120,
+      "matrimonial": 85
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "AGUA CALIENTE",
+      "WIFI",
+      "TV CABLE"
+    ],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-15T04:55:24.878Z",
+      "notas": "En las Habitaciones Dobles, pueden ingresar hasta 3 personas\nPor alquiler de 3 camas dobles, garaje para 1 auto gratis. (consulte disponibilidad)"
+    }
+  };
+  {
+    "tipo": "hotel",
     "nombre": "Hospedaje Feliz",
     "imagenes": [
       "assets/images/alojamientos/hotel-hospedaje-feliz.jpg"
