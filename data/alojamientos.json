@@ -1,13 +1,13 @@
 [
   {
     "tipo": "hotel",
-    "nombre": "Hostal El Gran Marzquez G&J",
-    "urlMaps": "https://maps.app.goo.gl/Uj5WYJ6EEpCdZVjBA",
+    "nombre": "HOSTAL EL GRAN MARQUEZ G&J",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-hostal-el-gran-marquez-g-j.jpg"
     ],
-    "direccion": "URB. José Carlos Mariategui  MZA. N3 LOTE. 35A (A espaldas de los Bomberos)",
-    "distanciaAproximada": "500m, 7 min caminando",
+    "direccion": "URB. JOSE CARLOS MARIATEGUI  MZA. N3 LOTE. 35A (A espaldas de los Bomberos)",
+    "distanciaAproximada": "10 min caminando",
     "accesible": false,
     "estacionamiento": {
       "tiene": true,
@@ -39,11 +39,11 @@
     ],
     "metadata": {
       "creadoPor": "Néstor",
-      "fechaCreacion": "2026-01-15T04:55:24.878Z",
+      "fechaCreacion": "2026-01-15T06:58:02.420Z",
       "notas": "En las Habitaciones Dobles, pueden ingresar hasta 3 personas\nPor alquiler de 3 camas dobles, garaje para 1 auto gratis. (consulte disponibilidad)"
     }
   },
-    {
+  {
     "tipo": "hotel",
     "nombre": "Hostal Vianori",
     "urlMaps": "",
@@ -79,8 +79,54 @@
     "servicios": [],
     "metadata": {
       "creadoPor": "Néstor",
-      "fechaCreacion": "2026-01-15T06:13:15.433Z",
+      "fechaCreacion": "2026-01-15T06:58:03.956Z",
       "notas": ""
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hotel El Virrey",
+    "urlMaps": "",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-el-virrey.jpg"
+    ],
+    "direccion": "Urb. Santa Crustina D-4 Lt 20-21, Frente al Hospital Regional E.G.B",
+    "distanciaAproximada": "1km, 15m caminando - s/2.00 auto p/persona - taxi s/5.00",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": true,
+      "tipo": "externo",
+      "gratuito": true,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "043 611011",
+      "whatsapp": "",
+      "email": "",
+      "facebook": "Hotel el virey",
+      "web": ""
+    },
+    "precios": {
+      "simple": 60,
+      "doble": 80,
+      "matrimonial": 90
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "Wi-Fi",
+      "Piscina",
+      "Apto para niños",
+      "Restaurante",
+      "Gimnasio"
+    ],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-15T06:58:05.454Z",
+      "notas": "Aceptan Tarjetas Visa y Mastercard"
     }
   },
   {
