@@ -2,6 +2,7 @@
   {
     "tipo": "hotel",
     "nombre": "HOSTAL EL GRAN MARQUEZ G&J",
+    "urlMaps": "https://maps.app.goo.gl/Uj5WYJ6EEpCdZVjBA",
     "imagenes": [
       "assets/images/alojamientos/hotel-hostal-el-gran-marquez-g-j.jpg"
     ],
