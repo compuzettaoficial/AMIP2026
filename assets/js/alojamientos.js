@@ -403,7 +403,7 @@ async function showDetail(nombre) {
         <div class="info-section">
             <h3><i class="fas fa-info-circle"></i> Información</h3>
             <p><strong>Dirección:</strong> ${alojamiento.direccion} 
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alojamiento.direccion + ' Nuevo Chimbote')}" target="_blank" rel="noopener">
+                <a href="${alojamiento.urlMaps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(alojamiento.direccion + ' Nuevo Chimbote')}`}" target="_blank" rel="noopener">
                     <i class="fas fa-map-marker-alt"></i> Ver en mapa
                 </a>
             </p>
