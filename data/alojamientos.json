@@ -1,12 +1,12 @@
 [
   {
     "tipo": "hotel",
-    "nombre": "HOSTAL EL GRAN MARQUEZ G&J",
+    "nombre": "Hostal El Gran Marzquez G&J",
     "urlMaps": "https://maps.app.goo.gl/Uj5WYJ6EEpCdZVjBA",
     "imagenes": [
       "assets/images/alojamientos/hotel-hostal-el-gran-marquez-g-j.jpg"
     ],
-    "direccion": "URB. JOSE CARLOS MARIATEGUI  MZA. N3 LOTE. 35A (A espaldas de los Bomberos)",
+    "direccion": "URB. José Carlos Mariategui  MZA. N3 LOTE. 35A (A espaldas de los Bomberos)",
     "distanciaAproximada": "10 min caminando",
     "accesible": false,
     "estacionamiento": {
