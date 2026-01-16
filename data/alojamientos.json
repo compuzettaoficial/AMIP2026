@@ -500,7 +500,7 @@
   },
   {
     "tipo": "hotel",
-    "nombre": "Nombre de Hotel",
+    "nombre": "Hotel de ejemplo 1",
     "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-nombre-de-hotel.jpg"
@@ -555,10 +555,10 @@
   },
   {
     "tipo": "hotel",
-    "nombre": "Gran Hotel Nuevo Horizonte",
+    "nombre": "Hotel de ejemplo 2",
     "urlMaps": "",
     "imagenes": [
-      "assets/images/alojamientos/hotel-gran-hotel-nuevo-horizonte.jpg"
+      "assets/images/alojamientos/hotel-ejemplo2.jpg"
     ],
     "direccion": "Jr. Tumbes 890, Urb. Belén, Nuevo Chimbote",
     "distanciaAproximada": "1.5 km del instituto, 18 min caminando",
