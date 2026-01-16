@@ -248,7 +248,7 @@
       "matrimonial": 160
     },
     "promocion": {
-      "tienePromocion": null,
+      "tienePromocion": false,
       "codigo":"",
       "preciosEvento": {
         "simple":,
@@ -700,7 +700,7 @@
     "metadata": {
       "creadoPor": "sistema",
       "fechaCreacion": "2026-01-10T21:33:15.770Z",
-      "notas": "istema de seguridad completo, ubicación céntrica"
+      "notas": "sistema de seguridad completo, ubicación céntrica"
     }
   }
 ]
