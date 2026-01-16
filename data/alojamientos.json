@@ -129,7 +129,7 @@
       "notas": "Aceptan Tarjetas Visa y Mastercard"
     }
   },
-    {
+  {
     "tipo": "hotel",
     "nombre": "Hotel Costa Bela",
     "urlMaps": "https://maps.app.goo.gl/SLciwqe4LRZZZRWD6",
@@ -172,7 +172,7 @@
       "notas": ""
     }
   },
-    {
+  {
     "tipo": "hotel",
     "nombre": "Hotel Aquarius",
     "urlMaps": "https://maps.app.goo.gl/ACPL7XfMTf873pDi9",
@@ -219,51 +219,52 @@
       "notas": ""
     }
   },
-{
-  "tipo": "hotel",
-  "nombre": "Hospedaje Feliz",
-  "urlMaps": "https://maps.app.goo.gl/Lc4LKP63Kfer5qUa8",
-  "imagenes": [
-    "assets/images/alojamientos/hotel-hospedaje-feliz.jpg"
-  ],
-  "direccion": "no detallada",
-  "distanciaAproximada": "10 min aprox",
-  "accesible": true,
-  "estacionamiento": {
-    "tiene": false,
-    "tipo": "ninguno",
-    "gratuito": false,
-    "precio": 0
+  {
+    "tipo": "hotel",
+    "nombre": "Hospedaje Feliz",
+    "urlMaps": "https://maps.app.goo.gl/Lc4LKP63Kfer5qUa8",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hospedaje-feliz.jpg"
+    ],
+    "direccion": "no detallada",
+    "distanciaAproximada": "10 min aprox",
+    "accesible": true,
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "",
+      "whatsapp": "+51",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 80,
+      "doble": 120,
+      "matrimonial": 160
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [
+      "TV"
+    ],
+    "metadata": {
+      "creadoPor": "YO",
+      "fechaCreacion": "2026-01-10T21:33:08.985Z",
+      "notas": "FELIZ"
+    }
   },
-  "contacto": {
-    "telefono": "",
-    "whatsapp": "+51",
-    "email": "",
-    "facebook": "",
-    "web": ""
-  },
-  "precios": {
-    "simple": 80,
-    "doble": 120,
-    "matrimonial": 160
-  },
-  "promocion": {
-    "tienePromocion": false,
-    "codigo": "",
-    "preciosEvento": null
-  },
-  "servicios": [
-    "TV"
-  ],
-  "metadata": {
-    "creadoPor": "YO",
-    "fechaCreacion": "2026-01-10T21:33:08.985Z",
-    "notas": "FELIZ"
-  }
-},
   {
     "tipo": "hotel",
     "nombre": "Costa del Inka",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-costa-del-inka.jpg"
     ],
@@ -307,6 +308,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Sengor",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-sengor.jpg"
     ],
@@ -353,6 +355,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Los Cocos",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-los-cocos.jpg"
     ],
@@ -406,6 +409,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Buenos Aires",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-buenos-aires.jpg"
     ],
@@ -451,6 +455,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Maresta Lodge",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-maresta-lodge.jpg"
     ],
@@ -496,6 +501,7 @@
   {
     "tipo": "hotel",
     "nombre": "Nombre de Hotel",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/nombre-de-hotel.jpg"
     ],
@@ -550,6 +556,7 @@
   {
     "tipo": "hotel",
     "nombre": "Gran Hotel Nuevo Horizonte",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/hotel-gran-hotel-nuevo-horizonte.jpg"
     ],
@@ -603,6 +610,7 @@
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Seguro Bellamar",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/parking-estacionamiento-seguro-bellamar.jpg"
     ],
@@ -637,6 +645,7 @@
   {
     "tipo": "cochera",
     "nombre": "Parking Institucional San Pedro",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/parking-institucional-san-pedro.jpg"
     ],
@@ -672,6 +681,7 @@
   {
     "tipo": "cochera",
     "nombre": "Cochera Nuevo Chimbote",
+    "urlMaps": "",
     "imagenes": [
       "assets/images/alojamientos/parking-cochera-nuevo-chimbote.jpg"
     ],
