@@ -264,7 +264,7 @@
   {
     "tipo": "hotel",
     "nombre": "Costa del Inka",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/yFFnwQv7niW6CR5w7",
     "imagenes": [
       "assets/images/alojamientos/hotel-costa-del-inka.jpg"
     ],
@@ -308,7 +308,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Sengor",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/1b4XDeBLkRmXjEcZ9",
     "imagenes": [
       "assets/images/alojamientos/hotel-sengor.jpg"
     ],
@@ -355,7 +355,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Los Cocos",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/h5S9Y4uT6wsBA2tp9",
     "imagenes": [
       "assets/images/alojamientos/hotel-los-cocos.jpg"
     ],
@@ -409,7 +409,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Buenos Aires",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/ZLzJv7QrY26bQLRs7",
     "imagenes": [
       "assets/images/alojamientos/hotel-buenos-aires.jpg"
     ],
@@ -455,7 +455,7 @@
   {
     "tipo": "hotel",
     "nombre": "Hotel Maresta Lodge",
-    "urlMaps": "",
+    "urlMaps": "https://maps.app.goo.gl/FKmDbbn1M6nDdyjW9",
     "imagenes": [
       "assets/images/alojamientos/hotel-maresta-lodge.jpg"
     ],
