@@ -517,7 +517,7 @@
     "contacto": {
       "telefono": "043-000000",
       "whatsapp": "+51900000000",
-      "email": "",
+      "email": "ejemplo1@mail.com",
       "facebook": "0",
       "web": ""
     },
@@ -560,7 +560,7 @@
     "imagenes": [
       "assets/images/alojamientos/hotel-ejemplo2.jpg"
     ],
-    "direccion": "Jr. Tumbes 890, Urb. Belén, Nuevo Chimbote",
+    "direccion": "",
     "distanciaAproximada": "1.5 km del instituto, 18 min caminando",
     "accesible": false,
     "estacionamiento": {
@@ -570,11 +570,11 @@
       "precio": 10
     },
     "contacto": {
-      "telefono": "043-318900",
-      "whatsapp": "+51998765432",
-      "email": "info@hotelhorizonte.pe",
+      "telefono": "043-000000",
+      "whatsapp": "+51900000000",
+      "email": "ejemplo2@mail.com",
       "facebook": "",
-      "web": "https://hotelhorizonte.pe"
+      "web": ""
     },
     "precios": {
       "simple": 110,
@@ -607,6 +607,56 @@
       "notas": "OFERTA AMIP: 25% descuento reservando con código. Ambiente familiar cristiano"
     }
   },
+  {
+  "tipo": "hotel",
+  "nombre": "Hotel de Ejemplo 3",
+  "urlMaps": "",
+  "imagenes": [
+    "assets/images/alojamientos/hotel-de-ejemplo-3.jpg"
+  ],
+  "direccion": "Calle Ejemplo 123, Urb. Ejemplo, Nuevo Chimbote",
+  "distanciaAproximada": "1 km del instituto, 12 min caminando",
+  "accesible": true,
+  "estacionamiento": {
+    "tiene": true,
+    "tipo": "interno",
+    "gratuito": true,
+    "precio": 0
+  },
+  "contacto": {
+    "telefono": "043-000000",
+    "whatsapp": "+51900000000",
+    "email": "ejemplo@hotel.com",
+    "facebook": "",
+    "web": ""
+  },
+  "precios": {
+    "simple": 120,
+    "doble": 140,
+    "matrimonial": 160
+  },
+  "promocion": {
+    "tienePromocion": true,
+    "codigo": "EJEMPLO2026",
+    "preciosEvento": {
+      "simple": 90,
+      "doble": 105,
+      "matrimonial": 120
+    }
+  },
+  "servicios": [
+    "WiFi gratis",
+    "Desayuno incluido",
+    "TV cable",
+    "Agua caliente 24h",
+    "Recepción 24 horas"
+  ],
+  "metadata": {
+    "creadoPor": "sistema",
+    "fechaCreacion": "2026-01-15T22:00:00.000Z",
+    "notas": "Este es un hotel de ejemplo con promoción AMIP 2026. Reemplazar con datos reales cuando se asocie un hotel."
+  }
+},
   {
     "tipo": "cochera",
     "nombre": "Estacionamiento Seguro Bellamar",
