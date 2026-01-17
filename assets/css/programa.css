@@ -1,0 +1,384 @@
+/* ========================================
+   PROGRAMA.CSS - ESTILOS ESPECÍFICOS
+======================================== */
+
+/* RESUMEN SECTION */
+.resumen-section {
+    background: white;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.resumen-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.resumen-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f9fafb;
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.resumen-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+    border-color: var(--primary);
+}
+
+.resumen-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.resumen-card strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.resumen-card span {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* PROGRAMA DETALLADO SECTION */
+.programa-detallado-section {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    padding: 4rem 0;
+}
+
+.dia-completo {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.dia-completo:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+}
+
+.dia-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid #f3f4f6;
+}
+
+.dia-badge {
+    background: linear-gradient(135deg, var(--primary), #2563eb);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.dia-badge-2 {
+    background: linear-gradient(135deg, #0891b2, #0e7490);
+}
+
+.dia-badge-3 {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.dia-info h3 {
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-bottom: 0.6rem;
+    font-weight: 800;
+}
+
+.dia-info p {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* TIMELINE DE HORARIOS */
+.horario-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.horario-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary), #2563eb);
+    border-radius: 4px;
+}
+
+.horario-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.horario-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.horario-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #dbeafe;
+}
+
+.horario-time {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+.horario-time i {
+    font-size: 1.1rem;
+}
+
+.horario-content h4 {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.horario-content h4 i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.horario-content p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.horario-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.horario-tags span {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-actividad {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.tag-tipo {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* INFORMACIÓN IMPORTANTE */
+.info-importante-section {
+    background: white;
+    padding: 4rem 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.info-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+    border-color: var(--primary);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* CTA PROGRAMA */
+.cta-programa {
+    background: linear-gradient(135deg, var(--primary), #1e40af);
+    color: white;
+    padding: 3.5rem 0;
+    text-align: center;
+}
+
+.cta-content-programa h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+}
+
+.cta-content-programa p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.btn-cta-programa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, var(--accent), #fb923c);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta-programa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+    background: linear-gradient(135deg, #fb923c, #f97316);
+}
+
+/* BREADCRUMB */
+.header-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.header-breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-breadcrumb a:hover {
+    color: white;
+}
+
+.header-breadcrumb span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1024px) {
+    .resumen-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .horario-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .resumen-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dia-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .dia-badge {
+        align-self: flex-start;
+    }
+    
+    .dia-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .horario-timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .horario-item::before {
+        left: -2rem;
+    }
+    
+    .horario-time {
+        font-size: 0.85rem;
+    }
+    
+    .horario-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .cta-content-programa h2 {
+        font-size: 1.6rem;
+    }
+}
