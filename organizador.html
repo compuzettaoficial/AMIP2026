@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador - XVII Convención AMIP 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AMIP - Asociación Misionera de Iglesias Pentecostales. Conoce más sobre la organización que hace posible la XVII Convención Nacional 2026.">
+    <meta name="keywords" content="AMIP, Asociación Misionera, Iglesias Pentecostales, organización, misiones">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/organizador.css">
+</head>
+<body>
+    <div class="page-wrapper">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="Ir a inicio">
+                    <img src="assets/images/logos/logo-circulo-azul.png" alt="Hospitalidad en Acción" class="logo-img" onerror="this.style.display='none'">
+                    <div>
+                        <div class="brand-name">HOSPITALIDAD EN <span class="highlight">ACCIÓN</span></div>
+                        <div class="brand-tagline">Sistema de apoyo logístico para eventos</div>
+                    </div>
+                </a>
+                
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="nav" aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="programa.html">Programa</a>
+                    <a href="lugar.html">Lugar</a>
+                    <a href="organizador.html" onclick="closeMenu()">Organizador</a>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <span>/</span>
+                <span>Organizador</span>
+            </div>
+            <h1>AMIP</h1>
+            <p>Asociación Misionera de Iglesias Pentecostales</p>
+        </div>
+    </section>
+
+    <!-- HERO ORGANIZADOR -->
+    <section class="organizador-hero">
+        <div class="container">
+            <div class="organizador-hero-content">
+                <div class="organizador-logo-hero">
+                    <img src="assets/images/logos/logo-amip.jpg" alt="Logo AMIP" onerror="this.style.display='none'">
+                </div>
+                <div class="organizador-intro-hero">
+                    <h2>Presencia en los 5 Continentes</h2>
+                    <p class="organizador-descripcion-hero">
+                        La Asociación Misionera de Iglesias Pentecostales (AMIP) es una organización comprometida 
+                        con la evangelización y el fortalecimiento de las iglesias a nivel mundial, llevando el 
+                        mensaje del Evangelio a todos los rincones del planeta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS GLOBALES -->
+    <section class="stats-globales-section">
+        <div class="container">
+            <div class="stats-globales-grid">
+                <div class="stat-global-card">
+                    <div class="stat-global-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="stat-global-content">
+                        <strong>5 Continentes</strong>
+                        <span>Alcance misionero internacional</span>
+                    </div>
+                </div>
+
+                <div class="stat-global-card">
+                    <div class="stat-global-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <div class="stat-global-content">
+                        <strong>Presencia en Perú</strong>
+                        <span>Iglesias en diversas ciudades</span>
+                    </div>
+                </div>
+
+                <div class="stat-global-card">
+                    <div class="stat-global-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-global-content">
+                        <strong>Miles de Miembros</strong>
+                        <span>Comunidad activa y comprometida</span>
+                    </div>
+                </div>
+
+                <div class="stat-global-card">
+                    <div class="stat-global-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="stat-global-content">
+                        <strong>Obra Misionera</strong>
+                        <span>Evangelización y discipulado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="mision-vision-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestro Propósito</span>
+                <h2 class="section-title">Misión y Visión</h2>
+            </div>
+
+            <div class="mision-vision-grid">
+                <div class="mision-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Nuestra Misión</h3>
+                    <p>
+                        Proclamar el Evangelio de Jesucristo a todas las naciones, edificando iglesias sólidas 
+                        fundamentadas en la Palabra de Dios, formando discípulos comprometidos con la obra misionera 
+                        y promoviendo la unidad del cuerpo de Cristo.
+                    </p>
+                </div>
+
+                <div class="vision-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Nuestra Visión</h3>
+                    <p>
+                        Ser una organización misionera de alcance global, reconocida por su compromiso con la 
+                        evangelización, la formación de líderes íntegros y el establecimiento de iglesias 
+                        saludables que transformen comunidades enteras para la gloria de Dios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="valores-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestros Principios</span>
+                <h2 class="section-title">Valores Fundamentales</h2>
+                <p class="section-subtitle">Los pilares que guían nuestra labor ministerial</p>
+            </div>
+
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Fidelidad Bíblica</h3>
+                    <p>Fundamentados en las Sagradas Escrituras como única regla de fe y conducta.</p>
+                </div>
+
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Integridad</h3>
+                    <p>Viviendo en rectitud y transparencia en todas nuestras acciones y decisiones.</p>
+                </div>
+
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Amor</h3>
+                    <p>Manifestando el amor de Cristo en nuestras relaciones y servicio a los demás.</p>
+                </div>
+
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <h3>Santidad</h3>
+                    <p>Llamados a vivir en santidad, separados para el servicio del Señor.</p>
+                </div>
+
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Unidad</h3>
+                    <p>Promoviendo la unidad en el cuerpo de Cristo, respetando la diversidad.</p>
+                </div>
+
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Visión Misionera</h3>
+                    <p>Comprometidos con llevar el Evangelio hasta lo último de la tierra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIDERAZGO -->
+    <section class="liderazgo-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestro Líder</span>
+                <h2 class="section-title">Presidencia Internacional</h2>
+            </div>
+
+            <div class="presidente-card">
+                <div class="presidente-image">
+                    <img src="assets/images/event/expositor-omar1.jpg" alt="Pastor Omar Tejeiro" onerror="this.style.display='none'">
+                </div>
+                <div class="presidente-info">
+                    <h3>Pastor Omar Tejeiro</h3>
+                    <p class="presidente-cargo">Presidente de la Misión AMIP Internacional</p>
+                    <p class="presidente-bio">
+                        Con años de experiencia en el ministerio y una pasión inquebrantable por la obra misionera, 
+                        el Pastor Omar Tejeiro lidera AMIP con visión, sabiduría y un profundo compromiso con la 
+                        evangelización mundial. Su liderazgo ha sido fundamental para expandir la obra en los 
+                        cinco continentes.
+                    </p>
+                    <div class="presidente-features">
+                        <div class="feature-badge">
+                            <i class="fas fa-award"></i> Líder reconocido
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-globe"></i> Experiencia internacional
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-heart"></i> Corazón misionero
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENLACES Y REDES -->
+    <section class="enlaces-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Conéctate</span>
+                <h2 class="section-title">Encuéntranos en Línea</h2>
+            </div>
+
+            <div class="enlaces-grid">
+                <a href="https://www.amipglobal.org/" target="_blank" class="enlace-card" rel="noopener">
+                    <div class="enlace-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="enlace-content">
+                        <strong>AMIP Global</strong>
+                        <span>Sitio web internacional</span>
+                    </div>
+                    <i class="fas fa-arrow-right enlace-arrow"></i>
+                </a>
+
+                <a href="https://amipinstitucional.org/" target="_blank" class="enlace-card" rel="noopener">
+                    <div class="enlace-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="enlace-content">
+                        <strong>Sitio Institucional</strong>
+                        <span>amipinstitucional.org</span>
+                    </div>
+                    <i class="fas fa-arrow-right enlace-arrow"></i>
+                </a>
+            </div>
+
+            <div class="redes-sociales">
+                <h3>Síguenos en Redes Sociales</h3>
+                <div class="redes-grid">
+                    <a href="https://www.facebook.com/amipinstitucional/" target="_blank" class="red-social" rel="noopener" title="Facebook Internacional">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.facebook.com/amipperuministeriojuvenil" target="_blank" class="red-social" rel="noopener" title="Facebook Juvenil Perú">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/amiponline/" target="_blank" class="red-social" rel="noopener" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/amipinstitucion" target="_blank" class="red-social" rel="noopener" title="X (Twitter)">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com/channel/UCxlxShKjz9v-pUAoxayTQHw/videos" target="_blank" class="red-social" rel="noopener" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-organizador">
+        <div class="container">
+            <div class="cta-content-org">
+                <h2>¿Listo para ser parte de la Convención?</h2>
+                <p>Revisa el programa completo y encuentra alojamiento cerca del evento</p>
+                <div class="cta-buttons">
+                    <a href="programa.html" class="btn-cta-org btn-primary">
+                        <i class="fas fa-calendar-alt"></i> Ver Programa
+                    </a>
+                    <a href="alojamientos.html" class="btn-cta-org btn-secondary">
+                        <i class="fas fa-hotel"></i> Ver Alojamientos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-minimal">
+                <div class="footer-brand">
+                    <strong>HOSPITALIDAD EN <span>ACCIÓN</span></strong>
+                </div>
+                <div class="footer-url">
+                    hospitalidadenaccion.org
+                </div>
+                <nav class="footer-nav" aria-label="Navegación footer">
+                    <a href="index.html">Inicio</a>
+                    <span class="separator">•</span>
+                    <a href="alojamientos.html">Alojamientos</a>
+                    <span class="separator">•</span>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-copyright">
+                    © 2025 · Desarrollado por Compuzetta
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    </div>
+
+    <script src="assets/js/shared.js"></script>
+</body>
+</html>
