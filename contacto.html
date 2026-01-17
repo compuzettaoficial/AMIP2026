@@ -240,11 +240,23 @@
                 </button>
                 
                 <nav id="nav" aria-label="Navegación principal">
-                    <a href="index.html">Inicio</a>
-                    <a href="index.html#evento">Evento</a>
-                    <a href="alojamientos.html">Alojamientos</a>
-                    <a href="contacto.html">Contacto</a>
-                </nav>
+    <a href="index.html" onclick="closeMenu()">Inicio</a>
+    
+    <!-- DROPDOWN EVENTO -->
+    <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" onclick="toggleDropdown(event)" aria-expanded="false">
+            Evento <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+            <a href="programa.html" onclick="closeMenu()">Programa</a>
+            <a href="lugar.html" onclick="closeMenu()">Lugar</a>
+            <a href="organizador.html" onclick="closeMenu()">Organizador</a>
+        </div>
+    </div>
+    
+    <a href="alojamientos.html" onclick="closeMenu()">Alojamientos</a>
+    <a href="contacto.html" onclick="closeMenu()">Contacto</a>
+</nav>
             </div>
         </div>
     </header>
