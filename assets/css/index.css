@@ -8,7 +8,7 @@ main {
 }
 
 /* ========================================
-   HERO SECTION - VERSIÓN FINAL
+   HERO SECTION - VERSIÓN FINAL LIMPIA
 ======================================== */
 .hero {
     background: 
@@ -190,7 +190,7 @@ main {
     text-shadow: 0 3px 12px rgba(0,0,0,0.7);
 }
 
-/* INFO CARDS */
+/* INFO CARDS - AHORA CLICABLES */
 .hero-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -213,9 +213,16 @@ main {
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
-.hero-info-card:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-6px);
+/* Estilos para cards clicables */
+.hero-info-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.hero-info-link:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: 0 12px 32px rgba(0,0,0,0.4);
     border-color: rgba(255, 255, 255, 0.5);
 }
@@ -257,7 +264,7 @@ main {
     line-height: 1.4;
 }
 
-/* BOTONES */
+/* BOTONES - SOLO AZUL PARA ALOJAMIENTO */
 .hero-actions {
     display: flex;
     justify-content: center;
@@ -281,28 +288,19 @@ main {
     box-shadow: 0 8px 28px rgba(0,0,0,0.3);
 }
 
-.btn-hero.primary {
+/* Botón de alojamiento en AZUL */
+.btn-hero.btn-alojamiento,
+.btn-alojamiento {
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-hero.primary:hover {
+.btn-hero.btn-alojamiento:hover,
+.btn-alojamiento:hover {
     background: linear-gradient(135deg, #1e40af, #1e3a8a);
     transform: translateY(-4px);
     box-shadow: 0 12px 36px rgba(30, 58, 138, 0.5);
-}
-
-.btn-hero.alojamiento {
-    background: linear-gradient(135deg, var(--accent), #fb923c);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn-hero.alojamiento:hover {
-    background: linear-gradient(135deg, #fb923c, #f97316);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(245, 158, 11, 0.5);
 }
 
 /* ANIMACIONES */
