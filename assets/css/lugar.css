@@ -1,0 +1,396 @@
+/* ========================================
+   LUGAR.CSS - ESTILOS ESPECÍFICOS
+======================================== */
+
+/* HERO DEL LUGAR */
+.lugar-hero {
+    background: white;
+    padding: 3rem 0;
+}
+
+.lugar-hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.lugar-image-main {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.lugar-image-main img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.lugar-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(16, 185, 129, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    font-size: 0.95rem;
+}
+
+.lugar-info-principal h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.lugar-descripcion {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.ubicacion-rapida {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+    border: 2px solid #e5e7eb;
+}
+
+.ubicacion-rapida i {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.ubicacion-rapida strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+}
+
+.ubicacion-rapida span {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.btn-direcciones {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, var(--accent), #fb923c);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-direcciones:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #fb923c, #f97316);
+}
+
+/* CARACTERÍSTICAS */
+.caracteristicas-section {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    padding: 4rem 0;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.caracteristica-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.caracteristica-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(30, 58, 138, 0.15);
+    border-color: var(--primary);
+}
+
+.caracteristica-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), #2563eb);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.caracteristica-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.caracteristica-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.caracteristica-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* MAPA SECTION */
+.mapa-section {
+    background: white;
+    padding: 4rem 0;
+}
+
+.mapa-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+}
+
+.mapa-embed {
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.instrucciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.instruccion-card {
+    display: flex;
+    gap: 1.2rem;
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.instruccion-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 16px rgba(30, 58, 138, 0.1);
+}
+
+.instruccion-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), #2563eb);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.instruccion-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.instruccion-content h3 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.instruccion-content p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* INFORMACIÓN PRÁCTICA */
+.info-practica-section {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    padding: 4rem 0;
+}
+
+.consejos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.consejo-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.consejo-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+    border-color: var(--primary);
+}
+
+.consejo-item i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.consejo-item h4 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.consejo-item p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* CTA LUGAR */
+.cta-lugar {
+    background: linear-gradient(135deg, var(--primary), #1e40af);
+    color: white;
+    padding: 3.5rem 0;
+}
+
+.cta-content-lugar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cta-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.cta-text p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.btn-cta-lugar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, var(--accent), #fb923c);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta-lugar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+    background: linear-gradient(135deg, #fb923c, #f97316);
+}
+
+/* BREADCRUMB */
+.header-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.header-breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-breadcrumb a:hover {
+    color: white;
+}
+
+.header-breadcrumb span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1024px) {
+    .lugar-hero-grid,
+    .mapa-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .caracteristicas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .consejos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .lugar-info-principal h2 {
+        font-size: 2rem;
+    }
+    
+    .lugar-image-main img {
+        height: 300px;
+    }
+    
+    .caracteristicas-grid,
+    .consejos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content-lugar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-text h2 {
+        font-size: 1.6rem;
+    }
+}
