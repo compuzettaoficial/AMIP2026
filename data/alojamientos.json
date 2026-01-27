@@ -1,4 +1,84 @@
 [
+    {
+    "tipo": "hotel",
+    "nombre": "Hostal Barceló",
+    "urlMaps": "https://maps.app.goo.gl/knwtbVdQ8ZHTZkBs7",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hostal-barcelo.jpg"
+    ],
+    "direccion": "Av. Pacífico L-2 120",
+    "distanciaAproximada": "Muy cercano al instituto",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "972074854",
+      "whatsapp": "+51 972074854",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 60,
+      "doble": 80,
+      "matrimonial": 70
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-27T16:30:00.000Z",
+      "notas": "Habitaciones desde el 2do piso (no tiene primer piso). Triple: S/110. Reservas requieren 50% del total de días a hospedarse."
+    }
+  },
+  {
+    "tipo": "hotel",
+    "nombre": "Hostal Ricardo",
+    "urlMaps": "https://maps.app.goo.gl/aa8671k26JhZuyk36",
+    "imagenes": [
+      "assets/images/alojamientos/hotel-hostal-ricardo.jpg"
+    ],
+    "direccion": "",
+    "distanciaAproximada": "",
+    "accesible": false,
+    "estacionamiento": {
+      "tiene": false,
+      "tipo": "ninguno",
+      "gratuito": false,
+      "precio": 0
+    },
+    "contacto": {
+      "telefono": "922964928",
+      "whatsapp": "+51 922964928",
+      "email": "",
+      "facebook": "",
+      "web": ""
+    },
+    "precios": {
+      "simple": 0,
+      "doble": 0,
+      "matrimonial": 0
+    },
+    "promocion": {
+      "tienePromocion": false,
+      "codigo": "",
+      "preciosEvento": null
+    },
+    "servicios": [],
+    "metadata": {
+      "creadoPor": "Néstor",
+      "fechaCreacion": "2026-01-27T16:30:00.000Z",
+      "notas": "Pendiente completar información de precios, servicios y ubicación"
+    }
+  },
   {
     "tipo": "hotel",
     "nombre": "Hostal El Gran Marquez G&J",
