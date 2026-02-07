@@ -4,7 +4,7 @@
 :root {
     /* Colores Profesionales Rediseñados */
     --primary: #1e3a8a;
-    --primary-gradient: linear-gradient(90deg, #2563eb 0%, #7c3aed 33%, #db2777 66%, #f59e0b 100%);
+    --primary-gradient: linear-gradient(90deg, var(--primary), var(--accent));
     --secondary: #0891b2;
     --accent: #f59e0b;
     --success: #10B981;
