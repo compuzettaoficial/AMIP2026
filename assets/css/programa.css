@@ -1,5 +1,5 @@
 /* ========================================
-   PROGRAMA.CSS - VERSIÓN CONCISA Y PROFESIONAL
+   PROGRAMA.CSS - VERSIÓN CONCISA
 ======================================== */
 
 /* RESUMEN SECTION */
@@ -63,7 +63,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-bottom: 2.5rem;
 }
 
 /* CARD DE CADA DÍA */
@@ -112,16 +111,8 @@
     background: linear-gradient(135deg, #0891b2, #0e7490);
 }
 
-.dia-card:nth-child(2) .dia-numero {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 .dia-card:nth-child(3) .dia-header {
     background: linear-gradient(135deg, #10b981, #059669);
-}
-
-.dia-card:nth-child(3) .dia-numero {
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .dia-info h3 {
@@ -136,12 +127,12 @@
     margin: 0;
 }
 
-/* LISTA DE HORARIOS */
+/* LISTA DE HORARIOS - MÁS COMPACTA */
 .horarios-lista {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .horario-bloque {
@@ -177,18 +168,10 @@
 
 .horario-detalle strong {
     display: block;
-    font-size: 1rem;
-    color: var(--dark);
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-}
-
-.horario-hora {
-    display: block;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     color: var(--primary);
-    font-weight: 600;
-    margin-bottom: 0.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
 }
 
 .horario-detalle p {
@@ -196,37 +179,6 @@
     color: var(--gray);
     line-height: 1.5;
     margin: 0;
-}
-
-/* NOTA DE CONFIRMACIÓN */
-.nota-confirmacion {
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
-    border: 2px solid #fbbf24;
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.nota-confirmacion i {
-    font-size: 1.5rem;
-    color: #92400e;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-}
-
-.nota-confirmacion p {
-    color: #78350f;
-    margin: 0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.nota-confirmacion strong {
-    font-weight: 700;
 }
 
 /* INFORMACIÓN IMPORTANTE */
@@ -412,26 +364,11 @@
     }
     
     .horario-detalle strong {
-        font-size: 0.95rem;
-    }
-    
-    .horario-hora {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     
     .horario-detalle p {
         font-size: 0.8rem;
-    }
-    
-    .nota-confirmacion {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    .nota-confirmacion i {
-        margin-top: 0;
     }
     
     .info-card {
