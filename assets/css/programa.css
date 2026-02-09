@@ -1,5 +1,5 @@
 /* ========================================
-   PROGRAMA.CSS - ESTILOS ESPECÍFICOS
+   PROGRAMA.CSS - VERSIÓN CONCISA Y PROFESIONAL
 ======================================== */
 
 /* RESUMEN SECTION */
@@ -58,164 +58,175 @@
     padding: 4rem 0;
 }
 
-.dia-completo {
-    background: white;
-    border-radius: 20px;
-    padding: 2.5rem;
+/* GRID DE DÍAS - 3 COLUMNAS */
+.dias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     margin-bottom: 2.5rem;
+}
+
+/* CARD DE CADA DÍA */
+.dia-card {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-.dia-completo:hover {
+.dia-card:hover {
     border-color: var(--primary);
     box-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+    transform: translateY(-4px);
 }
 
+/* HEADER DEL DÍA */
 .dia-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 3px solid #f3f4f6;
-}
-
-.dia-badge {
     background: linear-gradient(135deg, var(--primary), #2563eb);
     color: white;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.dia-badge-2 {
+.dia-numero {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.dia-card:nth-child(2) .dia-header {
     background: linear-gradient(135deg, #0891b2, #0e7490);
 }
 
-.dia-badge-3 {
+.dia-card:nth-child(2) .dia-numero {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dia-card:nth-child(3) .dia-header {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 
+.dia-card:nth-child(3) .dia-numero {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .dia-info h3 {
-    font-size: 1.8rem;
-    color: var(--dark);
-    margin-bottom: 0.6rem;
-    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
 }
 
-.dia-info p {
+.dia-subtitulo {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* LISTA DE HORARIOS */
+.horarios-lista {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.horario-bloque {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.horario-icono {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.horario-icono.manana {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+}
+
+.horario-icono.noche {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+}
+
+.horario-detalle {
+    flex: 1;
+}
+
+.horario-detalle strong {
+    display: block;
     font-size: 1rem;
-    color: var(--gray);
-    line-height: 1.6;
-}
-
-/* TIMELINE DE HORARIOS */
-.horario-timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.horario-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, var(--primary), #2563eb);
-    border-radius: 4px;
-}
-
-.horario-item {
-    position: relative;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #f3f4f6;
-}
-
-.horario-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.horario-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 0.5rem;
-    width: 16px;
-    height: 16px;
-    background: var(--primary);
-    border: 4px solid white;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #dbeafe;
-}
-
-.horario-time {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 0.95rem;
-}
-
-.horario-time i {
-    font-size: 1.1rem;
-}
-
-.horario-content h4 {
-    font-size: 1.2rem;
     color: var(--dark);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
-.horario-content h4 i {
-    color: var(--accent);
-    font-size: 1.1rem;
+.horario-hora {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
 }
 
-.horario-content p {
+.horario-detalle p {
+    font-size: 0.85rem;
     color: var(--gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* NOTA DE CONFIRMACIÓN */
+.nota-confirmacion {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nota-confirmacion i {
+    font-size: 1.5rem;
+    color: #92400e;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.nota-confirmacion p {
+    color: #78350f;
+    margin: 0;
     line-height: 1.6;
-    margin-bottom: 0.8rem;
     font-size: 0.95rem;
 }
 
-.horario-tags {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-}
-
-.horario-tags span {
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.tag-actividad {
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.tag-tipo {
-    background: #fef3c7;
-    color: #92400e;
+.nota-confirmacion strong {
+    font-weight: 700;
 }
 
 /* INFORMACIÓN IMPORTANTE */
@@ -262,6 +273,12 @@
     color: var(--gray);
     line-height: 1.6;
     font-size: 0.95rem;
+    margin: 0;
+}
+
+.info-card strong {
+    color: var(--dark);
+    font-weight: 700;
 }
 
 /* CTA PROGRAMA */
@@ -319,6 +336,9 @@
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .header-breadcrumb a:hover {
@@ -337,48 +357,97 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .horario-item {
+    .dias-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .resumen-grid,
-    .info-grid {
+    .resumen-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resumen-card {
+        padding: 1.2rem;
     }
     
     .dia-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        padding: 1.2rem;
     }
     
-    .dia-badge {
-        align-self: flex-start;
+    .dia-numero {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
     }
     
     .dia-info h3 {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
     
-    .horario-timeline {
-        padding-left: 1.5rem;
+    .dia-subtitulo {
+        font-size: 0.8rem;
     }
     
-    .horario-item::before {
-        left: -2rem;
+    .horarios-lista {
+        padding: 1.2rem;
     }
     
-    .horario-time {
-        font-size: 0.85rem;
+    .horario-bloque {
+        gap: 0.8rem;
     }
     
-    .horario-content h4 {
+    .horario-icono {
+        width: 40px;
+        height: 40px;
         font-size: 1.1rem;
+    }
+    
+    .horario-detalle strong {
+        font-size: 0.95rem;
+    }
+    
+    .horario-hora {
+        font-size: 0.8rem;
+    }
+    
+    .horario-detalle p {
+        font-size: 0.8rem;
+    }
+    
+    .nota-confirmacion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .nota-confirmacion i {
+        margin-top: 0;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
     }
     
     .cta-content-programa h2 {
         font-size: 1.6rem;
+    }
+    
+    .cta-content-programa p {
+        font-size: 1rem;
+    }
+    
+    .btn-cta-programa {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
     }
 }
